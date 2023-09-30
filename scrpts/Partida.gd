@@ -29,7 +29,7 @@ func busquedaUsuarios():
 		
 
 func _on_btnSalir_pressed():
-	get_tree().change_scene("res://Escena/Control.tscn")
+	get_tree().change_scene("res://Escena/MenuInicial.tscn")
 
 
 func _on_btnCrearNuevaPartida_pressed():

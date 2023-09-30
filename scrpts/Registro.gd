@@ -27,7 +27,7 @@ func busquedaUsuarios():
 		
 
 func _on_btnRegresar_pressed():
-	get_tree().change_scene("res://Escena/Partida.tscn")
+	get_tree().change_scene("res://Escena/MenuInicial.tscn")
 
 
 func _on_btnSiguiente_pressed():
