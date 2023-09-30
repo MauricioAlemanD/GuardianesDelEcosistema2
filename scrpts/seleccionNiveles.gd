@@ -1,54 +1,11 @@
-extends Control
+extends Control #Hereda de control
 
-func _ready():
-	print(UsuarioGlobal.nombreUsuarioGlobal)
-	$lblNombreUsuario.text = UsuarioGlobal.nombreUsuarioGlobal
+#Seleccion de personje 
 
-
-#var levels = {"1":true,"2":false,"3":false,"4":false,"5":false,"6":false,"7":false,"8":false}
-#var userName = ""
-#var entrar = false
-#
-#
-#func _ready():
-#	startLevels()
-#	if  true:
-#		$SvgMexico/Guan.visible = levels["1"]
-#		$SvgMexico/Quer.visible = levels["2"]
-#		$SvgMexico/Hid.visible = levels["3"]
-#		$SvgMexico/Pueb.visible = levels["4"]
-#		$SvgMexico/Tlax.visible = levels["5"]
-#		$SvgMexico/Mor.visible = levels["6"]
-#		$SvgMexico/Mex.visible = levels["7"]
-#		$SvgMexico/CDM.visible = levels["8"]
-#		entrar = true
-#
-#
-#
-#
-#
-#func startLevels():
-#
-#	var file = File.new()
-#
-#	if (file.file_exists("user://levelsData.dat")):
-#
-#		file.open("user://levelsData.dat", File.READ)
-#		levels = file.get_var()
-#		file.close()
-#
-#	else:
-#		file.open("user://levelsData.dat",File.WRITE)
-#		file.store_var(levels)
-#		file.close()
+func _ready(): #Se crea e inicia el construcor de la escena
+	$lblNombreUsuario.text = UsuarioGlobal.nombreUsuarioGlobal #Se añadde al texto de la etiqueta el valor del usuario global
 
 
-
-
-#func _on_Button_pressed():
-	#$SvgMexico/Hud.visible = false
-
-
-
-func _on_Button_pressed():
-	get_tree().change_scene("res://Escena/MenuInicial.tscn")
+func _on_Button_pressed(): #Se crea el evento para el boton de salir
+	
+	get_tree().change_scene("res://Escena/MenuInicial.tscn") #Se cambia de la escena actual a la escena de inicio de sesion

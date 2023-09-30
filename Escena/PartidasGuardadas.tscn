@@ -87,4 +87,3 @@ expand_icon = true
 [connection signal="pressed" from="btnRegresar" to="." method="_on_btnRegresar_pressed"]
 [connection signal="pressed" from="btnJugar" to="." method="_on_btnJugar_pressed"]
 [connection signal="item_selected" from="cmbUsuarios" to="." method="_on_cmbUsuarios_item_selected"]
-[connection signal="pressed" from="cmbUsuarios" to="." method="_on_cmbUsuarios_pressed"]

@@ -1,11 +1,8 @@
-extends Control
+extends Control #Hereda de control
+
+func _on_btnJugar_pressed(): #Se crea el evento del boton de jugar
+	get_tree().change_scene("res://Escena/Partida.tscn") #se accede a la raiz del proyecto, para cambiar a la escena llamada PArtida
 
 
-
-func _on_btnJugar_pressed():
-	get_tree().change_scene("res://Escena/Partida.tscn")
-
-
-func _on_btnSalir_pressed():
-	get_tree().quit()
-
+func _on_btnSalir_pressed(): #Se crea el evento del boton salir
+	get_tree().quit() #Se accede a la raiz del proyecto y se le pide salir con .quit() 

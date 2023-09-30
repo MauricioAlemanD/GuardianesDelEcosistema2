@@ -102,3 +102,4 @@ texture = ExtResource( 3 )
 
 [connection signal="pressed" from="btnSiguiente" to="." method="_on_btnSiguiente_pressed"]
 [connection signal="pressed" from="btnRegresar" to="." method="_on_btnRegresar_pressed"]
+[connection signal="text_changed" from="txtNombre" to="." method="_on_txtNombre_text_changed"]
