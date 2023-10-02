@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://sprites/Ax/Animaciones/Correr derecha/CorrerDerecha.png" type="Texture" id=1]
 [ext_resource path="res://jugador/Jugador.gd" type="Script" id=2]
@@ -141,6 +141,9 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
+[sub_resource type="Animation" id=27]
+resource_name = "Picker"
+
 [sub_resource type="Animation" id=6]
 length = 0.001
 tracks/0/type = "value"
@@ -243,6 +246,7 @@ anims/EstaticoAbajo = SubResource( 7 )
 anims/EstaticoArriba = SubResource( 8 )
 anims/EstaticoDerecha = SubResource( 9 )
 anims/EstaticoIzquierda = SubResource( 10 )
+anims/Picker = SubResource( 27 )
 anims/RESET = SubResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
