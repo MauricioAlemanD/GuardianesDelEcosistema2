@@ -12,7 +12,8 @@ config_version=4
 
 config/name="Guardianes del ecosistema"
 run/main_scene="res://Escena/MenuInicial.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://sprites/ESTADOSPNG/zcentro.png"
+config/icon="res://sprites/logo.png"
 
 [autoload]
 
