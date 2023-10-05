@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="Guanajuato_mapa" type="Node2D"]
+
+[node name="escenario" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="escenario"]
+format = 1
