@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://sprites/Ax/Animaciones/Correr derecha/CorrerDerecha.png" type="Texture" id=1]
 [ext_resource path="res://jugador/Jugador.gd" type="Script" id=2]
+[ext_resource path="res://Hitboxes/HitBox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 13.2736
@@ -141,8 +142,95 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
+[sub_resource type="Animation" id=28]
+resource_name = "PickArriba"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 50, 51, 52, 53 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "pick_animation_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "PickIzquierda"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 46, 46, 47, 48 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "pick_animation_finished"
+} ]
+}
+
 [sub_resource type="Animation" id=27]
 resource_name = "Picker"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 23, 24, 25, 26 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "pick_animation_finished"
+} ]
+}
 
 [sub_resource type="Animation" id=6]
 length = 0.001
@@ -207,30 +295,64 @@ min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "PickIzquierda"
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "Picker"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "Picker"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "PickArriba"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=34]
+blend_point_0/node = SubResource( 30 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 31 )
+blend_point_1/pos = Vector2( 0, 1.1 )
+blend_point_2/node = SubResource( 32 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 33 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=25]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
 
 [sub_resource type="AnimationNodeStateMachine" id=13]
 states/Correr/node = SubResource( 19 )
 states/Correr/position = Vector2( 405.667, 93.2222 )
 states/Estatico/node = SubResource( 24 )
 states/Estatico/position = Vector2( 163, 93.6667 )
-transitions = [ "Estatico", "Correr", SubResource( 25 ), "Correr", "Estatico", SubResource( 26 ) ]
+states/Pick/node = SubResource( 34 )
+states/Pick/position = Vector2( 162.556, 165.667 )
+transitions = [ "Estatico", "Correr", SubResource( 25 ), "Correr", "Estatico", SubResource( 26 ), "Estatico", "Pick", SubResource( 35 ), "Pick", "Estatico", SubResource( 36 ) ]
 start_node = "Estatico"
+graph_offset = Vector2( -91.114, 0 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
+[sub_resource type="CapsuleShape2D" id=37]
+radius = 23.0
+height = 14.0
+
 [node name="Jugador" type="KinematicBody2D"]
+collision_layer = 2
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2.66406, 2.66406 )
 texture = ExtResource( 1 )
-hframes = 24
+hframes = 54
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 15 )
@@ -246,6 +368,8 @@ anims/EstaticoAbajo = SubResource( 7 )
 anims/EstaticoArriba = SubResource( 8 )
 anims/EstaticoDerecha = SubResource( 9 )
 anims/EstaticoIzquierda = SubResource( 10 )
+anims/PickArriba = SubResource( 28 )
+anims/PickIzquierda = SubResource( 29 )
 anims/Picker = SubResource( 27 )
 anims/RESET = SubResource( 6 )
 
@@ -254,5 +378,21 @@ tree_root = SubResource( 13 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 12 )
-parameters/Correr/blend_position = Vector2( -0.00402302, -0.0317919 )
+parameters/Correr/blend_position = Vector2( 0, 0 )
 parameters/Estatico/blend_position = Vector2( 0, 0 )
+parameters/Pick/blend_position = Vector2( 0, 0 )
+
+[node name="HitboxPivot" type="Position2D" parent="."]
+position = Vector2( 0, -8 )
+__meta__ = {
+"_gizmo_extents_": 32.0
+}
+
+[node name="ToqueHitbox" parent="HitboxPivot" instance=ExtResource( 3 )]
+position = Vector2( 0, 8 )
+collision_mask = 8
+
+[node name="CollisionShape2D" parent="HitboxPivot/ToqueHitbox" index="0"]
+shape = SubResource( 37 )
+
+[editable path="HitboxPivot/ToqueHitbox"]

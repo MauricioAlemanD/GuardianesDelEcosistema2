@@ -12,5 +12,6 @@ var stateLevel5 = {"1":false,"2":false,"3":false}
 var stateLevel6 = {"1":false,"2":false,"3":false}
 var stateLevel7 = {"1":false,"2":false,"3":false}
 var stateLevel8 = {"1":false,"2":false,"3":false}
+var botellasRecogidas = 0
 
 

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/Arboles/HierbaDia.png" type="Texture" id=1]
+
+[node name="HierbaDia" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 16, 8 )
+texture = ExtResource( 1 )
