@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Tile_set/Tiles_Guanajuato-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Tile_set/Tiles_Guanajuato transparentet.png" type="Texture" id=2]
+[ext_resource path="res://jugador/Jugador.tscn" type="PackedScene" id=3]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tiles_Guanajuato transparentet.png 0"
@@ -79,3 +80,10 @@ tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 786514, 0, 0 )
+
+[node name="Jugador" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1186, 334 )
+
+[node name="Camera2D" type="Camera2D" parent="Jugador"]
+position = Vector2( 3, 0 )
+current = true
