@@ -388,7 +388,6 @@
 
 [sub_resource type="StreamTexture" id=4]
 flags = 4
-load_path = "res://.import/arboles.png-b8ea8947b34754fa55d34892a9ffc2f2.stex"
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 64, 0, 64 )
