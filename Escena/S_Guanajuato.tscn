@@ -525,7 +525,6 @@ tile_set = SubResource( 7 )
 format = 1
 
 [node name="Roca" parent="escenario" instance=ExtResource( 7 )]
-visible = false
 
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
 position = Vector2( 230, 1525 )
