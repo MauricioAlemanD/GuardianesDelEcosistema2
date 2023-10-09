@@ -1904,6 +1904,9 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 1/z_index = 0
 
 [node name="GuanajuatoAfuaera" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ -1960.0 ]
+}
 
 [node name="trBackground" type="TextureRect" parent="."]
 visible = false
