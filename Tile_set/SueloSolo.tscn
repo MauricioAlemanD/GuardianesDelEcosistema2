@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Tile_set/Tiles_Guanajuato transparentet.png" type="Texture" id=1]
+[ext_resource path="res://jugador/Jugador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Mundo/HierbaNoche.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Mundo/ArbolEncinoNoche.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Mundo/Botella.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Mundo/ArbolPinoNoche.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Tile_set/SueloSolo.gd" type="Script" id=7]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Tiles_Guanajuato transparentet.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 96, 32, 32, 32 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [  ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Tiles_Guanajuato transparentet.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[node name="PruebaAutoTileRandom" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Pasto" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+format = 1
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Jugador" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 264, 284 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort/Jugador"]
+current = true
+
+[node name="Arboles" type="YSort" parent="YSort"]
+
+[node name="ArbolPino" parent="YSort/Arboles" instance=ExtResource( 6 )]
+position = Vector2( 76, 549 )
+
+[node name="ArbolEncino2" parent="YSort/Arboles" instance=ExtResource( 4 )]
+position = Vector2( 232, 512 )
+
+[node name="ArbolEncino" parent="YSort/Arboles" instance=ExtResource( 4 )]
+position = Vector2( 154, 509 )
+
+[node name="Hierba" type="YSort" parent="YSort"]
+
+[node name="HierbaNoche" parent="YSort/Hierba" instance=ExtResource( 3 )]
+position = Vector2( 352, 416 )
+
+[node name="HierbaNoche4" parent="YSort/Hierba" instance=ExtResource( 3 )]
+position = Vector2( 384, 416 )
+
+[node name="HierbaNoche2" parent="YSort/Hierba" instance=ExtResource( 3 )]
+position = Vector2( 320, 416 )
+
+[node name="HierbaNoche3" parent="YSort/Hierba" instance=ExtResource( 3 )]
+position = Vector2( 288, 416 )
+
+[node name="YSort" type="YSort" parent="YSort"]
+
+[node name="Pasto" parent="YSort/YSort" instance=ExtResource( 5 )]
+position = Vector2( 112, 360 )
+
+[node name="Pasto2" parent="YSort/YSort" instance=ExtResource( 5 )]
+position = Vector2( 304, 360 )
+
+[node name="Pasto3" parent="YSort/YSort" instance=ExtResource( 5 )]
+position = Vector2( 488, 296 )
+
+[node name="Pasto4" parent="YSort/YSort" instance=ExtResource( 5 )]
+position = Vector2( 96, 200 )
