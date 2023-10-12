@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const aceleracion =500
-const velocidadMaxima = 500
+const velocidadMaxima = 200
 const friccion = 500
 
 enum{
