@@ -1,7 +1,7 @@
 extends Node2D
 
 func abrirNiv1():
-	get_tree().change_scene("res://Escena/NivelGuanajuato.tscn")
+	get_tree().change_scene("res://Escena/S_Guanajuato.tscn")
 	
 
 func _on_AreaGuanajuato_area_entered(area):
