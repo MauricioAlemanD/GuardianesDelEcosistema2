@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://fonts/eEraDua.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://bg/02.png" type="Texture" id=2]
 [ext_resource path="res://scrpts/PartidasGuardadas.gd" type="Script" id=3]
+[ext_resource path="res://Sonido/HitSound.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=3]
 size = 35
@@ -84,6 +85,10 @@ flat = true
 align = 1
 expand_icon = true
 
+[node name="HitSound" parent="." instance=ExtResource( 4 )]
+
+[connection signal="mouse_entered" from="btnRegresar" to="." method="_on_btnRegresar_mouse_entered"]
 [connection signal="pressed" from="btnRegresar" to="." method="_on_btnRegresar_pressed"]
+[connection signal="mouse_entered" from="btnJugar" to="." method="_on_btnJugar_mouse_entered"]
 [connection signal="pressed" from="btnJugar" to="." method="_on_btnJugar_pressed"]
 [connection signal="item_selected" from="cmbUsuarios" to="." method="_on_cmbUsuarios_item_selected"]

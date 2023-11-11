@@ -45,3 +45,11 @@ func _on_cmbUsuarios_item_selected(index): #Se crea el evento del contenedor de 
 
 func _on_btnRegresar_pressed(): #Se añade el evento del evento del boton de regresar
 	get_tree().change_scene("res://Escena/MenuInicial.tscn") #Se cambia la escena actual a la del menu inical
+
+
+func _on_btnJugar_mouse_entered():
+	$HitSound.play()
+
+
+func _on_btnRegresar_mouse_entered():
+	$HitSound.play()

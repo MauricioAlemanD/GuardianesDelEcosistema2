@@ -41,3 +41,13 @@ func _on_btnCrearNuevaPartida_pressed(): #Se define el evento del boton para cre
 
 func _on_btnCargarPartida_pressed(): #Se define el evento del boton de cargar partida
 	get_tree().change_scene("res://Escena/PartidasGuardadas.tscn") #Se cambia la escena actual a la escena de cargar partida
+
+
+func _on_btnCrearNuevaPartida_mouse_entered():
+	$HitSound.play()
+
+func _on_btnCargarPartida_mouse_entered():
+	$HitSound.play()
+
+func _on_btnSalir_mouse_entered():
+	$HitSound.play()

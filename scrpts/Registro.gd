@@ -52,3 +52,11 @@ func _on_txtNombre_text_changed(): #Se crea el evento de campo de texto cuando e
 	$btnSiguiente.disabled = false #Se establece que el boton siguente este habilitado cuando el campo de texto rreciba un tecleo
 	if $txtNombre.text == "": #Se crea una condicion comparando el contenido del campo de texto con una cadena vacia para evitar que ingresen usuarios vacios
 		$btnSiguiente.disabled = true #Se cambia la propiedad de deshabilitado al boton siguiente
+
+
+func _on_btnSiguiente_mouse_entered():
+	$HitSound.play()
+
+
+func _on_btnRegresar_mouse_entered():
+	$HitSound.play()

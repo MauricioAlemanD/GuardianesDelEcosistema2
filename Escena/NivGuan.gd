@@ -2,7 +2,6 @@ extends Node2D
 
 func abrirNiv1():
 	get_tree().change_scene("res://Escena/S_Guanajuato.tscn")
-	
 
 func _on_AreaGuanajuato_area_entered(area):
 	$GuanajuatoAz/AreaGuanajuato/CambioEscena.playing = true
@@ -13,8 +12,6 @@ func _on_AreaGuanajuato_area_entered(area):
 	tiempo_expirado.connect("timeout",self,"_on_tiempo_expirado")
 	
 	tiempo_expirado.start()
-	
-
 
 func _on_tiempo_expirado():
 	abrirNiv1()

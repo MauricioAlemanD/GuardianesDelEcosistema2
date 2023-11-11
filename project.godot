@@ -12,12 +12,15 @@ config_version=4
 
 config/name="Guardianes del ecosistema"
 run/main_scene="res://Escena/MenuInicial.tscn"
-boot_splash/image="res://sprites/ESTADOSPNG/zcentro.png"
+boot_splash/image="res://sprites/logo.png"
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://sprites/logo.png"
 
 [autoload]
 
 UsuarioGlobal="*res://scrpts/UsuarioGlobal.gd"
+BgSound="*res://Sonido/BgSound.tscn"
 
 [display]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://sprites/gui/HUD_BG.png" type="Texture" id=1]
 [ext_resource path="res://sprites/gui/hud-Recuperado.png" type="Texture" id=2]
@@ -9,13 +9,25 @@
 [ext_resource path="res://sprites/gui/color_Progreso_Nivel.png" type="Texture" id=7]
 [ext_resource path="res://sprites/gui/HUD_ITEMPS.png" type="Texture" id=8]
 [ext_resource path="res://Escena/HUD.gd" type="Script" id=9]
+[ext_resource path="res://sprites/gui/BG_PAUSA_MISIONES.png" type="Texture" id=10]
+[ext_resource path="res://Configs/btns.tres" type="DynamicFont" id=11]
+[ext_resource path="res://sprites/gui/CASILLA.png" type="Texture" id=12]
+[ext_resource path="res://Sonido/HitSound.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 15
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 2
+outline_color = Color( 0.796078, 0.352941, 0.180392, 1 )
+font_data = ExtResource( 4 )
+
 [node name="HUD" type="Node2D"]
 script = ExtResource( 9 )
+
+[node name="HitSound" parent="." instance=ExtResource( 13 )]
 
 [node name="Hud-Recuperado" type="Sprite" parent="."]
 visible = false
@@ -153,6 +165,7 @@ position = Vector2( 393, 54 )
 texture = ExtResource( 6 )
 
 [node name="Separador3X58" type="Sprite" parent="."]
+visible = false
 position = Vector2( 555, 40 )
 texture = ExtResource( 5 )
 
@@ -175,5 +188,164 @@ flat = true
 position = Vector2( 30, 23 )
 texture = ExtResource( 3 )
 
+[node name="mnuPausa" type="Sprite" parent="."]
+position = Vector2( 512, 304 )
+texture = ExtResource( 10 )
+
+[node name="lblAjustes" type="Label" parent="mnuPausa"]
+anchor_right = 1.0
+margin_left = -290.0
+margin_top = -179.0
+margin_right = -291.0
+margin_bottom = -112.0
+custom_fonts/font = SubResource( 2 )
+text = "AJUSTES"
+align = 1
+valign = 1
+
+[node name="btnContinuar" type="Button" parent="mnuPausa"]
+anchor_right = 1.0
+margin_left = -288.0
+margin_top = -48.0
+margin_right = -288.0
+margin_bottom = -22.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 11 )
+enabled_focus_mode = 0
+text = "CONTINUAR"
+flat = true
+
+[node name="btnGuardarPartida" type="Button" parent="mnuPausa"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -288.0
+margin_top = -163.0
+margin_right = -288.0
+margin_bottom = -137.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 11 )
+enabled_focus_mode = 0
+text = "GUARDAR PARTIDA"
+flat = true
+
+[node name="btnSalir" type="Button" parent="mnuPausa"]
+anchor_right = 1.0
+margin_left = -288.0
+margin_top = 80.0
+margin_right = -288.0
+margin_bottom = 106.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 11 )
+enabled_focus_mode = 0
+text = "SALIR AL MENÚ"
+flat = true
+
+[node name="mnuMisiones" type="Sprite" parent="."]
+position = Vector2( 512, 304 )
+texture = ExtResource( 10 )
+
+[node name="lblMisiones" type="Label" parent="mnuMisiones"]
+anchor_right = 1.0
+margin_left = -290.0
+margin_top = -179.0
+margin_right = -291.0
+margin_bottom = -112.0
+custom_fonts/font = SubResource( 2 )
+text = "AJUSTES"
+align = 1
+valign = 1
+
+[node name="btnContinuar" type="Button" parent="mnuMisiones"]
+anchor_right = 1.0
+margin_left = -288.0
+margin_top = 112.0
+margin_right = -288.0
+margin_bottom = 138.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 11 )
+enabled_focus_mode = 0
+text = "CONTINUAR"
+flat = true
+
+[node name="lblMsn1" type="Label" parent="mnuMisiones"]
+margin_left = -280.0
+margin_top = -112.0
+margin_right = 192.0
+margin_bottom = -48.0
+custom_fonts/font = ExtResource( 11 )
+text = "Misión 1:"
+
+[node name="lblMsn2" type="Label" parent="mnuMisiones"]
+margin_left = -280.0
+margin_top = -48.0
+margin_right = 192.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 11 )
+text = "Misión 2:"
+
+[node name="lblMsn3" type="Label" parent="mnuMisiones"]
+margin_left = -280.0
+margin_top = 16.0
+margin_right = 192.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 11 )
+text = "Misión 3:"
+
+[node name="Casilla" type="Sprite" parent="mnuMisiones"]
+position = Vector2( 224, -80 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 12 )
+
+[node name="Casilla2" type="Sprite" parent="mnuMisiones"]
+position = Vector2( 224, -16 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 12 )
+
+[node name="Casilla3" type="Sprite" parent="mnuMisiones"]
+position = Vector2( 224, 48 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 12 )
+
+[node name="Label4" type="Label" parent="mnuMisiones"]
+light_mask = 0
+margin_left = 216.0
+margin_top = -88.0
+margin_right = 232.0
+margin_bottom = -68.0
+custom_colors/font_color = Color( 0.796078, 0.352941, 0.180392, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "X"
+
+[node name="Label5" type="Label" parent="mnuMisiones"]
+light_mask = 0
+margin_left = 216.0
+margin_top = -24.0
+margin_right = 232.0
+margin_bottom = -4.0
+custom_colors/font_color = Color( 0.796078, 0.352941, 0.180392, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "X"
+
+[node name="Label6" type="Label" parent="mnuMisiones"]
+light_mask = 0
+margin_left = 216.0
+margin_top = 40.0
+margin_right = 232.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 0.796078, 0.352941, 0.180392, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "X"
+
+[connection signal="mouse_entered" from="lblM/btnMisiones" to="." method="_on_btnMisiones_mouse_entered"]
 [connection signal="pressed" from="lblM/btnMisiones" to="." method="_on_btnMisiones_pressed"]
+[connection signal="mouse_entered" from="btnAjustes" to="." method="_on_btnAjustes_mouse_entered"]
 [connection signal="pressed" from="btnAjustes" to="." method="_on_btnAjustes_pressed"]
+[connection signal="mouse_entered" from="mnuPausa/btnContinuar" to="." method="_on_btnContinuar_mouse_entered"]
+[connection signal="pressed" from="mnuPausa/btnContinuar" to="." method="_on_btnContinuar_pressed"]
+[connection signal="mouse_entered" from="mnuPausa/btnGuardarPartida" to="." method="_on_btnGuardarPartida_mouse_entered"]
+[connection signal="pressed" from="mnuPausa/btnGuardarPartida" to="." method="_on_btnGuardarPartida_pressed"]
+[connection signal="mouse_entered" from="mnuPausa/btnSalir" to="." method="_on_btnSalir_mouse_entered"]
+[connection signal="pressed" from="mnuPausa/btnSalir" to="." method="_on_btnSalir_pressed"]
+[connection signal="mouse_entered" from="mnuMisiones/btnContinuar" to="." method="_on_btnContinuar_mouse_entered"]
+[connection signal="pressed" from="mnuMisiones/btnContinuar" to="." method="_on_btnContinuar_pressed"]
