@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ArbolTLAXCALA.png-95ea3ec86e8de170aaf9a4caa6f4cb92.stex"
+path="res://.import/ArbolCDMXG.png-c101ea7ada961c574c46cce9bb178e7d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SPRITES_SOPHIE/Arboles/ArbolTLAXCALA.png"
-dest_files=[ "res://.import/ArbolTLAXCALA.png-95ea3ec86e8de170aaf9a4caa6f4cb92.stex" ]
+source_file="res://SPRITES_SOPHIE/Arboles/ArbolCDMXG.png"
+dest_files=[ "res://.import/ArbolCDMXG.png-c101ea7ada961c574c46cce9bb178e7d.stex" ]
 
 [params]
 
