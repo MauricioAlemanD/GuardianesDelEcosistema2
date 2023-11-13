@@ -181,10 +181,12 @@ tile_data = PoolIntArray( -3735555, 1, 0, -3735554, 1, 0, -3735553, 0, 0, -36700
 
 [node name="Suelos" type="TileMap" parent="Escenario"]
 tile_set = SubResource( 3 )
+cell_size = Vector2( 32, 32 )
 format = 1
 
 [node name="Arboles" type="TileMap" parent="Escenario"]
 tile_set = SubResource( 4 )
+cell_size = Vector2( 32, 32 )
 format = 1
 
 [node name="Jugador" parent="Escenario" instance=ExtResource( 1 )]
