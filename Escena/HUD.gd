@@ -19,7 +19,7 @@ func _on_btnMisiones_pressed():
 
 
 func _on_btnSalir_pressed():
-	get_tree().change_scene("res://Escena/MenuInicial.tscn") 
+	get_tree().change_scene("res://Escena/seleccionNiveles.tscn") 
 
 
 func _on_btnGuardarPartida_pressed():
