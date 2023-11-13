@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://SPRITES_SOPHIE/Arboles/ArbolEDOMEX.png" type="Texture" id=1]
 [ext_resource path="res://SPRITES_SOPHIE/Tiles/Tiles_EDOMEX-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Escena/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://jugador/Jugador.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Escena/S_EDOMEX.gd" type="Script" id=5]
+[ext_resource path="res://Escena/mapeadoEDOMEX.gd" type="Script" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tiles_EDOMEX-Sheet.png 0"
@@ -164,8 +166,10 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 0/z_index = 0
 
 [node name="EDOMEX_Mapa" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Escenario" type="Node2D" parent="."]
+script = ExtResource( 6 )
 
 [node name="Base" type="TileMap" parent="Escenario"]
 tile_set = SubResource( 1 )
@@ -189,16 +193,16 @@ tile_set = SubResource( 5 )
 cell_size = Vector2( 32, 32 )
 format = 1
 
-[node name="Jugador" parent="Escenario" instance=ExtResource( 4 )]
+[node name="Jugador" parent="." instance=ExtResource( 4 )]
 visible = false
 position = Vector2( 306, 121 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Camera2D" type="Camera2D" parent="Escenario/Jugador"]
+[node name="Camera2D" type="Camera2D" parent="Jugador"]
 position = Vector2( -37, 10 )
 current = true
 
-[node name="HUD" parent="Escenario/Jugador/Camera2D" instance=ExtResource( 3 )]
+[node name="HUD" parent="Jugador/Camera2D" instance=ExtResource( 3 )]
 position = Vector2( -511, -299 )
