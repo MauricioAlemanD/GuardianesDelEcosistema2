@@ -1,0 +1,47 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Mundo/Estalactita/AnimacionEstalactita/E6.png" type="Texture" id=1]
+[ext_resource path="res://Mundo/Estalactita/AnimacionEstalactita/E5.png" type="Texture" id=2]
+[ext_resource path="res://Mundo/Estalactita/AnimacionEstalactita/E8.png" type="Texture" id=3]
+[ext_resource path="res://Mundo/Estalactita/AnimacionEstalactita/E2.png" type="Texture" id=4]
+[ext_resource path="res://Mundo/Estalactita/AnimacionEstalactita/E3.png" type="Texture" id=5]
+[ext_resource path="res://Mundo/Estalactita/AnimacionEstalactita/E7.png" type="Texture" id=6]
+[ext_resource path="res://Mundo/Estalactita/AnimacionEstalactita/E9.png" type="Texture" id=7]
+[ext_resource path="res://Mundo/Estalactita/AnimacionEstalactita/E10.png" type="Texture" id=8]
+[ext_resource path="res://Mundo/Estalactita/AnimacionEstalactita/E0.png" type="Texture" id=9]
+[ext_resource path="res://Mundo/Estalactita/AnimacionEstalactita/E1.png" type="Texture" id=10]
+[ext_resource path="res://Mundo/Estalactita/AnimacionEstalactita/E4.png" type="Texture" id=11]
+[ext_resource path="res://Mundo/Estalactita/Estalactita.gd" type="Script" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "caida",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.625, 2.5 )
+
+[node name="Estalactita" type="Node2D"]
+script = ExtResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "caida"
+speed_scale = 0.5
+centered = false
+offset = Vector2( -16, -296 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -5000 )
+shape = SubResource( 2 )
+
+[node name="tiempoEventoPerder" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

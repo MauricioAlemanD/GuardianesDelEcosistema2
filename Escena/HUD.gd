@@ -6,6 +6,7 @@ func _ready():
 	$lblNivel.text = UsuarioGlobal.nivelActual
 	$mnuMisiones.visible = false
 	$mnuPausa.visible = false
+	$mnuTexto.visible = false
 
 
 func _on_btnAjustes_pressed():
@@ -27,6 +28,7 @@ func _on_btnGuardarPartida_pressed():
 
 
 func _on_btnContinuar_pressed():
+	$mnuTexto.visible = false
 	$mnuPausa.visible = false
 	$mnuMisiones.visible = false
 

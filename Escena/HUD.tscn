@@ -337,6 +337,35 @@ custom_colors/font_color = Color( 0.796078, 0.352941, 0.180392, 1 )
 custom_fonts/font = ExtResource( 11 )
 text = "X"
 
+[node name="mnuTexto" type="Sprite" parent="."]
+position = Vector2( 48, 464 )
+scale = Vector2( 0.9, 1.6 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="lblMsn1" type="Label" parent="mnuTexto"]
+margin_left = 18.0
+margin_top = 15.0
+margin_right = 1104.0
+margin_bottom = 98.0
+rect_scale = Vector2( 0.9, 0.6 )
+custom_fonts/font = ExtResource( 11 )
+text = "Habitante: "
+autowrap = true
+
+[node name="btnContinuar" type="Button" parent="mnuTexto"]
+anchor_right = 1.0
+margin_left = 871.111
+margin_top = 55.0
+margin_right = 7.11108
+margin_bottom = 81.0
+rect_scale = Vector2( 0.9, 0.6 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 11 )
+enabled_focus_mode = 0
+text = "CONTINUAR"
+flat = true
+
 [connection signal="mouse_entered" from="lblM/btnMisiones" to="." method="_on_btnMisiones_mouse_entered"]
 [connection signal="pressed" from="lblM/btnMisiones" to="." method="_on_btnMisiones_pressed"]
 [connection signal="mouse_entered" from="btnAjustes" to="." method="_on_btnAjustes_mouse_entered"]
@@ -349,3 +378,5 @@ text = "X"
 [connection signal="pressed" from="mnuPausa/btnSalir" to="." method="_on_btnSalir_pressed"]
 [connection signal="mouse_entered" from="mnuMisiones/btnContinuar" to="." method="_on_btnContinuar_mouse_entered"]
 [connection signal="pressed" from="mnuMisiones/btnContinuar" to="." method="_on_btnContinuar_pressed"]
+[connection signal="mouse_entered" from="mnuTexto/btnContinuar" to="." method="_on_btnContinuar_mouse_entered"]
+[connection signal="pressed" from="mnuTexto/btnContinuar" to="." method="_on_btnContinuar_pressed"]

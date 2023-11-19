@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Escena/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://jugador/Jugador.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Escena/S_Morelos.gd" type="Script" id=5]
 [ext_resource path="res://Escena/mapeadoMorelos.gd" type="Script" id=6]
 [ext_resource path="res://Mundo/Suelos.tscn" type="PackedScene" id=7]
+[ext_resource path="res://M_NPC/NPCPrueba.png" type="Texture" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tiles_Morelos-Sheet.png 0"
@@ -166,6 +167,10 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 10.449
+height = 10.449
+
 [node name="Morelos_Mapa" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -206,6 +211,72 @@ format = 1
 [node name="Suelos2" parent="Escenario" instance=ExtResource( 7 )]
 tile_data = PoolIntArray(  )
 
+[node name="NPC1" type="Sprite" parent="."]
+position = Vector2( 4136, 3000 )
+scale = Vector2( 3.0625, 3.0625 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="NPC1"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPC1/Area2D"]
+position = Vector2( 1.95921, -27.7551 )
+scale = Vector2( 1.38659, 2.85155 )
+polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.449, 15.6735, -10.449, 5.22449 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPC1/Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1/Area2D/StaticBody2D"]
+shape = SubResource( 6 )
+
+[node name="NPC2" type="Sprite" parent="."]
+position = Vector2( 2208, 1512 )
+scale = Vector2( 3.0625, 3.0625 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="NPC2"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPC2/Area2D"]
+position = Vector2( 1.95921, -27.7551 )
+scale = Vector2( 1.38659, 2.85155 )
+polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.449, 15.6735, -10.449, 5.22449 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPC2/Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2/Area2D/StaticBody2D"]
+shape = SubResource( 6 )
+
+[node name="NPC3" type="Sprite" parent="."]
+position = Vector2( 1664, 3264 )
+scale = Vector2( 3.0625, 3.0625 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="NPC3"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPC3/Area2D"]
+position = Vector2( 1.95921, -27.7551 )
+scale = Vector2( 1.38659, 2.85155 )
+polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.449, 15.6735, -10.449, 5.22449 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPC3/Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3/Area2D/StaticBody2D"]
+shape = SubResource( 6 )
+
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3088, 3296 )
 __meta__ = {
@@ -218,3 +289,9 @@ current = true
 
 [node name="HUD" parent="Jugador/Camera2D" instance=ExtResource( 1 )]
 position = Vector2( -511, -299 )
+
+[node name="cerrarTexto" type="Timer" parent="."]
+
+[connection signal="area_entered" from="NPC1/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="NPC2/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="NPC3/Area2D" to="." method="_on_Area2D_area_entered"]
