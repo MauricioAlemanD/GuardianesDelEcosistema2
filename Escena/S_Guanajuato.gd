@@ -11,6 +11,7 @@ func _ready():
 	$Roca.visible = false
 	$Suelos.visible = false
 	UsuarioGlobal.ganadoJefe1 = true
+	$Jugador/Camera2D/CambioEscena.visible = false
 	
 
 
@@ -64,17 +65,29 @@ func jefeMuricelago():
 		
 		var esperarEstalactita = Timer.new()
 		esperarEstalactita.wait_time = 1
-		esperarEstalactita.one_shot = true
+		esperarEstalactita.one_shot = false
 		get_tree().get_root().add_child(esperarEstalactita)
 		esperarEstalactita.connect("timeout", self, "_on_tiempo_expirado2", [i])
 		esperarEstalactita.start()
 		
 	print("Has ganado")
+	
+func _on_temporizador_espera_timeoutES():
+	# Cambia la escena después de 2 segundos
+	get_tree().change_scene("res://FinalJefe/Guanajuato.tscn")
 
 func _on_tiempo_expirado2(iteracion):
 	
 	if UsuarioGlobal.ganadoJefe1 == false:
 		get_tree().change_scene("res://Escena/MenuInicial.tscn")
+	elif estalactitas == 10 and UsuarioGlobal.ganadoJefe1 == true:
+		$Jugador/Camera2D/CambioEscena.playing = true
+		$Jugador/Camera2D/CambioEscena.visible = true
+		$temporizadorEspera.wait_time = 1
+		$temporizadorEspera.one_shot = true
+		$temporizadorEspera.connect("timeout", self, "_on_temporizador_espera_timeoutES")
+		$temporizadorEspera.start()
+
 	
 	print("Caida de roca en iteración:", iteracion)
 	var coordenadas_personaje = $Jugador.position
@@ -85,6 +98,7 @@ func _on_tiempo_expirado2(iteracion):
 	nueva_estalactita.position.y = coordenadas_personaje.y
 
 	add_child(nueva_estalactita)
+	
 	
 
 
@@ -103,10 +117,17 @@ func _on_eventoMurcielago_area_entered(area):
 	get_tree().get_root().add_child(esperarEstalactita)
 	esperarEstalactita.connect("timeout", self, "_on_tiempo_expirado3")
 	esperarEstalactita.start()
+
 	
 func _on_tiempo_expirado3():
+	
 	if UsuarioGlobal.ganadoJefe1 == true:
 		print("Felicidades has ganado")
+		estalactitas = estalactitas + 1
+		print(estalactitas)
+		
+		
+		
 	elif UsuarioGlobal.ganadoJefe1 == false:
 		print("Intentalo de nuevo")
 		

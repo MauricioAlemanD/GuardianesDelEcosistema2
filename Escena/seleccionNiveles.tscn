@@ -80,7 +80,6 @@ polygon = PoolVector2Array( 10.2552, -11.9975, 20.364, -11.9975, 20.364, -7.9539
 position = Vector2( 32.4946, 10.2418 )
 scale = Vector2( 8.5293, 4.78588 )
 z_index = 1
-frame = 0
 
 [node name="tiempo_expirado" type="Timer" parent="SvgMexico/EventoGuanajuato"]
 
@@ -104,7 +103,6 @@ polygon = PoolVector2Array( -5.48369, -18.7285, -7.50545, -20.7502, -11.549, -20
 position = Vector2( -7, 3 )
 scale = Vector2( 8.5293, 4.78588 )
 z_index = 1
-frame = 0
 
 [node name="tiempo_expirado" type="Timer" parent="SvgMexico/EventoQueretaro"]
 

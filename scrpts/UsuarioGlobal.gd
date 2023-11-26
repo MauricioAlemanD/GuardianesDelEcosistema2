@@ -17,3 +17,4 @@ var botellasRecogidas = 0
 
 var cuadroTexto = "Habitante: ";
 var ganadoJefe1 = true;
+var ganadoJefe2 = true;

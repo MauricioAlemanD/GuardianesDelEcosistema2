@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://bg/03.png" type="Texture" id=1]
+[ext_resource path="res://sprites/jefes/Queretaro.png" type="Texture" id=2]
+[ext_resource path="res://fonts/eEraDua.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://FinalJefe/Queretaro.gd" type="Script" id=4]
+[ext_resource path="res://sprites/jefes/Queretaro1.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="03" type="Sprite" parent="."]
+scale = Vector2( 3.41333, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Dialogo" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 440.0
+margin_right = 992.0
+margin_bottom = 576.0
+custom_fonts/font = SubResource( 1 )
+autowrap = true
+
+[node name="tiempoDialogo" type="Timer" parent="."]
+
+[node name="btnContinuar" type="Button" parent="."]
+anchor_right = 1.0
+margin_left = 808.0
+margin_top = 32.0
+margin_right = 977.0
+margin_bottom = 69.0
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "CONTINUAR"
+flat = true
+
+[node name="Queretaro" type="Sprite" parent="."]
+position = Vector2( 516.75, 266.75 )
+scale = Vector2( 5.45313, 5.45313 )
+texture = ExtResource( 2 )
+
+[node name="Queretaro1" type="Sprite" parent="Queretaro"]
+position = Vector2( -44.578, -0.73988 )
+scale = Vector2( 0.66185, 0.66185 )
+texture = ExtResource( 5 )
+
+[node name="Queretaro2" type="Sprite" parent="Queretaro"]
+position = Vector2( 63.6301, -2.40462 )
+scale = Vector2( 0.690752, 0.690752 )
+texture = ExtResource( 5 )
+
+[node name="Queretaro1" type="Sprite" parent="Queretaro/Queretaro2"]
+position = Vector2( -44.9874, 2.9456 )
+texture = ExtResource( 5 )
+
+[connection signal="pressed" from="btnContinuar" to="." method="_on_Button_pressed"]

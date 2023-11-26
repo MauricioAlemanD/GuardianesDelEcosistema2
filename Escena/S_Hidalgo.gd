@@ -1,8 +1,15 @@
 extends Node2D
 
+var combinacion = "35142"
+var combinacionValida = ""
+var contadorBotones = 0
+
 func _ready():
 	UsuarioGlobal.nivelActual = "Hidalgo"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel Hidalgo"
+	$Jugador/Camera2D/Reto.visible = false
+	$Jugador/Camera2D/CambioEscena.visible = false
+
 
 
 func _on_Area2D_area_entered(area):
@@ -48,3 +55,56 @@ func _on_Area2D_area_entered(area):
 
 func _on_tiempo_expirado():
 	$Jugador/Camera2D/HUD/mnuTexto.visible = false
+
+
+func _on_btnPua1_pressed():
+	combinacionValida = combinacionValida + "1"
+	print(combinacionValida)
+	$Jugador/Camera2D/Reto/PielHidalgo/Pua1.visible = false
+	validarPuas()
+func _on_btnPua2_pressed():
+	combinacionValida = combinacionValida + "2"
+	print(combinacionValida)
+	$Jugador/Camera2D/Reto/PielHidalgo/Pua2.visible = false
+	validarPuas()
+func _on_btnPua3_pressed():
+	combinacionValida = combinacionValida + "3"
+	print(combinacionValida)
+	$Jugador/Camera2D/Reto/PielHidalgo/Pua3.visible = false
+	validarPuas()
+func _on_btnPua4_pressed():
+	combinacionValida = combinacionValida + "4"
+	print(combinacionValida)
+	$Jugador/Camera2D/Reto/PielHidalgo/Pua4.visible = false
+	validarPuas()
+func _on_btnPua5_pressed():
+	combinacionValida = combinacionValida + "5"
+	print(combinacionValida)
+	$Jugador/Camera2D/Reto/PielHidalgo/Pua5.visible = false
+	validarPuas()
+func validarPuas():
+	if combinacionValida.length() == 5:
+		if combinacionValida == combinacion:
+			print("Ganaste")
+			$Jugador/Camera2D/CambioEscena.playing = true
+			$Jugador/Camera2D/CambioEscena.visible = true
+			$temporizadorEspera.wait_time = 1
+			$temporizadorEspera.one_shot = true
+			$temporizadorEspera.connect("timeout", self, "_on_temporizador_espera_timeoutES")
+			$temporizadorEspera.start()
+			
+		else:
+			print("Intenta de nuevo")
+			$Jugador/Camera2D/Reto/PielHidalgo/Pua5.visible = true
+			$Jugador/Camera2D/Reto/PielHidalgo/Pua4.visible = true
+			$Jugador/Camera2D/Reto/PielHidalgo/Pua3.visible = true
+			$Jugador/Camera2D/Reto/PielHidalgo/Pua2.visible = true
+			$Jugador/Camera2D/Reto/PielHidalgo/Pua1.visible = true
+			combinacionValida = ""
+
+
+func _on_eventoJefe_area_entered(area):
+	$Jugador/Camera2D/Reto.visible = true
+func _on_temporizador_espera_timeoutES():
+	get_tree().change_scene("res://FinalJefe/Hidalgo.tscn")
+	
