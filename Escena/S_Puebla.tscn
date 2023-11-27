@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://jugador/Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escena/HUD.tscn" type="PackedScene" id=2]
@@ -8,6 +8,13 @@
 [ext_resource path="res://Escena/S_Puebla.gd" type="Script" id=6]
 [ext_resource path="res://Mundo/Suelos.tscn" type="PackedScene" id=7]
 [ext_resource path="res://M_NPC/NPCPrueba.png" type="Texture" id=8]
+[ext_resource path="res://sprites/jefes/puebla.png" type="Texture" id=9]
+[ext_resource path="res://sprites/jefes/puebla/piezas/mosaico.png" type="Texture" id=10]
+[ext_resource path="res://sprites/jefes/puebla/lagartija.png" type="Texture" id=11]
+[ext_resource path="res://fonts/eEraDua.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://FinalJefe/puebla/juegoPuebla.gd" type="Script" id=13]
+[ext_resource path="res://sprites/jefes/puebla/piezas/iguanabg.png" type="Texture" id=14]
+[ext_resource path="res://Escena/CambioEscenaNergo.tscn" type="PackedScene" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tiles_Puebla-Sheet.png 0"
@@ -171,6 +178,15 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 radius = 10.449
 height = 10.449
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 16.1, 20.1001 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
 [node name="Puebla_Mapa" type="Node2D"]
 script = ExtResource( 6 )
 
@@ -273,8 +289,22 @@ polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3/Area2D/StaticBody2D"]
 shape = SubResource( 6 )
 
+[node name="Puebla" type="Sprite" parent="."]
+position = Vector2( 1344, 3000 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 9 )
+
+[node name="eventoJefe" type="Area2D" parent="Puebla"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puebla/eventoJefe"]
+position = Vector2( -0.100037, 0.900024 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 7 )
+
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3352, 3304 )
+position = Vector2( 1568, 2984 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -286,8 +316,449 @@ current = true
 [node name="HUD" parent="Jugador/Camera2D" instance=ExtResource( 2 )]
 position = Vector2( -511, -299 )
 
+[node name="juego" type="Node2D" parent="Jugador/Camera2D"]
+position = Vector2( -507, -298 )
+script = ExtResource( 13 )
+
+[node name="Iguanabg" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 538.5, 282.5 )
+scale = Vector2( 0.4897, 0.4897 )
+texture = ExtResource( 14 )
+
+[node name="Sprite0_0" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 12, 17 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+
+[node name="btn01" type="Button" parent="Jugador/Camera2D/juego/Sprite0_0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite0_1" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 876, 457 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="btn02" type="Button" parent="Jugador/Camera2D/juego/Sprite0_1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite0_2" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 132, 161 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 2
+
+[node name="btn03" type="Button" parent="Jugador/Camera2D/juego/Sprite0_2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite0_3" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 28, 169 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 3
+
+[node name="btn04" type="Button" parent="Jugador/Camera2D/juego/Sprite0_3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite1_0" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 140, 313 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 4
+
+[node name="btn05" type="Button" parent="Jugador/Camera2D/juego/Sprite1_0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite1_1" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 124, 73 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 5
+
+[node name="btn06" type="Button" parent="Jugador/Camera2D/juego/Sprite1_1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite1_2" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 876, 33 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 6
+
+[node name="btn07" type="Button" parent="Jugador/Camera2D/juego/Sprite1_2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite1_3" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 908, 321 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 7
+
+[node name="btn08" type="Button" parent="Jugador/Camera2D/juego/Sprite1_3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite2_0" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( -12, 329 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 8
+
+[node name="btn09" type="Button" parent="Jugador/Camera2D/juego/Sprite2_0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite2_1" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 76, 113 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 9
+
+[node name="btn10" type="Button" parent="Jugador/Camera2D/juego/Sprite2_1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite2_2" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 772, 9 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 10
+
+[node name="btn11" type="Button" parent="Jugador/Camera2D/juego/Sprite2_2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite2_3" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 132, 465 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 11
+
+[node name="btn12" type="Button" parent="Jugador/Camera2D/juego/Sprite2_3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite3_0" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 884, 177 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 12
+
+[node name="btn13" type="Button" parent="Jugador/Camera2D/juego/Sprite3_0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite3_1" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 788, 169 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 13
+
+[node name="btn14" type="Button" parent="Jugador/Camera2D/juego/Sprite3_1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite3_2" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( -12, 489 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 14
+
+[node name="btn15" type="Button" parent="Jugador/Camera2D/juego/Sprite3_2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Sprite3_3" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 764, 457 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+centered = false
+hframes = 4
+vframes = 4
+frame = 15
+
+[node name="btn16" type="Button" parent="Jugador/Camera2D/juego/Sprite3_3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Mosaico" type="Sprite" parent="Jugador/Camera2D/juego"]
+position = Vector2( 276, 17 )
+scale = Vector2( 0.494382, 0.494382 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="btnm01" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 285.0
+margin_top = 30.0
+margin_right = 413.0
+margin_bottom = 150.0
+flat = true
+
+[node name="btnm02" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 416.0
+margin_top = 32.0
+margin_right = 544.0
+margin_bottom = 152.0
+flat = true
+
+[node name="btnm03" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 544.0
+margin_top = 32.0
+margin_right = 672.0
+margin_bottom = 152.0
+flat = true
+
+[node name="btnm04" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 672.0
+margin_top = 32.0
+margin_right = 800.0
+margin_bottom = 152.0
+flat = true
+
+[node name="btnm05" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 288.0
+margin_top = 160.0
+margin_right = 416.0
+margin_bottom = 280.0
+flat = true
+
+[node name="btnm06" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 416.0
+margin_top = 160.0
+margin_right = 544.0
+margin_bottom = 280.0
+flat = true
+
+[node name="btnm07" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 544.0
+margin_top = 160.0
+margin_right = 672.0
+margin_bottom = 280.0
+flat = true
+
+[node name="btnm08" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 672.0
+margin_top = 160.0
+margin_right = 800.0
+margin_bottom = 280.0
+flat = true
+
+[node name="btnm09" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 288.0
+margin_top = 288.0
+margin_right = 416.0
+margin_bottom = 408.0
+flat = true
+
+[node name="btnm10" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 416.0
+margin_top = 288.0
+margin_right = 544.0
+margin_bottom = 408.0
+flat = true
+
+[node name="btnm11" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 536.0
+margin_top = 288.0
+margin_right = 664.0
+margin_bottom = 408.0
+flat = true
+
+[node name="btnm12" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 672.0
+margin_top = 288.0
+margin_right = 800.0
+margin_bottom = 408.0
+flat = true
+
+[node name="btnm13" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 288.0
+margin_top = 408.0
+margin_right = 416.0
+margin_bottom = 528.0
+flat = true
+
+[node name="btnm14" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 416.0
+margin_top = 408.0
+margin_right = 544.0
+margin_bottom = 528.0
+flat = true
+
+[node name="btnm15" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 536.0
+margin_top = 408.0
+margin_right = 664.0
+margin_bottom = 528.0
+flat = true
+
+[node name="btnm16" type="Button" parent="Jugador/Camera2D/juego"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 672.0
+margin_top = 408.0
+margin_right = 800.0
+margin_bottom = 528.0
+flat = true
+
+[node name="Label" type="Label" parent="Jugador/Camera2D/juego"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 328.0
+margin_top = 184.0
+margin_right = 736.0
+margin_bottom = 419.0
+custom_fonts/font = SubResource( 8 )
+text = "Completa el rompecabezas clickeando las piezas y volviendo a clickear donde creas que vayan."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Tween" type="Tween" parent="Jugador/Camera2D/juego"]
+
+[node name="CambioEscena" parent="Jugador/Camera2D" instance=ExtResource( 15 )]
+position = Vector2( 5.2041, -21.0212 )
+scale = Vector2( 35.125, 20.7188 )
+z_index = 2
+speed_scale = 1.0
+playing = false
+
 [node name="cerrarTexto" type="Timer" parent="."]
+
+[node name="temporizadorEspera" type="Timer" parent="."]
 
 [connection signal="area_entered" from="NPC1/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="NPC2/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="NPC3/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Puebla/eventoJefe" to="." method="_on_eventoJefe_area_entered"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite0_0/btn01" to="." method="_on_btn01_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite0_1/btn02" to="." method="_on_btn02_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite0_2/btn03" to="." method="_on_btn03_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite0_3/btn04" to="." method="_on_btn04_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite1_0/btn05" to="." method="_on_btn05_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite1_1/btn06" to="." method="_on_btn06_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite1_2/btn07" to="." method="_on_btn07_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite1_3/btn08" to="." method="_on_btn08_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite2_0/btn09" to="." method="_on_btn09_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite2_1/btn10" to="." method="_on_btn10_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite2_2/btn11" to="." method="_on_btn11_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite2_3/btn12" to="." method="_on_btn12_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite3_0/btn13" to="." method="_on_btn13_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite3_1/btn14" to="." method="_on_btn14_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite3_2/btn15" to="." method="_on_btn15_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/Sprite3_3/btn16" to="." method="_on_btn16_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm01" to="." method="_on_btnm01_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm02" to="." method="_on_btnm02_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm03" to="." method="_on_btnm03_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm04" to="." method="_on_btnm04_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm05" to="." method="_on_btnm05_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm06" to="." method="_on_btnm06_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm07" to="." method="_on_btnm07_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm08" to="." method="_on_btnm08_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm09" to="." method="_on_btnm09_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm10" to="." method="_on_btnm10_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm11" to="." method="_on_btnm11_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm12" to="." method="_on_btnm12_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm13" to="." method="_on_btnm13_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm14" to="." method="_on_btnm14_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm15" to="." method="_on_btnm15_pressed"]
+[connection signal="pressed" from="Jugador/Camera2D/juego/btnm16" to="." method="_on_btnm16_pressed"]
