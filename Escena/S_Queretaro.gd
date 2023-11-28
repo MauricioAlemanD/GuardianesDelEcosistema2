@@ -21,9 +21,6 @@ func _ready():
 	$Jefe/tubo3.visible = false
 	UsuarioGlobal.ganadoJefe2 = true
 	$Jugador/Camera2D/CambioEscena.visible = false
-	
-
-
 func _on_Area2D_area_entered(area):
 	var NPC
 	

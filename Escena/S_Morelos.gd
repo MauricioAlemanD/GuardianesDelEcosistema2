@@ -1,9 +1,12 @@
 extends Node2D
-
+var segundos_pasados = 0
 func _ready():
 	UsuarioGlobal.nivelActual = "Morelos"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel Morelos"
-
+	$Jugador/Camera2D/CambioEscena.visible = false
+	UsuarioGlobal.fuegoApagador = 0
+	$Jugador/Camera2D/tiempo.visible = false
+	$Jugador/Camera2D/llamaradas.visible = false
 
 func _on_Area2D_area_entered(area):
 	var NPC
@@ -49,3 +52,39 @@ func _on_Area2D_area_entered(area):
 func _on_tiempo_expirado():
 	$Jugador/Camera2D/HUD/mnuTexto.visible = false
 
+func _on_temporizador_timeout():
+	segundos_pasados += 1
+	$Jugador/Camera2D/tiempo.text = "Tiempo restante "+ str(segundos_pasados)+"/100"
+	$Jugador/Camera2D/llamaradas.text = "Llamaradas apagadas " + str(UsuarioGlobal.fuegoApagador)+"/20"
+	if UsuarioGlobal.fuegoApagador == 20 and segundos_pasados <= 100 :
+		print("Ganaste")
+		$Jugador/Camera2D/CambioEscena.playing = true
+		$Jugador/Camera2D/CambioEscena.visible = true
+		var temporizadorEspera = Timer.new()
+		temporizadorEspera.wait_time = 1
+		temporizadorEspera.one_shot = true
+		get_tree().get_root().add_child(temporizadorEspera)
+		temporizadorEspera.connect("timeout",self,"_on_temporizador_espera_timeoutESE")
+		temporizadorEspera.start()
+	if UsuarioGlobal.fuegoApagador <20 and segundos_pasados > 100 :
+		get_tree().change_scene("res://Escena/seleccionNiveles.tscn")
+	
+func _on_temporizador_espera_timeoutESE():
+	get_tree().change_scene("res://FinalJefe/Morelos.tscn")
+
+
+func _on_eventoJefe_area_entered(area):
+	$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Pe..Peroque he hecho, ayudame a controlar el incendio antes de que se propague. Si ya apagaaste algunos nos servira de mucho. Pasa por ellos para apagarlos."
+	$Jugador/Camera2D/HUD/mnuTexto.visible = true
+	$Jugador/Camera2D/tiempo.visible = true
+	$Jugador/Camera2D/llamaradas.visible = true
+	var cerrarTexto = Timer.new()
+	cerrarTexto.wait_time = 10
+	cerrarTexto.one_shot = true
+	get_tree().get_root().add_child(cerrarTexto)
+	cerrarTexto.connect("timeout",self,"_on_tiempo_expirado")
+	cerrarTexto.start()
+	$temporizador.wait_time = 1
+	$temporizador.one_shot = false
+	$temporizador.connect("timeout", self, "_on_temporizador_timeout")
+	$temporizador.start() 

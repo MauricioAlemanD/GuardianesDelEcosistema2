@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://SPRITES_SOPHIE/Tiles/Tiles_Tlaxcala-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://SPRITES_SOPHIE/Arboles/ArbolTLAXCALA.png" type="Texture" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://Escena/S_Tlaxcala.gd" type="Script" id=6]
 [ext_resource path="res://Mundo/Suelos.tscn" type="PackedScene" id=7]
 [ext_resource path="res://M_NPC/NPCPrueba.png" type="Texture" id=8]
+[ext_resource path="res://sprites/jefes/tlaxcala/jaula1.png" type="Texture" id=9]
+[ext_resource path="res://sprites/jefes/tlaxcala/paloma1.png" type="Texture" id=10]
+[ext_resource path="res://sprites/jefes/tlaxcala/paloma2.png" type="Texture" id=11]
+[ext_resource path="res://sprites/jefes/Tlaxcala.png" type="Texture" id=12]
+[ext_resource path="res://Escena/CambioEscenaNergo.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tiles_Tlaxcala-Sheet.png 0"
@@ -171,6 +176,20 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 radius = 10.449
 height = 10.449
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 18.353, 18.353 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 18.3824, 19.7647 )
+
 [node name="Tlaxcala_Mapa" type="Node2D"]
 script = ExtResource( 6 )
 
@@ -272,8 +291,83 @@ polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3/Area2D/StaticBody2D"]
 shape = SubResource( 7 )
 
+[node name="Tlaxcala" type="Sprite" parent="."]
+position = Vector2( 816, 1112 )
+scale = Vector2( 2.83333, 2.83333 )
+texture = ExtResource( 12 )
+
+[node name="eventoJefe" type="Area2D" parent="Tlaxcala"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tlaxcala/eventoJefe"]
+shape = SubResource( 10 )
+
+[node name="Jaulajefe" type="Sprite" parent="Tlaxcala"]
+position = Vector2( -2.82352, 0 )
+texture = ExtResource( 9 )
+
+[node name="Paloma1" type="Node2D" parent="."]
+position = Vector2( 2224, 520 )
+scale = Vector2( 2.83333, 2.83333 )
+
+[node name="spritePaloma1" type="AnimatedSprite" parent="Paloma1"]
+frames = SubResource( 8 )
+playing = true
+
+[node name="jaulaPaloma1" type="Sprite" parent="Paloma1"]
+texture = ExtResource( 9 )
+
+[node name="quitaJaulaPaloma1" type="Area2D" parent="Paloma1"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paloma1/quitaJaulaPaloma1"]
+position = Vector2( -0.0294189, 1.41171 )
+shape = SubResource( 9 )
+
+[node name="Paloma2" type="Node2D" parent="."]
+position = Vector2( 4248, 1832 )
+scale = Vector2( 2.83333, 2.83333 )
+
+[node name="spritePaloma2" type="AnimatedSprite" parent="Paloma2"]
+frames = SubResource( 8 )
+frame = 1
+playing = true
+
+[node name="jaulaPaloma2" type="Sprite" parent="Paloma2"]
+texture = ExtResource( 9 )
+
+[node name="quitaJaulaPaloma2" type="Area2D" parent="Paloma2"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paloma2/quitaJaulaPaloma2"]
+position = Vector2( -0.0294189, 1.41171 )
+shape = SubResource( 9 )
+
+[node name="Paloma3" type="Node2D" parent="."]
+position = Vector2( 3784, 3024 )
+scale = Vector2( 2.83333, 2.83333 )
+
+[node name="spritePaloma3" type="AnimatedSprite" parent="Paloma3"]
+frames = SubResource( 8 )
+frame = 1
+playing = true
+
+[node name="jaulaPaloma3" type="Sprite" parent="Paloma3"]
+texture = ExtResource( 9 )
+
+[node name="quitaJaulaPaloma3" type="Area2D" parent="Paloma3"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paloma3/quitaJaulaPaloma3"]
+position = Vector2( -0.0294189, 1.41171 )
+shape = SubResource( 9 )
+
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1000, 1328 )
+position = Vector2( 1576, 960 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -285,8 +379,21 @@ current = true
 [node name="HUD" parent="Jugador/Camera2D" instance=ExtResource( 4 )]
 position = Vector2( -511, -299 )
 
+[node name="CambioEscena" parent="Jugador/Camera2D" instance=ExtResource( 13 )]
+position = Vector2( 5.2041, -21.0212 )
+scale = Vector2( 35.125, 20.7188 )
+z_index = 2
+speed_scale = 1.0
+playing = false
+
 [node name="cerrarTexto" type="Timer" parent="."]
+
+[node name="temporizadorEspera" type="Timer" parent="."]
 
 [connection signal="area_entered" from="NPC1/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="NPC2/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="NPC3/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Tlaxcala/eventoJefe" to="." method="_on_eventoJefe_area_entered"]
+[connection signal="area_entered" from="Paloma1/quitaJaulaPaloma1" to="." method="_on_quitaJaulaPaloma1_area_entered"]
+[connection signal="area_entered" from="Paloma2/quitaJaulaPaloma2" to="." method="_on_quitaJaulaPaloma2_area_entered"]
+[connection signal="area_entered" from="Paloma3/quitaJaulaPaloma3" to="." method="_on_quitaJaulaPaloma3_area_entered"]

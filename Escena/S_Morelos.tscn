@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Escena/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://jugador/Jugador.tscn" type="PackedScene" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://Escena/mapeadoMorelos.gd" type="Script" id=6]
 [ext_resource path="res://Mundo/Suelos.tscn" type="PackedScene" id=7]
 [ext_resource path="res://M_NPC/NPCPrueba.png" type="Texture" id=8]
+[ext_resource path="res://FinalJefe/Morelos/Fuego.tscn" type="PackedScene" id=9]
+[ext_resource path="res://fonts/eEraDua.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Escena/CambioEscenaNergo.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sprites/jefes/morelos.png" type="Texture" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tiles_Morelos-Sheet.png 0"
@@ -171,6 +175,15 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 radius = 10.449
 height = 10.449
 
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 16.0385, 12.3846 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
 [node name="Morelos_Mapa" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -277,6 +290,79 @@ polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3/Area2D/StaticBody2D"]
 shape = SubResource( 6 )
 
+[node name="Fuego1" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2128, 1048 )
+
+[node name="Fuego2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3528, 2848 )
+
+[node name="Fuego3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3896, 2696 )
+
+[node name="Fuego4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3192, 2232 )
+
+[node name="Fuego5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1816, 2376 )
+
+[node name="Fuego6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2304, 2848 )
+
+[node name="Fuego7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1128, 2816 )
+
+[node name="Fuego8" parent="." instance=ExtResource( 9 )]
+position = Vector2( 856, 2400 )
+
+[node name="Fuego9" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3584, 1984 )
+
+[node name="Fuego10" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3424, 1032 )
+
+[node name="Fuego11" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3640, 1400 )
+
+[node name="Fuego12" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2544, 824 )
+
+[node name="Fuego13" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1936, 1568 )
+
+[node name="Fuego14" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1248, 2064 )
+
+[node name="Fuego15" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2968, 1240 )
+
+[node name="Fuego16" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2568, 2032 )
+
+[node name="Fuego17" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2976, 1520 )
+
+[node name="Fuego18" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1344, 1576 )
+
+[node name="Fuego19" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1616, 1344 )
+
+[node name="Fuego20" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2776, 920 )
+
+[node name="Morelos" type="Sprite" parent="."]
+position = Vector2( 1240, 2504 )
+scale = Vector2( 3.25, 3.25 )
+texture = ExtResource( 12 )
+
+[node name="eventoJefe" type="Area2D" parent="Morelos"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Morelos/eventoJefe"]
+position = Vector2( 1.19229, 2.46155 )
+shape = SubResource( 8 )
+
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3088, 3296 )
 __meta__ = {
@@ -290,8 +376,40 @@ current = true
 [node name="HUD" parent="Jugador/Camera2D" instance=ExtResource( 1 )]
 position = Vector2( -511, -299 )
 
+[node name="tiempo" type="Label" parent="Jugador/Camera2D"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -491.0
+margin_top = -202.0
+margin_right = -145.0
+margin_bottom = -171.0
+custom_fonts/font = SubResource( 7 )
+text = "Tiempo restante 0/100"
+
+[node name="llamaradas" type="Label" parent="Jugador/Camera2D"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -491.0
+margin_top = -162.0
+margin_right = -74.0
+margin_bottom = -131.0
+custom_fonts/font = SubResource( 7 )
+text = "Llamaradas apagadas 0/20"
+
+[node name="CambioEscena" parent="Jugador/Camera2D" instance=ExtResource( 11 )]
+position = Vector2( 5.2041, -21.0212 )
+scale = Vector2( 35.125, 20.7188 )
+z_index = 2
+speed_scale = 1.0
+playing = false
+
 [node name="cerrarTexto" type="Timer" parent="."]
+
+[node name="temporizadorEspera" type="Timer" parent="."]
+
+[node name="temporizador" type="Timer" parent="."]
 
 [connection signal="area_entered" from="NPC1/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="NPC2/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="NPC3/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Morelos/eventoJefe" to="." method="_on_eventoJefe_area_entered"]

@@ -1,11 +1,9 @@
 extends Node2D
-
-
 func _ready():
 	UsuarioGlobal.nivelActual = "Tlaxcala"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel Tlaxcala"
-
-
+	$Tlaxcala/Jaulajefe.visible = false
+	$Jugador/Camera2D/CambioEscena.visible = false
 func _on_Area2D_area_entered(area):
 	var NPC
 	
@@ -46,10 +44,58 @@ func _on_Area2D_area_entered(area):
 	cerrarTexto.connect("timeout",self,"_on_tiempo_expirado")
 	
 	cerrarTexto.start()
-
 func _on_tiempo_expirado():
 	$Jugador/Camera2D/HUD/mnuTexto.visible = false
-
-
-
-
+func _on_quitaJaulaPaloma1_area_entered(area):
+	print("aa")
+	$Paloma1/jaulaPaloma1.visible = false
+func _on_quitaJaulaPaloma2_area_entered(area):
+	$Paloma2/jaulaPaloma2.visible = false
+func _on_quitaJaulaPaloma3_area_entered(area):
+	$Paloma3/jaulaPaloma3.visible = false
+func _on_eventoJefe_area_entered(area):
+	if $Paloma1/jaulaPaloma1.visible == false and $Paloma2/jaulaPaloma2.visible == false and $Paloma3/jaulaPaloma3.visible == false:
+		print("Ganaste")
+		$Tlaxcala/Jaulajefe.visible = true
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Me atrapaste"
+		$Jugador/Camera2D/HUD/mnuTexto.visible = true
+		var cerrarTexto = Timer.new()
+		cerrarTexto.wait_time = 10
+		cerrarTexto.one_shot = true
+		get_tree().get_root().add_child(cerrarTexto)
+		cerrarTexto.connect("timeout",self,"_on_tiempo_expirado")
+		$Jugador/Camera2D/CambioEscena.playing = true
+		$Jugador/Camera2D/CambioEscena.visible = true
+		$temporizadorEspera.wait_time = 1
+		$temporizadorEspera.one_shot = true
+		$temporizadorEspera.connect("timeout", self, "_on_temporizador_espera_timeoutES")
+		$temporizadorEspera.start()
+	elif  $Paloma1/jaulaPaloma1.visible == false and $Paloma2/jaulaPaloma2.visible == false and $Paloma3/jaulaPaloma3.visible == true:
+		print("Yo no se nada")
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Yo no se nada"
+		$Jugador/Camera2D/HUD/mnuTexto.visible = true
+		var cerrarTexto = Timer.new()
+		cerrarTexto.wait_time = 10
+		cerrarTexto.one_shot = true
+		get_tree().get_root().add_child(cerrarTexto)
+		cerrarTexto.connect("timeout",self,"_on_tiempo_expirado")
+	elif  $Paloma1/jaulaPaloma1.visible == false and $Paloma2/jaulaPaloma2.visible == true and $Paloma3/jaulaPaloma3.visible == true:
+		print("Deja de entrometerte")
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Deja de entrometerte"
+		$Jugador/Camera2D/HUD/mnuTexto.visible = true
+		var cerrarTexto = Timer.new()
+		cerrarTexto.wait_time = 10
+		cerrarTexto.one_shot = true
+		get_tree().get_root().add_child(cerrarTexto)
+		cerrarTexto.connect("timeout",self,"_on_tiempo_expirado")
+	elif  $Paloma1/jaulaPaloma1.visible == true and $Paloma2/jaulaPaloma2.visible == true and $Paloma3/jaulaPaloma3.visible == true:
+		print("Que buen dia hace hoy")
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Que buen dia para trabajar hoy"
+		$Jugador/Camera2D/HUD/mnuTexto.visible = true
+		var cerrarTexto = Timer.new()
+		cerrarTexto.wait_time = 10
+		cerrarTexto.one_shot = true
+		get_tree().get_root().add_child(cerrarTexto)
+		cerrarTexto.connect("timeout",self,"_on_tiempo_expirado")
+func _on_temporizador_espera_timeoutES():
+	get_tree().change_scene("res://FinalJefe/Tlaxcala.tscn")

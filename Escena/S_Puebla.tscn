@@ -300,7 +300,6 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puebla/eventoJefe"]
 position = Vector2( -0.100037, 0.900024 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 7 )
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]

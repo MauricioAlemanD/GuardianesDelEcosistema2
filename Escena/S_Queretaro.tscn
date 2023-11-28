@@ -862,7 +862,6 @@ texture = ExtResource( 22 )
 [node name="tubo1" type="AnimatedSprite" parent="Jefe"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -880,6 +879,7 @@ shape = SubResource( 37 )
 [node name="tubo2" type="AnimatedSprite" parent="Jefe"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
+frame = 2
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -897,7 +897,7 @@ shape = SubResource( 37 )
 [node name="tubo3" type="AnimatedSprite" parent="Jefe"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -920,7 +920,6 @@ texture = ExtResource( 24 )
 [node name="tubo1" type="AnimatedSprite" parent="secuas1"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -938,7 +937,6 @@ shape = SubResource( 37 )
 [node name="tubo2" type="AnimatedSprite" parent="secuas1"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -956,6 +954,7 @@ shape = SubResource( 37 )
 [node name="tubo3" type="AnimatedSprite" parent="secuas1"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
+frame = 2
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -978,7 +977,7 @@ texture = ExtResource( 24 )
 [node name="tubo1" type="AnimatedSprite" parent="secuas2"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -996,7 +995,7 @@ shape = SubResource( 37 )
 [node name="tubo2" type="AnimatedSprite" parent="secuas2"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1014,7 +1013,6 @@ shape = SubResource( 37 )
 [node name="tubo3" type="AnimatedSprite" parent="secuas2"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1037,7 +1035,7 @@ texture = ExtResource( 24 )
 [node name="tubo1" type="AnimatedSprite" parent="secuas3"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1055,7 +1053,6 @@ shape = SubResource( 37 )
 [node name="tubo2" type="AnimatedSprite" parent="secuas3"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1073,7 +1070,6 @@ shape = SubResource( 37 )
 [node name="tubo3" type="AnimatedSprite" parent="secuas3"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 

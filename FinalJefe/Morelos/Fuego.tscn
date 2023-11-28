@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/jefes/morelos/fuego2.png" type="Texture" id=1]
+[ext_resource path="res://sprites/jefes/morelos/fuego4.png" type="Texture" id=2]
+[ext_resource path="res://sprites/jefes/morelos/fuego1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/jefes/morelos/fuego3.png" type="Texture" id=4]
+[ext_resource path="res://FinalJefe/Morelos/Fuego.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 33, 46 )
+
+[node name="Fuego1" type="Node2D"]
+position = Vector2( 32, 48 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="FuegoAnimacion" type="AnimatedSprite" parent="."]
+scale = Vector2( 3, 3 )
+frames = SubResource( 7 )
+frame = 3
+playing = true
+
+[node name="Fuego1" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fuego1"]
+position = Vector2( 0, -2 )
+shape = SubResource( 8 )
+
+[connection signal="area_entered" from="Fuego1" to="." method="_on_Fuego1_area_entered"]
