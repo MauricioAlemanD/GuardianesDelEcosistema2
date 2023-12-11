@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Pisada pasto (efecto).mp3-6dd6cccfd3532e84d2bbb32e86f39d76.mp3str"
+
+[deps]
+
+source_file="res://Sonido/Pisada pasto (efecto).mp3"
+dest_files=[ "res://.import/Pisada pasto (efecto).mp3-6dd6cccfd3532e84d2bbb32e86f39d76.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Rata de negocios.mp3-286548e6fca27bfd9c2f5f437fa1198a.mp3str"
+
+[deps]
+
+source_file="res://Sonido/Rata de negocios.mp3"
+dest_files=[ "res://.import/Rata de negocios.mp3-286548e6fca27bfd9c2f5f437fa1198a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
