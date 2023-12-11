@@ -20,7 +20,15 @@ config/icon="res://sprites/logo.png"
 [autoload]
 
 UsuarioGlobal="*res://scrpts/UsuarioGlobal.gd"
-BgSound="*res://Sonido/BgSound.tscn"
+BgApertura="*res://Sonido/BgApertura.tscn"
+BgGuanajuato="*res://Sonido/BgGuanajuato.tscn"
+BgQueretaro="*res://Sonido/BgQueretaro.tscn"
+BgHidalgo="*res://Sonido/BgHidalgo.tscn"
+BgPuebla="*res://Sonido/BgPuebla.tscn"
+BgMorelos="*res://Sonido/BgMorelos.tscn"
+BgEdomex="*res://Sonido/BgEDOMEX.tscn"
+BgCdmx="*res://Sonido/BgCDMX.tscn"
+BgTlaxcala="*res://Sonido/BgTlaxcala.tscn"
 
 [display]
 

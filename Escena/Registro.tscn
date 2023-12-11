@@ -6,17 +6,15 @@
 [ext_resource path="res://scrpts/Registro.gd" type="Script" id=4]
 [ext_resource path="res://fonts/ea.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Sonido/HitSound.tscn" type="PackedScene" id=6]
+[ext_resource path="res://fonts/Heavitas.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="Theme" id=1]
-
-[sub_resource type="DynamicFontData" id=2]
-font_path = "res://fonts/8-bit fortress.ttf"
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 2 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFontData" id=5]
 font_path = "res://fonts/8-bit fortress.ttf"
@@ -80,8 +78,8 @@ margin_top = 348.0
 margin_right = 733.0
 margin_bottom = 414.0
 custom_fonts/font = SubResource( 3 )
-text = "¡Bienvenido! nuevo guardian
-¿Cual es tu nombre?"
+text = "¡Bienvenido! nuevo guardian!
+¿Cuál es tu nombre?"
 
 [node name="lblExistente" type="Label" parent="."]
 visible = false

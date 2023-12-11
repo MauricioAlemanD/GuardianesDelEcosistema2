@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://sprites/ESTADOSPNG/AZ/mexicoAZ.png" type="Texture" id=1]
 [ext_resource path="res://sprites/ESTADOSPNG/AZ/SVG MEXICO.png" type="Texture" id=2]
@@ -18,14 +18,28 @@
 [ext_resource path="res://Escena/CambioEscena.tscn" type="PackedScene" id=16]
 [ext_resource path="res://sprites/almanaqueICO.png" type="Texture" id=17]
 [ext_resource path="res://Escena/EventoQueretaro.gd" type="Script" id=18]
-
-[sub_resource type="DynamicFontData" id=3]
-font_path = "res://fonts/8-bit fortress.ttf"
+[ext_resource path="res://sprites/Estrucutras/controles/c5.png" type="Texture" id=19]
+[ext_resource path="res://sprites/Estrucutras/controles/c3.png" type="Texture" id=20]
+[ext_resource path="res://sprites/Estrucutras/controles/indicador2.png" type="Texture" id=21]
+[ext_resource path="res://sprites/Estrucutras/controles/indicador4.png" type="Texture" id=22]
+[ext_resource path="res://sprites/Estrucutras/controles/c2.png" type="Texture" id=23]
+[ext_resource path="res://sprites/Estrucutras/controles/c1.png" type="Texture" id=24]
+[ext_resource path="res://sprites/Estrucutras/controles/c4.png" type="Texture" id=25]
+[ext_resource path="res://sprites/Estrucutras/controles/indicador1.png" type="Texture" id=26]
+[ext_resource path="res://sprites/Estrucutras/controles/indicador3.png" type="Texture" id=27]
+[ext_resource path="res://fonts/Heavitas.ttf" type="DynamicFontData" id=28]
+[ext_resource path="res://Escena/EventoPuebla.gd" type="Script" id=29]
+[ext_resource path="res://Escena/EventoCDMX.gd" type="Script" id=30]
+[ext_resource path="res://Escena/EventoTlaxcala.gd" type="Script" id=31]
+[ext_resource path="res://Escena/EventoMorelos.gd" type="Script" id=32]
+[ext_resource path="res://Escena/EventoHidalgo.gd" type="Script" id=33]
+[ext_resource path="res://Escena/EventoMexico.gd" type="Script" id=34]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
-outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 3 )
+outline_size = 3
+outline_color = Color( 0.172549, 0.152941, 0.152941, 1 )
+font_data = ExtResource( 28 )
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Label
@@ -34,12 +48,27 @@ func _ready():
 	text=UsuarioGlobal.nombreUsuarioGlobal
 "
 
-[sub_resource type="DynamicFontData" id=4]
-font_path = "res://fonts/8-BIT WONDER.TTF"
-
 [sub_resource type="DynamicFont" id=5]
-size = 23
-font_data = SubResource( 4 )
+size = 30
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 28 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 24 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 25 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="seleccionNiveles" type="Control"]
 anchor_left = 0.5
@@ -106,29 +135,134 @@ z_index = 1
 
 [node name="tiempo_expirado" type="Timer" parent="SvgMexico/EventoQueretaro"]
 
-[node name="PueblaAz" type="Sprite" parent="SvgMexico"]
+[node name="EventoPuebla" type="Node2D" parent="SvgMexico"]
 position = Vector2( 28, 20 )
+script = ExtResource( 29 )
+
+[node name="PueblaAz" type="Sprite" parent="SvgMexico/EventoPuebla"]
+position = Vector2( 0, -7.62939e-06 )
 texture = ExtResource( 10 )
 
-[node name="CdmxAz" type="Sprite" parent="SvgMexico"]
+[node name="AreaPuebla" type="Area2D" parent="SvgMexico/EventoPuebla/PueblaAz"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SvgMexico/EventoPuebla/PueblaAz/AreaPuebla"]
+polygon = PoolVector2Array( -6.2661, -8.88033, -6.2661, -10.9021, -4.24434, -16.9674, -4.24434, -18.9891, -2.22258, -25.0544, 1.82094, -33.1414, 1.82094, -31.1197, 3.8427, -25.0544, 3.8427, -23.0326, 1.82094, -21.0109, 3.8427, -16.9674, 7.88622, -14.9456, 9.90797, -18.9891, 11.9297, -18.9891, 13.9515, -16.9674, 13.9515, -12.9239, 11.9297, -8.88033, 9.90797, -4.83681, 9.90797, -0.793297, 15.9733, 1.22847, 17.995, 3.25023, 13.9515, 3.25023, 13.9515, 9.31551, 11.9297, 15.3808, 17.995, 19.4243, 22.0385, 17.4025, 22.0385, 19.4243, 13.9515, 27.5113, 7.88622, 25.4896, 5.86446, 21.4461, 3.8427, 21.4461, 1.82094, 23.4678, 1.82094, 29.5331, -10.3096, 29.5331, -22.4402, 25.4896, -20.4184, 19.4243, -16.3749, 19.4243, -14.3531, 11.3373, -14.3531, 3.25023, -14.3531, 1.22847, -6.2661, 7.29375, 3.8427, 3.25023, 5.86446, 1.22847, -4.24434, -8.88033 )
+
+[node name="CambioEscena" parent="SvgMexico/EventoPuebla/PueblaAz/AreaPuebla" instance=ExtResource( 16 )]
+position = Vector2( -26.4837, -18.9891 )
+scale = Vector2( 8.5293, 4.78588 )
+z_index = 1
+
+[node name="tiempo_expirado" type="Timer" parent="SvgMexico/EventoPuebla"]
+
+[node name="EventoCDMX" type="Node2D" parent="SvgMexico"]
 position = Vector2( 3, 22.9946 )
+script = ExtResource( 30 )
+
+[node name="CdmxAz" type="Sprite" parent="SvgMexico/EventoCDMX"]
 texture = ExtResource( 3 )
 
-[node name="TlaxcalaAz" type="Sprite" parent="SvgMexico"]
-position = Vector2( 23, 19.5 )
+[node name="AreaCDMX" type="Area2D" parent="SvgMexico/EventoCDMX/CdmxAz"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SvgMexico/EventoCDMX/CdmxAz/AreaCDMX"]
+polygon = PoolVector2Array( 0.538071, 4.29916, 2.55983, 4.29916, 4.58159, 2.2774, 2.55983, -1.76612, 0.538071, -5.80965, -1.48369, -3.78789, -3.50545, -1.76612, -5.52721, 0.255638, -3.50545, 2.2774, -3.50545, 2.2774, -1.48369, 4.29916 )
+
+[node name="CambioEscena" parent="SvgMexico/EventoCDMX/CdmxAz/AreaCDMX" instance=ExtResource( 16 )]
+position = Vector2( -1.48367, -21.9837 )
+scale = Vector2( 8.5293, 4.78588 )
+z_index = 1
+
+[node name="tiempo_expirado" type="Timer" parent="SvgMexico/EventoCDMX"]
+
+[node name="EventoTlaxcala" type="Node2D" parent="SvgMexico"]
+position = Vector2( 23.0707, 19.0071 )
+scale = Vector2( 1.06874, 1.04415 )
+script = ExtResource( 31 )
+
+[node name="TlaxcalaAz" type="Sprite" parent="SvgMexico/EventoTlaxcala"]
+scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 
-[node name="HidalgoAz" type="Sprite" parent="SvgMexico"]
-position = Vector2( 7, -3.00545 )
+[node name="AreaTlaxcala" type="Area2D" parent="SvgMexico/EventoTlaxcala/TlaxcalaAz"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SvgMexico/EventoTlaxcala/TlaxcalaAz/AreaTlaxcala"]
+polygon = PoolVector2Array( -3.14253, -5.61759, 0.6409, -7.55386, 2.53262, -7.55386, 4.42433, -3.68133, 6.31606, -1.74506, 8.20776, 0.1912, 10.0995, 2.12746, 8.20776, 4.06374, -1.25081, 7.93626, -10.7094, 0.1912, -5.03424, -3.68133 )
+
+[node name="CambioEscena" parent="SvgMexico/EventoTlaxcala/TlaxcalaAz/AreaTlaxcala" instance=ExtResource( 16 )]
+position = Vector2( -12.6011, -15.2989 )
+scale = Vector2( 8.5293, 4.78588 )
+z_index = 1
+
+[node name="tiempo_expirado" type="Timer" parent="SvgMexico/EventoTlaxcala"]
+
+[node name="EventoHidalgo" type="Node2D" parent="SvgMexico"]
+position = Vector2( 7, -3.00546 )
+script = ExtResource( 33 )
+
+[node name="HidalgoAz" type="Sprite" parent="SvgMexico/EventoHidalgo"]
 texture = ExtResource( 8 )
 
-[node name="MexicoAz" type="Sprite" parent="SvgMexico"]
+[node name="AreaHidalgo" type="Area2D" parent="SvgMexico/EventoHidalgo/HidalgoAz"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SvgMexico/EventoHidalgo/HidalgoAz/AreaHidalgo"]
+polygon = PoolVector2Array( -17.6142, 4.01633, -19.636, -0.0271835, -17.6142, -2.04894, -13.5707, -4.0707, -9.52721, -8.11422, -9.52721, -12.1577, -3.46193, -14.1795, -1.44017, -18.223, 2.60335, -16.2013, 8.66862, -18.223, 14.7339, -14.1795, 14.7339, -12.1577, 12.7121, -8.11422, 8.66862, -6.09246, 6.64687, -2.04894, 8.66862, 1.99458, 14.7339, -2.04894, 16.7557, -2.04894, 18.7774, -0.0271835, 16.7557, 1.99458, 12.7121, 4.01633, 14.7339, 10.0816, 12.7121, 16.1469, 8.66862, 18.1686, 4.62511, 20.1904, 4.62511, 16.1469, 2.60335, 14.1251, 0.581589, 14.1251, 0.581589, 10.0816, 0.581589, 10.0816, -3.46193, 8.05985, -5.48369, 12.1034, -9.52721, 14.1251, -9.52721, 10.0816, -11.549, 8.05985, -17.6142, 6.03809 )
+
+[node name="CambioEscena" parent="SvgMexico/EventoHidalgo/HidalgoAz/AreaHidalgo" instance=ExtResource( 16 )]
+position = Vector2( -7.50544, 4.01633 )
+scale = Vector2( 8.5293, 4.78588 )
+z_index = 1
+
+[node name="tiempo_expirado" type="Timer" parent="SvgMexico/EventoHidalgo"]
+
+[node name="EventoMexico" type="Node2D" parent="SvgMexico"]
 position = Vector2( -4.99455, 21.9946 )
+script = ExtResource( 34 )
+
+[node name="MexicoAz" type="Sprite" parent="SvgMexico/EventoMexico"]
 texture = ExtResource( 1 )
 
-[node name="MorelosAz" type="Sprite" parent="SvgMexico"]
-position = Vector2( 5.00543, 34 )
+[node name="AreaEDOMEX" type="Area2D" parent="SvgMexico/EventoMexico/MexicoAz"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SvgMexico/EventoMexico/MexicoAz/AreaEDOMEX"]
+polygon = PoolVector2Array( -15.7285, 17.4297, -17.7502, 13.3862, -17.7502, 9.34267, -15.7285, 1.25564, -9.66321, -12.8967, -7.64145, -18.962, -3.59793, -18.962, 0.445587, -14.9184, 2.46735, -10.8749, 8.53262, -14.9184, 12.5761, -14.9184, 12.5761, -10.8749, 14.5979, -10.8749, 16.6197, -4.80965, 18.6414, 5.29916, 16.6197, 7.32092, 14.5979, 5.29916, 12.5761, 1.25564, 8.53262, -2.78789, 4.48911, -0.766121, 4.48911, 3.2774, 2.46735, 9.34267, -1.57617, 11.3644, -11.685, 15.408, -13.7067, 19.4515, -15.7285, 19.4515 )
+
+[node name="CambioEscena" parent="SvgMexico/EventoMexico/MexicoAz/AreaEDOMEX" instance=ExtResource( 16 )]
+position = Vector2( 4.48911, -20.9837 )
+scale = Vector2( 8.5293, 4.78588 )
+z_index = 1
+
+[node name="tiempo_expirado" type="Timer" parent="SvgMexico/EventoMexico"]
+
+[node name="EventoMorelos" type="Node2D" parent="SvgMexico"]
+position = Vector2( 5.00542, 34 )
+script = ExtResource( 32 )
+
+[node name="MorelosAz" type="Sprite" parent="SvgMexico/EventoMorelos"]
 texture = ExtResource( 9 )
+
+[node name="AreaMorelos" type="Area2D" parent="SvgMexico/EventoMorelos/MorelosAz"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Area2D" type="CollisionPolygon2D" parent="SvgMexico/EventoMorelos/MorelosAz/AreaMorelos"]
+polygon = PoolVector2Array( 0.554413, 5.4243, -5.51086, 3.40254, -7.53262, 1.38078, -7.53262, -2.66273, -5.51086, -4.68449, -3.48911, -6.70625, 2.57617, -6.70625, 6.61969, -4.68449, 6.61969, -0.640976, 4.59793, 3.40254, 2.57617, 5.4243 )
+
+[node name="CambioEscena" parent="SvgMexico/EventoMorelos/MorelosAz/AreaMorelos" instance=ExtResource( 16 )]
+position = Vector2( -3.4891, -32.9891 )
+scale = Vector2( 8.5293, 4.78588 )
+z_index = 1
+
+[node name="tiempo_expirado" type="Timer" parent="SvgMexico/EventoMorelos"]
 
 [node name="Hud" type="Sprite" parent="SvgMexico"]
 position = Vector2( 102.099, 52.313 )
@@ -141,9 +275,9 @@ margin_top = 386.0
 margin_right = 958.0
 margin_bottom = 412.0
 rect_pivot_offset = Vector2( 134, 11 )
-custom_colors/font_color = Color( 0.164706, 0.141176, 0.0980392, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Guardiian:"
+text = "Guardian:"
 
 [node name="lblNombreUsuario" type="Label" parent="."]
 margin_left = 736.0
@@ -151,7 +285,7 @@ margin_top = 412.0
 margin_right = 983.0
 margin_bottom = 438.0
 rect_pivot_offset = Vector2( 134, 11 )
-custom_colors/font_color = Color( 0.501961, 0.294118, 0.109804, 1 )
+custom_colors/font_color = Color( 0.721569, 0.631373, 0.54902, 1 )
 custom_fonts/font = SubResource( 1 )
 script = SubResource( 2 )
 
@@ -170,12 +304,12 @@ margin_top = -5.0
 margin_right = 785.0
 margin_bottom = 21.0
 rect_pivot_offset = Vector2( 115, 13 )
-custom_colors/font_color = Color( 0.164706, 0.141176, 0.0980392, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "último nivel:"
+text = "último nivel : GUANAJUATO"
 
-[node name="AlmanaqueIco" type="Sprite" parent="lblUltimoNivel"]
-position = Vector2( -355, 457 )
+[node name="AlmanaqueIco" type="Sprite" parent="."]
+position = Vector2( 0, 452 )
 scale = Vector2( 0.193151, 0.193151 )
 texture = ExtResource( 17 )
 
@@ -185,9 +319,9 @@ margin_top = -43.0
 margin_right = 785.0
 margin_bottom = -17.0
 rect_pivot_offset = Vector2( 115, 13 )
-custom_colors/font_color = Color( 0.164706, 0.141176, 0.0980392, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Progreso"
+text = "Progreso : 0%"
 
 [node name="lblSeleccionNivel" type="Label" parent="."]
 margin_left = -81.0
@@ -195,7 +329,7 @@ margin_top = -27.0
 margin_right = 349.0
 margin_bottom = 13.0
 rect_pivot_offset = Vector2( 134, 11 )
-custom_colors/font_color = Color( 0.164706, 0.141176, 0.0980392, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "Selección de nivel"
 align = 1
@@ -208,9 +342,29 @@ margin_bottom = 17.0
 focus_mode = 0
 flat = true
 
+[node name="indicador" type="AnimatedSprite" parent="."]
+modulate = Color( 0.905882, 0.513726, 0.741176, 1 )
+position = Vector2( 344, 124 )
+scale = Vector2( 1.16939, 1.32486 )
+frames = SubResource( 6 )
+playing = true
+
+[node name="controles" type="AnimatedSprite" parent="."]
+position = Vector2( 64, 244 )
+scale = Vector2( 0.738777, 0.837 )
+frames = SubResource( 7 )
+frame = 4
+playing = true
+
 [node name="Jugador" parent="." instance=ExtResource( 13 )]
 position = Vector2( 800, 460 )
 
 [connection signal="area_entered" from="SvgMexico/EventoGuanajuato/GuanajuatoAz/AreaGuanajuato" to="SvgMexico/EventoGuanajuato" method="_on_AreaGuanajuato_area_entered"]
 [connection signal="area_entered" from="SvgMexico/EventoQueretaro/QueretaroAz/AreaQueretaro" to="SvgMexico/EventoQueretaro" method="_on_AreaQueretaro_area_entered"]
+[connection signal="area_entered" from="SvgMexico/EventoPuebla/PueblaAz/AreaPuebla" to="SvgMexico/EventoPuebla" method="_on_AreaPuebla_area_entered"]
+[connection signal="area_entered" from="SvgMexico/EventoCDMX/CdmxAz/AreaCDMX" to="SvgMexico/EventoCDMX" method="_on_AreaCDMX_area_entered"]
+[connection signal="area_entered" from="SvgMexico/EventoTlaxcala/TlaxcalaAz/AreaTlaxcala" to="SvgMexico/EventoTlaxcala" method="_on_AreaTlaxcala_area_entered"]
+[connection signal="area_entered" from="SvgMexico/EventoHidalgo/HidalgoAz/AreaHidalgo" to="SvgMexico/EventoHidalgo" method="_on_AreaHidalgo_area_entered"]
+[connection signal="area_entered" from="SvgMexico/EventoMexico/MexicoAz/AreaEDOMEX" to="SvgMexico/EventoMexico" method="_on_AreaEDOMEX_area_entered"]
+[connection signal="area_entered" from="SvgMexico/EventoMorelos/MorelosAz/AreaMorelos" to="SvgMexico/EventoMorelos" method="_on_AreaMorelos_area_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

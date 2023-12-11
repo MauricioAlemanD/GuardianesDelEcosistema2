@@ -10,3 +10,5 @@ func _ready(): #Se crea e inicia el construcor de la escena
 func _on_Button_pressed(): #Se crea el evento para el boton de salir
 	
 	get_tree().change_scene("res://Escena/MenuInicial.tscn") #Se cambia de la escena actual a la escena de inicio de sesion
+
+

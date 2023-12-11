@@ -1,16 +1,74 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://fonts/bgzm.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/ea.tres" type="DynamicFont" id=2]
 [ext_resource path="res://fonts/eEraDua.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://scrpts/Menu.gd" type="Script" id=4]
 [ext_resource path="res://Sonido/HitSound.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/Ax/Animaciones/Descanso/Descanso4.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Ax/Animaciones/Descanso/Descanso3.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Ax/Animaciones/Descanso/Descanso1.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Ax/Animaciones/Descanso/Descanso2.png" type="Texture" id=9]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute1.png" type="Texture" id=10]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute2.png" type="Texture" id=11]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute4.png" type="Texture" id=12]
+[ext_resource path="res://sprites/frames/frames/murcielago2.png" type="Texture" id=13]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute12.png" type="Texture" id=14]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute5.png" type="Texture" id=15]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute7.png" type="Texture" id=16]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute9.png" type="Texture" id=17]
+[ext_resource path="res://sprites/frames/frames/cacomixtle4.png" type="Texture" id=18]
+[ext_resource path="res://sprites/frames/frames/cacomixtle3.png" type="Texture" id=19]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute13.png" type="Texture" id=20]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute6.png" type="Texture" id=21]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute3.png" type="Texture" id=22]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute15.png" type="Texture" id=23]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute10.png" type="Texture" id=24]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute14.png" type="Texture" id=25]
+[ext_resource path="res://sprites/frames/frames/murcielago1.png" type="Texture" id=26]
+[ext_resource path="res://sprites/frames/frames/cacomixtle2.png" type="Texture" id=27]
+[ext_resource path="res://sprites/frames/frames/cacomixtle1.png" type="Texture" id=28]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute8.png" type="Texture" id=29]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute16.png" type="Texture" id=30]
+[ext_resource path="res://sprites/Ax/Animaciones/Celebración 2/Celebración Cute11.png" type="Texture" id=31]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
 outline_size = 7
 outline_color = Color( 0.2, 0.0196078, 0.203922, 1 )
 font_data = ExtResource( 3 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 29 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 31 ), ExtResource( 14 ), ExtResource( 20 ), ExtResource( 25 ), ExtResource( 23 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Menu" type="Control"]
 anchor_left = 0.5
@@ -22,6 +80,9 @@ margin_top = -240.0
 margin_right = 432.0
 margin_bottom = 240.0
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 561.0 ]
+}
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -70,8 +131,38 @@ flat = true
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 1 )]
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 119, 444 )
+scale = Vector2( 5.98437, 5.98437 )
+frames = SubResource( 2 )
+animation = "New Anim"
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 800, 408 )
+scale = Vector2( 5.78125, 5.78125 )
+frames = SubResource( 3 )
+frame = 12
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 215, 316 )
+scale = Vector2( 5.79688, 5.79688 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+position = Vector2( 660, 348 )
+scale = Vector2( 4.90625, 4.90625 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
 [node name="HitSound" parent="." instance=ExtResource( 5 )]
 
+[connection signal="ready" from="." to="." method="_on_Menu_ready"]
 [connection signal="mouse_entered" from="vbxBotones/btnJugar" to="." method="_on_btnJugar_mouse_entered"]
 [connection signal="pressed" from="vbxBotones/btnJugar" to="." method="_on_btnJugar_pressed"]
 [connection signal="mouse_entered" from="vbxBotones/btnSalir" to="." method="_on_btnSalir_mouse_entered"]
