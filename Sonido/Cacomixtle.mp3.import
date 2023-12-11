@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cacomixtle.mp3-287cee27dbc3af4696052fc96d31bc68.mp3str"
+
+[deps]
+
+source_file="res://Sonido/Cacomixtle.mp3"
+dest_files=[ "res://.import/Cacomixtle.mp3-287cee27dbc3af4696052fc96d31bc68.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

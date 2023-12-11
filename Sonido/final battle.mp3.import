@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/final battle.mp3-a0b5438fe70de9bfe8dda4116436a3b7.mp3str"
+
+[deps]
+
+source_file="res://Sonido/final battle.mp3"
+dest_files=[ "res://.import/final battle.mp3-a0b5438fe70de9bfe8dda4116436a3b7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

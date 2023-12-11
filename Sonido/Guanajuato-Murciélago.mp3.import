@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Guanajuato-Murciélago.mp3-5e3fb12de102f02644faf051b5593bfa.mp3str"
+
+[deps]
+
+source_file="res://Sonido/Guanajuato-Murciélago.mp3"
+dest_files=[ "res://.import/Guanajuato-Murciélago.mp3-5e3fb12de102f02644faf051b5593bfa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

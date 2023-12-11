@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Tema apertura.mp3-6649fc01eeecd1707f649226a5ef1d40.mp3str"
+
+[deps]
+
+source_file="res://Sonido/Tema apertura.mp3"
+dest_files=[ "res://.import/Tema apertura.mp3-6649fc01eeecd1707f649226a5ef1d40.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
