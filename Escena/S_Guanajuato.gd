@@ -12,7 +12,8 @@ func _ready():
 	$Suelos.visible = false
 	UsuarioGlobal.ganadoJefe1 = true
 	$Jugador/Camera2D/CambioEscena.visible = false
-	
+	BgApertura.stop()
+	BgGuanajuato.play()
 
 
 func _on_Area2D_area_entered(area):

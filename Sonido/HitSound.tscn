@@ -4,4 +4,4 @@
 
 [node name="HitSound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
-volume_db = -18.159
+volume_db = 1.0

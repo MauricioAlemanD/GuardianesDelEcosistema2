@@ -1,8 +1,41 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sonido/Tema apertura.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Sonido/Escorpi+on.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Sonido/La serpiente.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Sonido/Coyote.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Sonido/Puercoespín leñador.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Sonido/final battle.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Sonido/Rata de negocios.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Sonido/Cacomixtle.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Sonido/Guanajuato-Murciélago.mp3" type="AudioStream" id=9]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+[node name="Node" type="Node"]
+
+[node name="Apertura" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -13.302
-autoplay = true
+volume_db = 1.0
+
+[node name="Guanajuato" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Queretaro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="Hidalgo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Tlaxcala" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Puebla" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="Morelos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="EstadoMexico" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="CiudadMexico" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )

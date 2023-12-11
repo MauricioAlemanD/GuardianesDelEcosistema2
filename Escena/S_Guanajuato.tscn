@@ -1,9 +1,11 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Tile_set/Tiles_Guanajuato-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Tile_set/Tiles_Guanajuato transparentet.png" type="Texture" id=2]
 [ext_resource path="res://jugador/Jugador.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Escena/CambioEscenaNergo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/frames/frames/npc_Chichimeca2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/frames/frames/npc_Chichimeca1.png" type="Texture" id=6]
 [ext_resource path="res://sprites/Arboles/PinoNoche.png" type="Texture" id=7]
 [ext_resource path="res://scrpts/Mapeados/MapeadoGuanajuato.gd" type="Script" id=8]
 [ext_resource path="res://sprites/Arboles/EncinoNoche.png" type="Texture" id=9]
@@ -14,12 +16,31 @@
 [ext_resource path="res://sprites/Estrucutras/Guanajuato/callejonBeso1.png" type="Texture" id=14]
 [ext_resource path="res://sprites/Estrucutras/Guanajuato/basilica.png" type="Texture" id=15]
 [ext_resource path="res://sprites/Estrucutras/Guanajuato/museoMomias.png" type="Texture" id=16]
-[ext_resource path="res://Escena/murcielago.png" type="Texture" id=17]
+[ext_resource path="res://sprites/frames/frames/mau3.png" type="Texture" id=17]
 [ext_resource path="res://Mundo/PiedrasTile.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Tile_set/Tiles_Queretaro-Sheet.png" type="Texture" id=19]
 [ext_resource path="res://sprites/Arboles/Cactus2.png" type="Texture" id=20]
 [ext_resource path="res://sprites/Arboles/Cactus1.png" type="Texture" id=21]
-[ext_resource path="res://M_NPC/NPCPrueba.png" type="Texture" id=22]
+[ext_resource path="res://sprites/frames/frames/mau4.png" type="Texture" id=22]
+[ext_resource path="res://sprites/frames/frames/mau6.png" type="Texture" id=23]
+[ext_resource path="res://sprites/frames/frames/mau7.png" type="Texture" id=24]
+[ext_resource path="res://sprites/frames/frames/mich8.png" type="Texture" id=25]
+[ext_resource path="res://sprites/frames/frames/mich6.png" type="Texture" id=26]
+[ext_resource path="res://sprites/frames/frames/mau9.png" type="Texture" id=27]
+[ext_resource path="res://sprites/frames/frames/mau2.png" type="Texture" id=28]
+[ext_resource path="res://sprites/frames/frames/mau5.png" type="Texture" id=29]
+[ext_resource path="res://sprites/frames/frames/mau8.png" type="Texture" id=30]
+[ext_resource path="res://sprites/frames/frames/mau1.png" type="Texture" id=31]
+[ext_resource path="res://sprites/frames/frames/mich1.png" type="Texture" id=32]
+[ext_resource path="res://sprites/frames/frames/mich3.png" type="Texture" id=33]
+[ext_resource path="res://sprites/frames/frames/mich2.png" type="Texture" id=34]
+[ext_resource path="res://sprites/frames/frames/mich4.png" type="Texture" id=35]
+[ext_resource path="res://sprites/frames/frames/mich7.png" type="Texture" id=36]
+[ext_resource path="res://sprites/frames/frames/mich5.png" type="Texture" id=37]
+[ext_resource path="res://sprites/frames/frames/murcielago2.png" type="Texture" id=38]
+[ext_resource path="res://sprites/frames/frames/murcielago1.png" type="Texture" id=39]
+[ext_resource path="res://sprites/Estrucutras/recursos/vagoneta.png" type="Texture" id=40]
+[ext_resource path="res://sprites/Estrucutras/recursos/rocaRadioactiva.png" type="Texture" id=41]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tiles_Guanajuato transparentet.png 0"
@@ -450,12 +471,47 @@ points = PoolVector2Array( 32, 64, 0, 64, 0, 0, 32, 0 )
 4/shapes = [  ]
 4/z_index = 0
 
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ ExtResource( 39 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 97, 17 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 6.3913, 9.17395 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ ExtResource( 31 ), ExtResource( 28 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 30 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="CapsuleShape2D" id=16]
 radius = 10.449
 height = 10.449
+
+[sub_resource type="SpriteFrames" id=20]
+animations = [ {
+"frames": [ ExtResource( 32 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 26 ), ExtResource( 36 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Guanajuato_mapa" type="Node2D"]
 script = ExtResource( 12 )
@@ -509,15 +565,11 @@ visible = false
 position = Vector2( 0, -640 )
 tile_data = PoolIntArray( 2490426, 0, 196608, 2490427, 0, 196609, 2490428, 0, 196609, 2490429, 0, 196609, 2490430, 0, 196609, 2490431, 0, 196610 )
 
-[node name="Basilica" type="Sprite" parent="."]
-position = Vector2( 2832, 1200 )
-scale = Vector2( 6.125, 6.125 )
-texture = ExtResource( 15 )
-
-[node name="Murcielago" type="Sprite" parent="."]
+[node name="Murcielago" type="AnimatedSprite" parent="."]
 position = Vector2( 1920, 712 )
 scale = Vector2( 3.5, 3.5 )
-texture = ExtResource( 17 )
+frames = SubResource( 18 )
+playing = true
 
 [node name="eventoMurcielago" type="Area2D" parent="."]
 position = Vector2( 1200, 1032 )
@@ -528,25 +580,131 @@ collision_mask = 0
 position = Vector2( 752, 120 )
 shape = SubResource( 17 )
 
+[node name="Basilica" type="Sprite" parent="."]
+position = Vector2( 2832, 1200 )
+scale = Vector2( 6.125, 6.125 )
+texture = ExtResource( 15 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Basilica"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Basilica/StaticBody2D"]
+polygon = PoolVector2Array( 9.14285, 44.4082, 19.5918, 53.551, 64, 10.449, 62.6939, -26.1225, 14.3673, -74.449, -28.7347, -30.0408, -30.0408, -11.7551, -35.2653, -5.22449, -36.5714, -13.0612, -41.7959, -20.898, -47.0204, -10.449, -52.2449, 2.61224, -50.9388, 37.8775, -43.1021, 45.7143, -40.4898, 43.102, -36.5714, 44.4082, -23.5102, 60.0816, -23.5102, 65.3061, -15.6735, 73.1429, -9.14285, 67.9184, -5.22449, 62.6939, -6.53061, 60.0816 )
+
 [node name="CallejonBeso2" type="Sprite" parent="."]
 position = Vector2( 1672.5, 1661.44 )
 scale = Vector2( 1.49219, 1.49219 )
 texture = ExtResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CallejonBeso2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CallejonBeso2/StaticBody2D"]
+polygon = PoolVector2Array( 5.02612, 49.9669, 26.4712, 71.4119, 63.9999, 71.4119, 63.9999, -51.8969, 42.5549, -73.3418, 5.02612, -73.3418, 5.02612, -62.6194, -32.5026, -57.2581, -32.5026, 28.5219, -11.0576, 49.9669 )
 
 [node name="CallejonBeso1" type="Sprite" parent="."]
 position = Vector2( 1496, 1656 )
 scale = Vector2( 1.59375, 1.59375 )
 texture = ExtResource( 14 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="CallejonBeso1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CallejonBeso1/StaticBody2D"]
+polygon = PoolVector2Array( -65.2549, 75.2942, -65.2549, -45.1765, -45.1765, -70.2745, -5.01959, -70.2745, -5.01959, -55.2156, 35.1373, -55.2156, 30.1177, 25.098, 15.0588, 50.196, -5.01959, 50.196, -25.098, 70.2745, -25.098, 75.2942 )
+
 [node name="MuseoMomias" type="Sprite" parent="."]
-position = Vector2( 1240, 2520 )
-scale = Vector2( 3.0625, 3.0625 )
+position = Vector2( 1358, 2461 )
+scale = Vector2( 4.90625, 4.90625 )
 texture = ExtResource( 16 )
 
-[node name="NPC1" type="Sprite" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="MuseoMomias"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MuseoMomias/StaticBody2D"]
+polygon = PoolVector2Array( -55.0318, -30.3694, 54.2166, -30.3694, 54.2166, -9.172, 64, -9.172, 64, 21.8089, 57.4778, 28.3312, -61.5541, 28.3312, -61.5541, -14.0637, -56.6624, -20.586 )
+
+[node name="Vagoneta" type="Sprite" parent="."]
+modulate = Color( 0.313726, 0.254902, 0.333333, 1 )
+position = Vector2( 3224, 1608 )
+scale = Vector2( 0.906562, 0.906562 )
+texture = ExtResource( 40 )
+
+[node name="Vagoneta2" type="Sprite" parent="."]
+modulate = Color( 0.313726, 0.254902, 0.333333, 1 )
+position = Vector2( 1104, 2000 )
+scale = Vector2( 0.906562, 0.906562 )
+texture = ExtResource( 40 )
+
+[node name="Vagoneta3" type="Sprite" parent="."]
+modulate = Color( 0.313726, 0.254902, 0.333333, 1 )
+position = Vector2( 2944, 2856 )
+scale = Vector2( 0.906562, 0.906562 )
+texture = ExtResource( 40 )
+
+[node name="Vagoneta4" type="Sprite" parent="."]
+modulate = Color( 0.313726, 0.254902, 0.333333, 1 )
+position = Vector2( 3472, 1136 )
+scale = Vector2( 0.906562, 0.906562 )
+texture = ExtResource( 40 )
+
+[node name="ROCA1" type="Sprite" parent="."]
+position = Vector2( 2401, 1961 )
+scale = Vector2( 1.9375, 1.9375 )
+texture = ExtResource( 41 )
+
+[node name="AreaRoca1" type="Area2D" parent="ROCA1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ROCA1/AreaRoca1"]
+position = Vector2( 0, -6.10352e-05 )
+shape = SubResource( 22 )
+
+[node name="ROCA2" type="Sprite" parent="."]
+position = Vector2( 3120, 2128 )
+scale = Vector2( 1.9375, 1.9375 )
+texture = ExtResource( 41 )
+
+[node name="AreaRoca1" type="Area2D" parent="ROCA2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ROCA2/AreaRoca1"]
+position = Vector2( 0, -6.10352e-05 )
+shape = SubResource( 22 )
+
+[node name="ROCA3" type="Sprite" parent="."]
+position = Vector2( 952, 2256 )
+scale = Vector2( 1.9375, 1.9375 )
+texture = ExtResource( 41 )
+
+[node name="AreaRoca1" type="Area2D" parent="ROCA3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ROCA3/AreaRoca1"]
+position = Vector2( 0, -6.10352e-05 )
+shape = SubResource( 22 )
+
+[node name="ROCA4" type="Sprite" parent="."]
+position = Vector2( 3504, 1376 )
+scale = Vector2( 1.9375, 1.9375 )
+texture = ExtResource( 41 )
+
+[node name="AreaRoca1" type="Area2D" parent="ROCA4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ROCA4/AreaRoca1"]
+position = Vector2( 0, -6.10352e-05 )
+shape = SubResource( 22 )
+
+[node name="ROCA5" type="Sprite" parent="."]
+position = Vector2( 2528, 3256 )
+scale = Vector2( 1.9375, 1.9375 )
+texture = ExtResource( 41 )
+
+[node name="AreaRoca1" type="Area2D" parent="ROCA5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ROCA5/AreaRoca1"]
+position = Vector2( 0, -6.10352e-05 )
+shape = SubResource( 22 )
+
+[node name="NPC1" type="AnimatedSprite" parent="."]
 position = Vector2( 2608, 2624 )
 scale = Vector2( 3.0625, 3.0625 )
-texture = ExtResource( 22 )
+frames = SubResource( 19 )
+frame = 3
+playing = true
 __meta__ = {
 "_edit_group_": true
 }
@@ -565,10 +723,12 @@ polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1/Area2D/StaticBody2D"]
 shape = SubResource( 16 )
 
-[node name="NPC2" type="Sprite" parent="."]
+[node name="NPC2" type="AnimatedSprite" parent="."]
 position = Vector2( 2952, 1968 )
 scale = Vector2( 3.0625, 3.0625 )
-texture = ExtResource( 22 )
+frames = SubResource( 20 )
+frame = 1
+playing = true
 __meta__ = {
 "_edit_group_": true
 }
@@ -587,10 +747,10 @@ polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2/Area2D/StaticBody2D"]
 shape = SubResource( 16 )
 
-[node name="NPC3" type="Sprite" parent="."]
+[node name="NPC3" type="AnimatedSprite" parent="."]
 position = Vector2( 1584, 1416 )
 scale = Vector2( 3.0625, 3.0625 )
-texture = ExtResource( 22 )
+frames = SubResource( 21 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -611,6 +771,7 @@ shape = SubResource( 16 )
 
 [node name="Jugador" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1992, 1416 )
+collision_mask = 129
 __meta__ = {
 "_edit_group_": true
 }

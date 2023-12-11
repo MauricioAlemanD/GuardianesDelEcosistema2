@@ -13,3 +13,11 @@ func _on_btnJugar_mouse_entered():
 
 func _on_btnSalir_mouse_entered():
 	$HitSound.play()
+
+
+func _on_Menu_ready():
+	if BgApertura.playing == true:
+		pass
+	else:
+		BgApertura.play()
+	
