@@ -1,9 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://sprites/gui/BG_PAUSA_MISIONES.png" type="Texture" id=1]
 [ext_resource path="res://fonts/ea.tres" type="DynamicFont" id=2]
 [ext_resource path="res://sprites/Comida/Guanajuato/EnchiladasMineras.png" type="Texture" id=3]
 [ext_resource path="res://sprites/Comida/Guanajuato/Guacamaya.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Comida/Queretaro/EnchiladasQueretanas.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Comida/EstadoDeMexico/QuesadillasDeHongos.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Comida/Tlaxcala/Tlatlapas.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Comida/Morelos/Cecina.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Comida/Puebla/ChileEnNogada.png" type="Texture" id=9]
+[ext_resource path="res://sprites/Comida/Morelos/ChilesRellenos.png" type="Texture" id=10]
+[ext_resource path="res://sprites/Comida/EstadoDeMexico/GuajoloteEnSalsaVerde.png" type="Texture" id=11]
+[ext_resource path="res://sprites/Comida/Queretaro/GorditasDeMaizQuebrado.png" type="Texture" id=12]
+[ext_resource path="res://sprites/Comida/Hidalgo/Pastes.png" type="Texture" id=13]
+[ext_resource path="res://sprites/Comida/Tlaxcala/TacosDeCanasta.png" type="Texture" id=14]
+[ext_resource path="res://sprites/Comida/CiudadDeMexico/TacosAlPastor.png" type="Texture" id=15]
+[ext_resource path="res://sprites/Estrucutras/Guanajuato/basilica.png" type="Texture" id=16]
+[ext_resource path="res://sprites/Comida/Puebla/Cemita.png" type="Texture" id=17]
+[ext_resource path="res://sprites/Estrucutras/Guanajuato/callejonBeso1.png" type="Texture" id=18]
+[ext_resource path="res://sprites/Comida/Hidalgo/GusanosDeMaguey.png" type="Texture" id=19]
+[ext_resource path="res://sprites/Comida/CiudadDeMexico/TortaDeTamal.png" type="Texture" id=20]
+[ext_resource path="res://sprites/Estrucutras/Guanajuato/museoMomias.png" type="Texture" id=21]
+[ext_resource path="res://sprites/Estrucutras/Hidalgo/grutashidalgo.png" type="Texture" id=22]
+[ext_resource path="res://sprites/Estrucutras/Queretaro/Templo San Francisco de Ásis.png" type="Texture" id=23]
+[ext_resource path="res://SPRITES_SOPHIE/Lugares/CasaCulturaTlaxcala.png" type="Texture" id=24]
+[ext_resource path="res://SPRITES_SOPHIE/Lugares/CatedralTlaxcala.png" type="Texture" id=25]
+[ext_resource path="res://sprites/Estrucutras/Queretaro/cerrocampana.png" type="Texture" id=26]
+[ext_resource path="res://SPRITES_SOPHIE/Lugares/PlazaTorosTlaxcala.png" type="Texture" id=27]
+[ext_resource path="res://sprites/Estrucutras/Queretaro/estacionTren.png" type="Texture" id=28]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -33,11 +57,21 @@ margin_top = 128.0
 margin_right = 512.0
 margin_bottom = 192.0
 
+[node name="CallejonBeso1" type="Sprite" parent="Button6"]
+position = Vector2( 34, 31.5 )
+scale = Vector2( 0.53125, 0.439189 )
+texture = ExtResource( 18 )
+
 [node name="Button9" type="Button" parent="."]
 margin_left = 448.0
 margin_top = 256.0
 margin_right = 512.0
 margin_bottom = 320.0
+
+[node name="EstacionTren" type="Sprite" parent="Button9"]
+position = Vector2( 32.1749, 29.5 )
+scale = Vector2( 0.349727, 1.18966 )
+texture = ExtResource( 28 )
 
 [node name="Button11" type="Button" parent="."]
 margin_left = 64.0
@@ -45,11 +79,21 @@ margin_top = 384.0
 margin_right = 128.0
 margin_bottom = 448.0
 
+[node name="GusanosDeMaguey" type="Sprite" parent="Button11"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+
 [node name="Button12" type="Button" parent="."]
 margin_left = 192.0
 margin_top = 384.0
 margin_right = 256.0
 margin_bottom = 448.0
+
+[node name="Pastes" type="Sprite" parent="Button12"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
 
 [node name="Button15" type="Button" parent="."]
 margin_left = 576.0
@@ -63,11 +107,21 @@ margin_top = 512.0
 margin_right = 128.0
 margin_bottom = 576.0
 
+[node name="TacosDeCanasta" type="Sprite" parent="Button16"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+
 [node name="Button17" type="Button" parent="."]
 margin_left = 192.0
 margin_top = 512.0
 margin_right = 256.0
 margin_bottom = 576.0
+
+[node name="Tlatlapas" type="Sprite" parent="Button17"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
 
 [node name="Button18" type="Button" parent="."]
 margin_left = 320.0
@@ -89,9 +143,14 @@ margin_bottom = 576.0
 
 [node name="Button21" type="Button" parent="."]
 margin_left = 64.0
-margin_top = 632.0
+margin_top = 640.0
 margin_right = 128.0
-margin_bottom = 696.0
+margin_bottom = 704.0
+
+[node name="Cemita" type="Sprite" parent="Button21"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
 
 [node name="Button22" type="Button" parent="."]
 margin_left = 192.0
@@ -99,17 +158,32 @@ margin_top = 640.0
 margin_right = 256.0
 margin_bottom = 704.0
 
+[node name="ChileEnNogada" type="Sprite" parent="Button22"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+
 [node name="Button23" type="Button" parent="."]
 margin_left = 320.0
-margin_top = 648.0
+margin_top = 640.0
 margin_right = 384.0
-margin_bottom = 712.0
+margin_bottom = 704.0
+
+[node name="CasaCulturaTlaxcala" type="Sprite" parent="Button23"]
+position = Vector2( 32, -96 )
+scale = Vector2( 0.25, 0.5 )
+texture = ExtResource( 24 )
 
 [node name="Button24" type="Button" parent="."]
 margin_left = 448.0
-margin_top = 648.0
+margin_top = 640.0
 margin_right = 512.0
-margin_bottom = 712.0
+margin_bottom = 704.0
+
+[node name="CatedralTlaxcala" type="Sprite" parent="Button24"]
+position = Vector2( 32, -96 )
+scale = Vector2( 0.5, 0.46875 )
+texture = ExtResource( 25 )
 
 [node name="Button25" type="Button" parent="."]
 margin_left = 576.0
@@ -117,17 +191,32 @@ margin_top = 640.0
 margin_right = 640.0
 margin_bottom = 704.0
 
+[node name="PlazaTorosTlaxcala" type="Sprite" parent="Button25"]
+position = Vector2( 32, -96 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 27 )
+
 [node name="Button26" type="Button" parent="."]
 margin_left = 64.0
-margin_top = 760.0
+margin_top = 768.0
 margin_right = 128.0
-margin_bottom = 824.0
+margin_bottom = 832.0
+
+[node name="Cecina" type="Sprite" parent="Button26"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
 
 [node name="Button27" type="Button" parent="."]
 margin_left = 192.0
 margin_top = 768.0
 margin_right = 256.0
 margin_bottom = 832.0
+
+[node name="ChilesRellenos" type="Sprite" parent="Button27"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
 
 [node name="Button28" type="Button" parent="."]
 margin_left = 320.0
@@ -153,11 +242,21 @@ margin_top = 896.0
 margin_right = 128.0
 margin_bottom = 960.0
 
+[node name="GuajoloteEnSalsaVerde" type="Sprite" parent="Button31"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+
 [node name="Button32" type="Button" parent="."]
 margin_left = 192.0
 margin_top = 896.0
 margin_right = 256.0
 margin_bottom = 960.0
+
+[node name="QuesadillasDeHongos" type="Sprite" parent="Button32"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
 
 [node name="Button33" type="Button" parent="."]
 margin_left = 320.0
@@ -183,11 +282,21 @@ margin_top = 1024.0
 margin_right = 128.0
 margin_bottom = 1088.0
 
+[node name="TacosAlPastor" type="Sprite" parent="Button36"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+
 [node name="Button37" type="Button" parent="."]
 margin_left = 200.0
 margin_top = 1024.0
 margin_right = 264.0
 margin_bottom = 1088.0
+
+[node name="TortaDeTamal" type="Sprite" parent="Button37"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 20 )
 
 [node name="Button38" type="Button" parent="."]
 margin_left = 320.0
@@ -219,11 +328,21 @@ margin_top = 384.0
 margin_right = 384.0
 margin_bottom = 448.0
 
+[node name="Grutashidalgo" type="Sprite" parent="Button13"]
+position = Vector2( 31.25, 32.2481 )
+scale = Vector2( 0.394578, 0.496124 )
+texture = ExtResource( 22 )
+
 [node name="Button10" type="Button" parent="."]
 margin_left = 576.0
 margin_top = 256.0
 margin_right = 640.0
 margin_bottom = 320.0
+
+[node name="TemploSanFranciscoDeÁsis" type="Sprite" parent="Button10"]
+position = Vector2( 32, 29.5 )
+scale = Vector2( 0.5, 1.18966 )
+texture = ExtResource( 23 )
 
 [node name="Button4" type="Button" parent="."]
 anchor_right = 0.5
@@ -232,6 +351,11 @@ margin_left = 576.0
 margin_top = 128.0
 margin_right = 128.0
 margin_bottom = -108.0
+
+[node name="MuseoMomias" type="Sprite" parent="Button4"]
+position = Vector2( 34, 32 )
+scale = Vector2( 0.46875, 1 )
+texture = ExtResource( 21 )
 
 [node name="Button5" type="Button" parent="."]
 margin_left = 320.0
@@ -256,6 +380,11 @@ margin_top = 256.0
 margin_right = 128.0
 margin_bottom = 320.0
 
+[node name="EnchiladasQueretanas" type="Sprite" parent="Button3"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+
 [node name="Button7" type="Button" parent="."]
 anchor_right = 0.011
 anchor_bottom = 0.034
@@ -264,6 +393,11 @@ margin_top = 256.0
 margin_right = 244.736
 margin_bottom = 299.6
 
+[node name="GorditasDeMaizQuebrado" type="Sprite" parent="Button7"]
+position = Vector2( 32, 32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+
 [node name="Button8" type="Button" parent="."]
 anchor_right = 0.034
 anchor_bottom = 0.086
@@ -271,6 +405,11 @@ margin_left = 320.0
 margin_top = 256.0
 margin_right = 349.184
 margin_bottom = 268.4
+
+[node name="Cerrocampana" type="Sprite" parent="Button8"]
+position = Vector2( 32, 30.25 )
+scale = Vector2( 0.32973, 0.475352 )
+texture = ExtResource( 26 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 0.039
@@ -349,3 +488,8 @@ margin_right = 259.064
 margin_bottom = 211.8
 custom_fonts/font = ExtResource( 2 )
 text = "	Queretaro"
+
+[node name="Basilica" type="Sprite" parent="."]
+position = Vector2( 352, 160 )
+scale = Vector2( 0.5, 0.464754 )
+texture = ExtResource( 16 )
