@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://sprites/gui/BG_PAUSA_MISIONES.png" type="Texture" id=1]
 [ext_resource path="res://fonts/ea.tres" type="DynamicFont" id=2]
@@ -28,426 +28,432 @@
 [ext_resource path="res://sprites/Estrucutras/Queretaro/cerrocampana.png" type="Texture" id=26]
 [ext_resource path="res://SPRITES_SOPHIE/Lugares/PlazaTorosTlaxcala.png" type="Texture" id=27]
 [ext_resource path="res://sprites/Estrucutras/Queretaro/estacionTren.png" type="Texture" id=28]
+[ext_resource path="res://mich/Control.gd" type="Script" id=29]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = 629.0
 
-[node name="BgPausaMisiones" type="Sprite" parent="."]
-position = Vector2( -72, -8 )
-scale = Vector2( 1.50604, 3.45531 )
+[node name="Control" type="Node2D" parent="."]
+script = ExtResource( 29 )
+
+[node name="BgPausaMisiones" type="Sprite" parent="Control"]
+position = Vector2( -29, 0 )
+scale = Vector2( 1.75993, 3.42738 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="EnchiladasMineras" type="Button" parent="."]
+[node name="EnchiladasMineras" type="Button" parent="Control"]
 margin_left = 64.0
 margin_top = 128.0
 margin_right = 128.0
 margin_bottom = 192.0
 
-[node name="EnchiladasMineras" type="Sprite" parent="EnchiladasMineras"]
+[node name="EnchiladasMineras" type="Sprite" parent="Control/EnchiladasMineras"]
 position = Vector2( 0, 7.62939e-06 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="Button6" type="Button" parent="."]
+[node name="Button6" type="Button" parent="Control"]
 margin_left = 448.0
 margin_top = 128.0
 margin_right = 512.0
 margin_bottom = 192.0
 
-[node name="CallejonBeso1" type="Sprite" parent="Button6"]
+[node name="CallejonBeso1" type="Sprite" parent="Control/Button6"]
 position = Vector2( 34, 31.5 )
 scale = Vector2( 0.53125, 0.439189 )
 texture = ExtResource( 18 )
 
-[node name="Button9" type="Button" parent="."]
+[node name="Button9" type="Button" parent="Control"]
 margin_left = 448.0
 margin_top = 256.0
 margin_right = 512.0
 margin_bottom = 320.0
 
-[node name="EstacionTren" type="Sprite" parent="Button9"]
+[node name="EstacionTren" type="Sprite" parent="Control/Button9"]
 position = Vector2( 32.1749, 29.5 )
 scale = Vector2( 0.349727, 1.18966 )
 texture = ExtResource( 28 )
 
-[node name="Button11" type="Button" parent="."]
+[node name="Button11" type="Button" parent="Control"]
 margin_left = 64.0
 margin_top = 384.0
 margin_right = 128.0
 margin_bottom = 448.0
 
-[node name="GusanosDeMaguey" type="Sprite" parent="Button11"]
+[node name="GusanosDeMaguey" type="Sprite" parent="Control/Button11"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 19 )
 
-[node name="Button12" type="Button" parent="."]
+[node name="Button12" type="Button" parent="Control"]
 margin_left = 192.0
 margin_top = 384.0
 margin_right = 256.0
 margin_bottom = 448.0
 
-[node name="Pastes" type="Sprite" parent="Button12"]
+[node name="Pastes" type="Sprite" parent="Control/Button12"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 13 )
 
-[node name="Button15" type="Button" parent="."]
+[node name="Button15" type="Button" parent="Control"]
 margin_left = 576.0
 margin_top = 384.0
 margin_right = 640.0
 margin_bottom = 448.0
 
-[node name="Button16" type="Button" parent="."]
+[node name="Button16" type="Button" parent="Control"]
 margin_left = 64.0
 margin_top = 512.0
 margin_right = 128.0
 margin_bottom = 576.0
 
-[node name="TacosDeCanasta" type="Sprite" parent="Button16"]
+[node name="TacosDeCanasta" type="Sprite" parent="Control/Button16"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 14 )
 
-[node name="Button17" type="Button" parent="."]
+[node name="Button17" type="Button" parent="Control"]
 margin_left = 192.0
 margin_top = 512.0
 margin_right = 256.0
 margin_bottom = 576.0
 
-[node name="Tlatlapas" type="Sprite" parent="Button17"]
+[node name="Tlatlapas" type="Sprite" parent="Control/Button17"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 
-[node name="Button18" type="Button" parent="."]
+[node name="Button18" type="Button" parent="Control"]
 margin_left = 320.0
 margin_top = 512.0
 margin_right = 384.0
 margin_bottom = 576.0
 
-[node name="Button19" type="Button" parent="."]
+[node name="Button19" type="Button" parent="Control"]
 margin_left = 448.0
 margin_top = 512.0
 margin_right = 512.0
 margin_bottom = 576.0
 
-[node name="Button20" type="Button" parent="."]
+[node name="Button20" type="Button" parent="Control"]
 margin_left = 576.0
 margin_top = 512.0
 margin_right = 640.0
 margin_bottom = 576.0
 
-[node name="Button21" type="Button" parent="."]
+[node name="Button21" type="Button" parent="Control"]
 margin_left = 64.0
 margin_top = 640.0
 margin_right = 128.0
 margin_bottom = 704.0
 
-[node name="Cemita" type="Sprite" parent="Button21"]
+[node name="Cemita" type="Sprite" parent="Control/Button21"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 17 )
 
-[node name="Button22" type="Button" parent="."]
+[node name="Button22" type="Button" parent="Control"]
 margin_left = 192.0
 margin_top = 640.0
 margin_right = 256.0
 margin_bottom = 704.0
 
-[node name="ChileEnNogada" type="Sprite" parent="Button22"]
+[node name="ChileEnNogada" type="Sprite" parent="Control/Button22"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 9 )
 
-[node name="Button23" type="Button" parent="."]
+[node name="Button23" type="Button" parent="Control"]
 margin_left = 320.0
 margin_top = 640.0
 margin_right = 384.0
 margin_bottom = 704.0
 
-[node name="CasaCulturaTlaxcala" type="Sprite" parent="Button23"]
+[node name="CasaCulturaTlaxcala" type="Sprite" parent="Control/Button23"]
 position = Vector2( 32, -96 )
 scale = Vector2( 0.25, 0.5 )
 texture = ExtResource( 24 )
 
-[node name="Button24" type="Button" parent="."]
+[node name="Button24" type="Button" parent="Control"]
 margin_left = 448.0
 margin_top = 640.0
 margin_right = 512.0
 margin_bottom = 704.0
 
-[node name="CatedralTlaxcala" type="Sprite" parent="Button24"]
+[node name="CatedralTlaxcala" type="Sprite" parent="Control/Button24"]
 position = Vector2( 32, -96 )
 scale = Vector2( 0.5, 0.46875 )
 texture = ExtResource( 25 )
 
-[node name="Button25" type="Button" parent="."]
+[node name="Button25" type="Button" parent="Control"]
 margin_left = 576.0
 margin_top = 640.0
 margin_right = 640.0
 margin_bottom = 704.0
 
-[node name="PlazaTorosTlaxcala" type="Sprite" parent="Button25"]
+[node name="PlazaTorosTlaxcala" type="Sprite" parent="Control/Button25"]
 position = Vector2( 32, -96 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 27 )
 
-[node name="Button26" type="Button" parent="."]
+[node name="Button26" type="Button" parent="Control"]
 margin_left = 64.0
 margin_top = 768.0
 margin_right = 128.0
 margin_bottom = 832.0
 
-[node name="Cecina" type="Sprite" parent="Button26"]
+[node name="Cecina" type="Sprite" parent="Control/Button26"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 8 )
 
-[node name="Button27" type="Button" parent="."]
+[node name="Button27" type="Button" parent="Control"]
 margin_left = 192.0
 margin_top = 768.0
 margin_right = 256.0
 margin_bottom = 832.0
 
-[node name="ChilesRellenos" type="Sprite" parent="Button27"]
+[node name="ChilesRellenos" type="Sprite" parent="Control/Button27"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="Button28" type="Button" parent="."]
+[node name="Button28" type="Button" parent="Control"]
 margin_left = 320.0
 margin_top = 768.0
 margin_right = 384.0
 margin_bottom = 832.0
 
-[node name="Button29" type="Button" parent="."]
+[node name="Button29" type="Button" parent="Control"]
 margin_left = 448.0
 margin_top = 768.0
 margin_right = 512.0
 margin_bottom = 832.0
 
-[node name="Button30" type="Button" parent="."]
+[node name="Button30" type="Button" parent="Control"]
 margin_left = 576.0
 margin_top = 768.0
 margin_right = 640.0
 margin_bottom = 832.0
 
-[node name="Button31" type="Button" parent="."]
+[node name="Button31" type="Button" parent="Control"]
 margin_left = 64.0
 margin_top = 896.0
 margin_right = 128.0
 margin_bottom = 960.0
 
-[node name="GuajoloteEnSalsaVerde" type="Sprite" parent="Button31"]
+[node name="GuajoloteEnSalsaVerde" type="Sprite" parent="Control/Button31"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 11 )
 
-[node name="Button32" type="Button" parent="."]
+[node name="Button32" type="Button" parent="Control"]
 margin_left = 192.0
 margin_top = 896.0
 margin_right = 256.0
 margin_bottom = 960.0
 
-[node name="QuesadillasDeHongos" type="Sprite" parent="Button32"]
+[node name="QuesadillasDeHongos" type="Sprite" parent="Control/Button32"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
-[node name="Button33" type="Button" parent="."]
+[node name="Button33" type="Button" parent="Control"]
 margin_left = 320.0
 margin_top = 896.0
 margin_right = 384.0
 margin_bottom = 960.0
 
-[node name="Button34" type="Button" parent="."]
+[node name="Button34" type="Button" parent="Control"]
 margin_left = 448.0
 margin_top = 896.0
 margin_right = 512.0
 margin_bottom = 960.0
 
-[node name="Button35" type="Button" parent="."]
+[node name="Button35" type="Button" parent="Control"]
 margin_left = 576.0
 margin_top = 896.0
 margin_right = 640.0
 margin_bottom = 960.0
 
-[node name="Button36" type="Button" parent="."]
+[node name="Button36" type="Button" parent="Control"]
 margin_left = 64.0
 margin_top = 1024.0
 margin_right = 128.0
 margin_bottom = 1088.0
 
-[node name="TacosAlPastor" type="Sprite" parent="Button36"]
+[node name="TacosAlPastor" type="Sprite" parent="Control/Button36"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 15 )
 
-[node name="Button37" type="Button" parent="."]
+[node name="Button37" type="Button" parent="Control"]
 margin_left = 200.0
 margin_top = 1024.0
 margin_right = 264.0
 margin_bottom = 1088.0
 
-[node name="TortaDeTamal" type="Sprite" parent="Button37"]
+[node name="TortaDeTamal" type="Sprite" parent="Control/Button37"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 20 )
 
-[node name="Button38" type="Button" parent="."]
+[node name="Button38" type="Button" parent="Control"]
 margin_left = 320.0
 margin_top = 1024.0
 margin_right = 384.0
 margin_bottom = 1088.0
 
-[node name="Button39" type="Button" parent="."]
+[node name="Button39" type="Button" parent="Control"]
 margin_left = 456.0
 margin_top = 1024.0
 margin_right = 520.0
 margin_bottom = 1088.0
 
-[node name="Button40" type="Button" parent="."]
+[node name="Button40" type="Button" parent="Control"]
 margin_left = 584.0
 margin_top = 1024.0
 margin_right = 648.0
 margin_bottom = 1088.0
 
-[node name="Button14" type="Button" parent="."]
+[node name="Button14" type="Button" parent="Control"]
 margin_left = 448.0
 margin_top = 384.0
 margin_right = 512.0
 margin_bottom = 448.0
 
-[node name="Button13" type="Button" parent="."]
+[node name="Button13" type="Button" parent="Control"]
 margin_left = 320.0
 margin_top = 384.0
 margin_right = 384.0
 margin_bottom = 448.0
 
-[node name="Grutashidalgo" type="Sprite" parent="Button13"]
+[node name="Grutashidalgo" type="Sprite" parent="Control/Button13"]
 position = Vector2( 31.25, 32.2481 )
 scale = Vector2( 0.394578, 0.496124 )
 texture = ExtResource( 22 )
 
-[node name="Button10" type="Button" parent="."]
+[node name="Button10" type="Button" parent="Control"]
 margin_left = 576.0
 margin_top = 256.0
 margin_right = 640.0
 margin_bottom = 320.0
 
-[node name="TemploSanFranciscoDeÁsis" type="Sprite" parent="Button10"]
+[node name="TemploSanFranciscoDeÁsis" type="Sprite" parent="Control/Button10"]
 position = Vector2( 32, 29.5 )
 scale = Vector2( 0.5, 1.18966 )
 texture = ExtResource( 23 )
 
-[node name="Button4" type="Button" parent="."]
+[node name="Button4" type="Button" parent="Control"]
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 576.0
 margin_top = 128.0
-margin_right = 128.0
-margin_bottom = -108.0
+margin_right = 588.0
+margin_bottom = 148.0
+rect_rotation = -0.166744
 
-[node name="MuseoMomias" type="Sprite" parent="Button4"]
+[node name="MuseoMomias" type="Sprite" parent="Control/Button4"]
 position = Vector2( 34, 32 )
 scale = Vector2( 0.46875, 1 )
 texture = ExtResource( 21 )
 
-[node name="Button5" type="Button" parent="."]
+[node name="Button5" type="Button" parent="Control"]
 margin_left = 320.0
 margin_top = 128.0
 margin_right = 384.0
 margin_bottom = 192.0
 
-[node name="Button2" type="Button" parent="."]
+[node name="Guacamaya" type="Button" parent="Control"]
 margin_left = 192.0
 margin_top = 128.0
 margin_right = 256.0
 margin_bottom = 192.0
 
-[node name="Guacamaya" type="Sprite" parent="Button2"]
+[node name="Guacamaya" type="Sprite" parent="Control/Guacamaya"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 
-[node name="Button3" type="Button" parent="."]
+[node name="Button3" type="Button" parent="Control"]
 margin_left = 64.0
 margin_top = 256.0
 margin_right = 128.0
 margin_bottom = 320.0
 
-[node name="EnchiladasQueretanas" type="Sprite" parent="Button3"]
+[node name="EnchiladasQueretanas" type="Sprite" parent="Control/Button3"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 
-[node name="Button7" type="Button" parent="."]
+[node name="Button7" type="Button" parent="Control"]
 anchor_right = 0.011
 anchor_bottom = 0.034
 margin_left = 192.0
 margin_top = 256.0
-margin_right = 244.736
-margin_bottom = 299.6
+margin_right = 256.0
+margin_bottom = 320.0
 
-[node name="GorditasDeMaizQuebrado" type="Sprite" parent="Button7"]
+[node name="GorditasDeMaizQuebrado" type="Sprite" parent="Control/Button7"]
 position = Vector2( 32, 32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 12 )
 
-[node name="Button8" type="Button" parent="."]
+[node name="Button8" type="Button" parent="Control"]
 anchor_right = 0.034
 anchor_bottom = 0.086
 margin_left = 320.0
 margin_top = 256.0
 margin_right = 349.184
-margin_bottom = 268.4
+margin_bottom = 276.0
 
-[node name="Cerrocampana" type="Sprite" parent="Button8"]
+[node name="Cerrocampana" type="Sprite" parent="Control/Button8"]
 position = Vector2( 32, 30.25 )
 scale = Vector2( 0.32973, 0.475352 )
 texture = ExtResource( 26 )
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Control"]
 anchor_right = 0.039
 anchor_bottom = 0.067
 margin_left = 64.0
 margin_top = 32.0
-margin_right = 259.064
-margin_bottom = 27.8
+margin_right = 304.0
+margin_bottom = 70.0
 custom_fonts/font = ExtResource( 2 )
 text = "Enciclopedia"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="Control"]
 anchor_right = 0.039
 anchor_bottom = 0.067
 margin_left = 64.0
 margin_top = 88.0
-margin_right = 259.064
-margin_bottom = 85.8
+margin_right = 286.0
+margin_bottom = 126.0
 custom_fonts/font = ExtResource( 2 )
 text = "Guanajuato"
 
-[node name="Label4" type="Label" parent="."]
+[node name="Label4" type="Label" parent="Control"]
 margin_left = 64.0
 margin_top = 344.0
-margin_right = 140.0
-margin_bottom = 364.0
+margin_right = 207.0
+margin_bottom = 382.0
 custom_fonts/font = ExtResource( 2 )
 text = "Hidalgo"
 
-[node name="Label5" type="Label" parent="."]
+[node name="Label5" type="Label" parent="Control"]
 margin_left = 64.0
 margin_top = 456.0
-margin_right = 207.0
+margin_right = 224.0
 margin_bottom = 494.0
 custom_fonts/font = ExtResource( 2 )
 text = "Tlaxcala"
 
-[node name="Label6" type="Label" parent="."]
+[node name="Label6" type="Label" parent="Control"]
 margin_left = 64.0
 margin_top = 584.0
 margin_right = 207.0
@@ -455,15 +461,15 @@ margin_bottom = 622.0
 custom_fonts/font = ExtResource( 2 )
 text = "Puebla"
 
-[node name="Label7" type="Label" parent="."]
+[node name="Label7" type="Label" parent="Control"]
 margin_left = 56.0
 margin_top = 736.0
-margin_right = 199.0
+margin_right = 211.0
 margin_bottom = 774.0
 custom_fonts/font = ExtResource( 2 )
 text = "Morelos"
 
-[node name="Label8" type="Label" parent="."]
+[node name="Label8" type="Label" parent="Control"]
 margin_left = 64.0
 margin_top = 848.0
 margin_right = 396.0
@@ -471,7 +477,7 @@ margin_bottom = 886.0
 custom_fonts/font = ExtResource( 2 )
 text = "Estado de Mexico"
 
-[node name="Label9" type="Label" parent="."]
+[node name="Label9" type="Label" parent="Control"]
 margin_left = 64.0
 margin_top = 968.0
 margin_right = 397.0
@@ -479,17 +485,25 @@ margin_bottom = 1006.0
 custom_fonts/font = ExtResource( 2 )
 text = "Cuidad de Mexico"
 
-[node name="Label3" type="Label" parent="."]
+[node name="Label3" type="Label" parent="Control"]
 anchor_right = 0.039
 anchor_bottom = 0.067
 margin_left = 64.0
 margin_top = 216.0
-margin_right = 259.064
-margin_bottom = 211.8
+margin_right = 265.0
+margin_bottom = 254.0
 custom_fonts/font = ExtResource( 2 )
 text = "	Queretaro"
 
-[node name="Basilica" type="Sprite" parent="."]
+[node name="Basilica" type="Sprite" parent="Control"]
 position = Vector2( 352, 160 )
 scale = Vector2( 0.5, 0.464754 )
 texture = ExtResource( 16 )
+
+[node name="VScrollBar" type="VScrollBar" parent="Control"]
+margin_left = 989.0
+margin_right = 1019.0
+margin_bottom = 600.0
+
+[connection signal="changed" from="Control/VScrollBar" to="Control" method="_on_VScrollBar_changed"]
+[connection signal="scrolling" from="Control/VScrollBar" to="Control" method="_on_VScrollBar_scrolling"]

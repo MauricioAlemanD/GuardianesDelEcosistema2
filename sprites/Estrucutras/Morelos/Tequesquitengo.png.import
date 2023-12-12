@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GuajoloteEnSalsaVerde.png-08b00a8b971f2fdeb6ec27c1b9a1cc14.stex"
+path="res://.import/Tequesquitengo.png-27287bea020605a67fd5a792c970e539.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Comida/EstadoDeMexico/GuajoloteEnSalsaVerde.png"
-dest_files=[ "res://.import/GuajoloteEnSalsaVerde.png-08b00a8b971f2fdeb6ec27c1b9a1cc14.stex" ]
+source_file="res://sprites/Estrucutras/Morelos/Tequesquitengo.png"
+dest_files=[ "res://.import/Tequesquitengo.png-27287bea020605a67fd5a792c970e539.stex" ]
 
 [params]
 
