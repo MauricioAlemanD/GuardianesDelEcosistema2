@@ -304,6 +304,8 @@ animations = [ {
 [node name="JugadorC" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 2, -5 )
 scale = Vector2( 2.625, 2.57813 )

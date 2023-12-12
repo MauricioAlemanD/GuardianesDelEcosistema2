@@ -1,23 +1,64 @@
 extends KinematicBody2D
 
-onready var jugador=$"."
-const aceleracion =500
-const velocidadMaxima = 200
-const friccion = 500
+const velocidad=200
 onready var animacion=$AnimatedSprite
+var actual_direccion="nada"
+
+func _ready():
+	$AnimatedSprite.play("EstaticoDerecha")
 
 func _physics_process(delta):
+	player_movement(delta)
+	
+func player_movement(delta):
+	var velocity = Vector2(0, 0)
 	if Input.is_action_pressed("ui_right"):
-		jugador.position.x+=velocidadMaxima*delta
-		animacion.play("CorrerDerecha")
+		actual_direccion="derecha"
+		play_animation(1)
+		velocity.x=velocidad
+		velocity.y=0
 	elif Input.is_action_pressed("ui_left"):
-		jugador.position.x-=velocidadMaxima*delta
-		animacion.play("CorrerIzquierda")
-	elif Input.is_action_pressed("ui_up"):
-		jugador.position.y-=velocidadMaxima*delta
-		animacion.play("CorrerArriba")
+		actual_direccion="izquierda"
+		play_animation(1)
+		velocity.x=-velocidad
+		velocity.y=0
 	elif Input.is_action_pressed("ui_down"):
-		jugador.position.y+=velocidadMaxima*delta
-		animacion.play("CorrerAbajo")
+		actual_direccion="abajo"
+		play_animation(1)
+		velocity.y=velocidad
+		velocity.x=0
+	elif Input.is_action_pressed("ui_up"):
+		actual_direccion="arriba"
+		play_animation(1)
+		velocity.y=-velocidad
+		velocity.x=0
 	else:
-		animacion.play("EstaticoDerecha")
+		play_animation(0)
+		velocity.x=0
+		velocity.y=0
+	
+	move_and_slide(velocity)
+
+func play_animation(movimiento):
+	var dir=actual_direccion
+	
+	if dir=="derecha":
+		if movimiento==1:
+			animacion.play("CorrerDerecha")
+		elif movimiento==0:
+			animacion.play("EstaticoDerecha")
+	if dir=="izquierda":
+		if movimiento==1:
+			animacion.play("CorrerIzquierda")
+		elif movimiento==0:
+			animacion.play("EstaticoIzquierda")
+	if dir=="abajo":
+		if movimiento==1:
+			animacion.play("CorrerAbajo")
+		elif movimiento==0:
+			animacion.play("EstaticoAbajo")
+	if dir=="arriba":
+		if movimiento==1:
+			animacion.play("CorrerArriba")
+		elif movimiento==0:
+			animacion.play("EstaticoArriba")
