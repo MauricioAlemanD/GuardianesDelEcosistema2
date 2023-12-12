@@ -4,7 +4,6 @@ func _ready():
 	UsuarioGlobal.nivelActual = "Ciudad de méxico"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel ciudad de méxico"
 
-
 func _on_Area2D_area_entered(area):
 	var NPC
 	
@@ -50,3 +49,10 @@ func _on_tiempo_expirado():
 	$Jugador/Camera2D/HUD/mnuTexto.visible = false
 
 
+
+
+func _on_SubTerra_area_entered(area):
+	if area.is_in_group("player"):
+		get_tree().get_nodes_in_group("cambio")[0].siguiente_nivel="subterra"
+		get_tree().get_nodes_in_group("cambio")[0]._verificar_nivel()
+		get_tree().get_nodes_in_group("cdmx")[0].queue_free()
