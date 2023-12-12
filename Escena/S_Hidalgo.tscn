@@ -350,6 +350,7 @@ position = Vector2( -37, 10 )
 current = true
 
 [node name="HUD" parent="Jugador/Camera2D" instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -511, -299 )
 
 [node name="Reto" type="Sprite" parent="Jugador/Camera2D"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GuajoloteEnSalsaVerde.png-08b00a8b971f2fdeb6ec27c1b9a1cc14.stex"
+path="res://.import/TorresSatelite.png-b764a86aadc1264be841bbe1abd8429f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Comida/EstadoDeMexico/GuajoloteEnSalsaVerde.png"
-dest_files=[ "res://.import/GuajoloteEnSalsaVerde.png-08b00a8b971f2fdeb6ec27c1b9a1cc14.stex" ]
+source_file="res://sprites/Estrucutras/Edomex/TorresSatelite.png"
+dest_files=[ "res://.import/TorresSatelite.png-b764a86aadc1264be841bbe1abd8429f.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

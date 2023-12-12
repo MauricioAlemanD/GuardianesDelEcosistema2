@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GuajoloteEnSalsaVerde.png-08b00a8b971f2fdeb6ec27c1b9a1cc14.stex"
+path="res://.import/Xochicalco.png-6004e39e6cd196e1d4d7c309a837cb65.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Comida/EstadoDeMexico/GuajoloteEnSalsaVerde.png"
-dest_files=[ "res://.import/GuajoloteEnSalsaVerde.png-08b00a8b971f2fdeb6ec27c1b9a1cc14.stex" ]
+source_file="res://sprites/Estrucutras/Morelos/Xochicalco.png"
+dest_files=[ "res://.import/Xochicalco.png-6004e39e6cd196e1d4d7c309a837cb65.stex" ]
 
 [params]
 
