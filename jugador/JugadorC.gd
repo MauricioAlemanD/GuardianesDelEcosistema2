@@ -17,11 +17,13 @@ func set_subterra(subter):
 	Subterra=subter
 
 func _ready():
+	
 	$AnimatedSprite.play("EstaticoDerecha")
 	set_subterra(null)
 	
 func _unhandled_input(event):
 	if event is InputEventKey and event.is_action_pressed("entrar") and Subterra!=null:
+		Global.player_pos=global_position
 		Subterra.enter()
 
 func _physics_process(delta):

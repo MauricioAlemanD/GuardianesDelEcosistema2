@@ -29,6 +29,7 @@ BgMorelos="*res://Sonido/BgMorelos.tscn"
 BgEdomex="*res://Sonido/BgEDOMEX.tscn"
 BgCdmx="*res://Sonido/BgCDMX.tscn"
 BgTlaxcala="*res://Sonido/BgTlaxcala.tscn"
+Global="*res://Escena/GLOBAL.gd"
 
 [display]
 
