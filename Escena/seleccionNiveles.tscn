@@ -359,14 +359,14 @@ modulate = Color( 0.905882, 0.513726, 0.741176, 1 )
 position = Vector2( 480, 348 )
 scale = Vector2( 1.16939, 1.32486 )
 frames = SubResource( 6 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="controles" type="AnimatedSprite" parent="."]
 position = Vector2( 64, 244 )
 scale = Vector2( 0.738777, 0.837 )
 frames = SubResource( 7 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="Jugador" parent="." instance=ExtResource( 13 )]

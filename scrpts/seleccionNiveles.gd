@@ -14,7 +14,9 @@ func _ready(): #Se crea e inicia el construcor de la escena
 		BgCdmx.stop()
 		BgApertura.play()
 	else:
-		BgApertura.play()
+		if BgApertura.playing == false:
+			BgApertura.play()
+		
 		
 	
 	$SvgMexico/EventoGuanajuato.position = Vector2(1000,1000)
