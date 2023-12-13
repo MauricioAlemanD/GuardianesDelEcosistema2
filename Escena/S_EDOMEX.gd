@@ -5,6 +5,14 @@ var contadorBasura = 0
 
 
 func _ready():
+	
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn1.text = "Habla con los habitantes."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn2.text = "Explora el lugar."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn3.text = "Recolecta la basura por el estado."
+	
+	BgApertura.stop()
+	BgEdomex.play()
+	
 	UsuarioGlobal.nivelActual = "Estado de México"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel Estado de México"
 	basura["Bateria"] = false

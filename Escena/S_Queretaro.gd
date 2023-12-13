@@ -3,6 +3,13 @@ extends Node2D
 var segundos_pasados = 0
 
 func _ready():
+	
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn1.text = "Habla con los habitantes."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn2.text = "Explora el mapa."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn3.text = "Sobvrevive al equipo de ratas corporativas."
+	BgApertura.stop()
+	BgQueretaro.play()
+	
 	UsuarioGlobal.nivelActual = "Queretaro"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel Queretaro"
 	$Traileres.position = Vector2(0,0)
@@ -21,6 +28,7 @@ func _ready():
 	$Jefe/tubo3.visible = false
 	UsuarioGlobal.ganadoJefe2 = true
 	$Jugador/Camera2D/CambioEscena.visible = false
+	
 func _on_Area2D_area_entered(area):
 	var NPC
 	

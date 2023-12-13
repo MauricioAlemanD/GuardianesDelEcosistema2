@@ -5,6 +5,14 @@ var cuadrosCorrectos = 0
 var label : Label
 var tween : Tween
 func _ready():
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn1.text = "Habla con los habitantes."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn2.text = "Explora el mapa."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn3.text = "Ayuda al falso escorpión a encontrarse a si mismo."
+	$Jugador/Camera2D/juego/ICONOFAIL.visible = false
+	
+	BgApertura.stop()
+	BgPuebla.play()
+
 	UsuarioGlobal.nivelActual = "Puebla"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel Puebla"
 	$Jugador/Camera2D/juego.visible = false
@@ -36,13 +44,13 @@ func _on_Area2D_area_entered(area):
 		NPC = 3
 	
 	if NPC == 1:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Habitante: En el centro histórico de Guanajuato, hay un callejón estrecho conocido como el ''Callejón del Beso''. La leyenda cuenta que dos amantes de diferentes clases sociales se encontraban en balcones opuestos y, al no poder casarse, se besaron en este callejón."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Dedica tiempo para ti, valórate y atiende tus necesidades. Realiza actividades que te hagan sentir bien física y emocionalmente."
 	
 	if NPC == 2:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Habitante: En las entrañas de esta región, la despiadada minería ha dejado tras de sí materiales letales que acechan tanto a nosotros como a la vida silvestre. Lamentablemente, los dueños de las empresas mineras parecen incapaces de sentir la tragedia que provocan, mostrando una indiferencia cruel ante el daño irreparable que infligen a nuestra tierra."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Evita compararte constantemente con los demás y en cambio, concéntrate en tus propios logros."
 		
 	if NPC == 3:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Mis abuelos me platicaban como antes había mas flora y fauna en esta zona, pero desde que llegó la industria minera todo empezó a morir."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Aprende a decir NO cuando sea necesario y establece límites claros en tus relaciones y actividades."
 	
 	
 	$Jugador/Camera2D/HUD/mnuTexto.visible = true
@@ -218,3 +226,7 @@ func _on_fade_out_complete():
 	print("Desaparición completa")
 func _on_temporizador_espera_timeoutES():
 	get_tree().change_scene("res://FinalJefe/Puebla.tscn")
+
+
+func _on_Button_pressed():
+	$Jugador/Camera2D/juego.visible = false

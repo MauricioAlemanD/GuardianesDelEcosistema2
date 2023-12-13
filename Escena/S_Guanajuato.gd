@@ -7,13 +7,20 @@ var estalactitas = 0
 func _ready():
 	UsuarioGlobal.nivelActual = "Guanajuato"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel Guanajuato"
-	
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn1.text = "Habla con los habitantes."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn2.text = "Recolecta las piedras contaminantes."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn3.text = "Sobvrevive al muciélago vengativo."
 	$Roca.visible = false
 	$Suelos.visible = false
 	UsuarioGlobal.ganadoJefe1 = true
 	$Jugador/Camera2D/CambioEscena.visible = false
 	BgApertura.stop()
 	BgGuanajuato.play()
+	
+	
+	
+	
+	
 
 
 func _on_Area2D_area_entered(area):
