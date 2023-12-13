@@ -250,74 +250,74 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=51]
+[sub_resource type="AnimationNodeAnimation" id=39]
 animation = "CorrerIzquierda"
 
-[sub_resource type="AnimationNodeAnimation" id=52]
+[sub_resource type="AnimationNodeAnimation" id=40]
 animation = "CorrerAbajo"
 
-[sub_resource type="AnimationNodeAnimation" id=53]
+[sub_resource type="AnimationNodeAnimation" id=41]
 animation = "CorrerDerecha"
 
-[sub_resource type="AnimationNodeAnimation" id=54]
+[sub_resource type="AnimationNodeAnimation" id=42]
 animation = "CorrerArrbia"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=19]
-blend_point_0/node = SubResource( 51 )
+blend_point_0/node = SubResource( 39 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 52 )
+blend_point_1/node = SubResource( 40 )
 blend_point_1/pos = Vector2( 0, 1 )
-blend_point_2/node = SubResource( 53 )
+blend_point_2/node = SubResource( 41 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 54 )
+blend_point_3/node = SubResource( 42 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=55]
+[sub_resource type="AnimationNodeAnimation" id=43]
 animation = "EstaticoIzquierda"
 
-[sub_resource type="AnimationNodeAnimation" id=56]
+[sub_resource type="AnimationNodeAnimation" id=44]
 animation = "EstaticoAbajo"
 
-[sub_resource type="AnimationNodeAnimation" id=57]
+[sub_resource type="AnimationNodeAnimation" id=45]
 animation = "RESET"
 
-[sub_resource type="AnimationNodeAnimation" id=58]
+[sub_resource type="AnimationNodeAnimation" id=46]
 animation = "EstaticoArriba"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=24]
-blend_point_0/node = SubResource( 55 )
+blend_point_0/node = SubResource( 43 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 56 )
+blend_point_1/node = SubResource( 44 )
 blend_point_1/pos = Vector2( 0, 1.1 )
-blend_point_2/node = SubResource( 57 )
+blend_point_2/node = SubResource( 45 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 58 )
+blend_point_3/node = SubResource( 46 )
 blend_point_3/pos = Vector2( 0, -1.1 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=59]
+[sub_resource type="AnimationNodeAnimation" id=47]
 animation = "PickIzquierda"
 
-[sub_resource type="AnimationNodeAnimation" id=60]
+[sub_resource type="AnimationNodeAnimation" id=48]
 animation = "Picker"
 
-[sub_resource type="AnimationNodeAnimation" id=61]
+[sub_resource type="AnimationNodeAnimation" id=49]
 animation = "Picker"
 
-[sub_resource type="AnimationNodeAnimation" id=62]
+[sub_resource type="AnimationNodeAnimation" id=50]
 animation = "PickArriba"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=34]
-blend_point_0/node = SubResource( 59 )
+blend_point_0/node = SubResource( 47 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 60 )
+blend_point_1/node = SubResource( 48 )
 blend_point_1/pos = Vector2( 0, 1.1 )
-blend_point_2/node = SubResource( 61 )
+blend_point_2/node = SubResource( 49 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 62 )
+blend_point_3/node = SubResource( 50 )
 blend_point_3/pos = Vector2( 0, -1.1 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )

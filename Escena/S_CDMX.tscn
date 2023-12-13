@@ -1,7 +1,7 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://jugador/Jugador.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Escena/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://jugador/JugadorC.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SubterraneoEntrada.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SPRITES_SOPHIE/Tiles/Tiles_CDMX-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Mundo/Suelos.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Escena/mapeadoCDMX.gd" type="Script" id=5]
@@ -12,7 +12,7 @@
 [ext_resource path="res://SPRITES_SOPHIE/Lugares/CDMX/MonumentoRev.png" type="Texture" id=10]
 [ext_resource path="res://SPRITES_SOPHIE/Lugares/CDMX/Bellas artes.png" type="Texture" id=11]
 [ext_resource path="res://SPRITES_SOPHIE/Lugares/CDMX/entrada metro.png" type="Texture" id=12]
-[ext_resource path="res://Escena/CambioEscenaNergo.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Escena/Subterraneo.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tiles_CDMX-Sheet.png 0"
@@ -179,13 +179,7 @@ radius = 10.449
 height = 10.449
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 69.5, 17.5 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 15.5, 5 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 17, 4.5 )
+extents = Vector2( 69.5, 39 )
 
 [node name="CDMX_Mapa" type="Node2D" groups=["cdmx"]]
 script = ExtResource( 6 )
@@ -328,16 +322,7 @@ texture = ExtResource( 12 )
 [node name="StaticBody2D" type="StaticBody2D" parent="EntradaSubterraneo"]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="EntradaSubterraneo/StaticBody2D"]
-scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( -63.4482, 62.2384, -44.1379, 62.2384, -34.2069, 8.80737, 35.3103, 8.80737, 45.7931, 58.7155, 46.3448, 62.8256, 60.6897, 62.8256, 63.4482, -33.4678, 50.2069, -65.1741, -53.5172, -64.5869, -63.4482, -29.9448 )
-
-[node name="SubTerra" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SubTerra"]
-position = Vector2( 1982.5, 2911.5 )
-shape = SubResource( 9 )
 
 [node name="BellasArtes" type="Sprite" parent="."]
 position = Vector2( 3183, 2375 )
@@ -358,41 +343,35 @@ texture = ExtResource( 10 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MontRev/StaticBody2D"]
 polygon = PoolVector2Array( 2.01044, -49.7778, 4.02094, -48.2808, 4.02094, -41.9181, 13.4031, -36.6783, 18.7643, -28.8187, 28.4816, -14.2223, 37.8638, 1.49707, 38.1989, 45.6608, 28.8167, 53.1462, 21.7801, 48.2806, 20.4398, 14.2222, 12.733, 14.9707, 11.0576, 24.3275, 3.01569, 28.0702, 3.68585, 57.2632, -11.3927, 63.6257, -19.7697, 54.269, -19.4346, 37.4269, -19.0995, 19.8363, -20.4398, 39.2982, -31.1623, 47.1578, -37.8639, 42.2924, -38.199, 3.74268, -37.8639, -1.49707, -38.5341, -5.23975, -37.5288, -8.98242, -35.8534, -13.848, -31.8325, -15.7194, -26.8063, -24.3275, -23.4555, -33.3099, -18.4293, -37.8011, -12.3979, -40.0468, -9.04712, -41.1696, -9.04712, -45.2865, -9.04712, -49.0293, -7.03668, -49.4036, -4.35602, -51.2749, -0.335083, -50.9006 )
 
-[node name="Jugador" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2581, 1782 )
-collision_layer = 18
-collision_mask = 17
+[node name="YSort" type="YSort" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="Jugador"]
-position = Vector2( -37, 10 )
+[node name="JugadorC" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 2592, 1832 )
+
+[node name="Camera2D2" type="Camera2D" parent="YSort/JugadorC"]
 current = true
 
-[node name="CambioEscena" parent="Jugador/Camera2D" instance=ExtResource( 13 )]
-visible = false
-position = Vector2( -11, 6 )
-scale = Vector2( 35.125, 20.7188 )
-z_index = 2
-speed_scale = 1.0
-playing = false
+[node name="Subterraneo" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 2464, 2880 )
+scale = Vector2( 1.91654, 1.77278 )
+inside_scene = ExtResource( 13 )
 
-[node name="HUD" parent="Jugador/Camera2D" instance=ExtResource( 2 )]
-visible = false
-position = Vector2( -511, -299 )
+[node name="entr" type="Node2D" parent="YSort"]
+position = Vector2( 2592, 1832 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Jugador"]
-light_mask = 17
-position = Vector2( 4.5, 12 )
-shape = SubResource( 8 )
-
-[node name="Area2D" type="Area2D" parent="Jugador"]
-collision_layer = 16
+[node name="SubTerra" type="Area2D" parent="YSort/entr"]
+position = Vector2( -2592, -1832 )
+collision_layer = 0
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador/Area2D"]
-position = Vector2( 5, 15.5 )
-shape = SubResource( 11 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/entr/SubTerra"]
+light_mask = 16
+position = Vector2( 1985, 2934 )
+shape = SubResource( 9 )
 
 [connection signal="area_entered" from="NPC1/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="NPC2/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="NPC3/Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="area_entered" from="SubTerra" to="." method="_on_SubTerra_area_entered"]
+[connection signal="area_entered" from="YSort/entr/SubTerra" to="." method="_on_SubTerra_area_entered"]
+[connection signal="body_entered" from="YSort/entr/SubTerra" to="." method="_on_SubTerra_body_entered"]
+[connection signal="body_exited" from="YSort/entr/SubTerra" to="." method="_on_SubTerra_body_exited"]
