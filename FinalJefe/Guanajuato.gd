@@ -25,5 +25,6 @@ func _on_temporizador_timeout():
 
 func _on_Button_pressed():
 	UsuarioGlobal.nivelActual = "Queretaro"
+	UsuarioGlobal.guardar_progreso()
 	get_tree().change_scene("res://Escena/seleccionNiveles.tscn")
 

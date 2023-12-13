@@ -98,14 +98,13 @@ flat = true
 position = Vector2( 37, 429 )
 scale = Vector2( 5.625, 5.625 )
 frames = SubResource( 2 )
-frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 844, 429 )
 scale = Vector2( 5.75, 5.75 )
 frames = SubResource( 3 )
-frame = 1
+frame = 3
 playing = true
 
 [connection signal="mouse_entered" from="VBoxContainer/btnCrearNuevaPartida" to="." method="_on_btnCrearNuevaPartida_mouse_entered"]
