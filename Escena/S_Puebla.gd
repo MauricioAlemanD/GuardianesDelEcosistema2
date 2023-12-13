@@ -100,96 +100,128 @@ func _on_btnm01_pressed():
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite0_0.position = Vector2(284, 25)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm02_pressed():
 	botonPresionado2 = "0_1"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite0_1.position = Vector2(412, 25)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm03_pressed():
 	botonPresionado2 = "0_2"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite0_2.position = Vector2(540, 25)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm04_pressed():
 	botonPresionado2 = "0_3"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite0_3.position = Vector2(668, 25)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm05_pressed():
 	botonPresionado2 = "1_0"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite1_0.position = Vector2(284, 153)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm06_pressed():
 	botonPresionado2 = "1_1"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite1_1.position = Vector2(412, 153)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm07_pressed():
 	botonPresionado2 = "1_2"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite1_2.position = Vector2(540, 153)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm08_pressed():
 	botonPresionado2 = "1_3"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite1_3.position = Vector2(668, 153)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm09_pressed():
 	botonPresionado2 = "2_0"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite2_0.position = Vector2(284, 281)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm10_pressed():
 	botonPresionado2 = "2_1"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite2_1.position = Vector2(412, 281)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm11_pressed():
 	botonPresionado2 = "2_2"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite2_2.position = Vector2(540, 281)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm12_pressed():
 	botonPresionado2 = "2_3"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite2_3.position = Vector2(668, 281)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm13_pressed():
 	botonPresionado2 = "3_0"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite3_0.position = Vector2(284, 409)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm15_pressed():
 	botonPresionado2 = "3_2"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite3_2.position = Vector2(540, 409)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm14_pressed():
 	botonPresionado2 = "3_1"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite3_1.position = Vector2(412, 409)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func _on_btnm16_pressed():
 	botonPresionado2 = "3_3"
 	if botonPresionado1 == botonPresionado2:
 		$Jugador/Camera2D/juego/Sprite3_3.position = Vector2(668, 409)
 		cuadrosCorrectos=cuadrosCorrectos+1
+	else:
+		tache()
 	corroborarPosiciones()
 func corroborarPosiciones():
 	print(cuadrosCorrectos)
@@ -230,3 +262,15 @@ func _on_temporizador_espera_timeoutES():
 
 func _on_Button_pressed():
 	$Jugador/Camera2D/juego.visible = false
+	
+	
+func tache():
+	$Jugador/Camera2D/juego/ICONOFAIL.visible = true
+	var senal = Timer.new()
+	senal.wait_time = 0.5
+	senal.one_shot = true
+	get_tree().get_root().add_child(senal)
+	senal.connect("timeout",self,"SenalTacheOff")
+	senal.start()
+func SenalTacheOff():
+	$Jugador/Camera2D/juego/ICONOFAIL.visible = false
