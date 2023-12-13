@@ -334,7 +334,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ), ExtResource( 3 ) ]
@@ -384,10 +384,9 @@ scale = Vector2( 2.10222, 1.84375 )
 texture = ExtResource( 4 )
 hframes = 5
 vframes = 8
-frame = 16
+frame = 4
 
 [node name="AnimTecla" type="AnimationPlayer" parent="Tecla"]
-autoplay = "TeclaQ"
 anims/RESET = SubResource( 58 )
 anims/TeclaE = SubResource( 59 )
 anims/TeclaQ = SubResource( 60 )
