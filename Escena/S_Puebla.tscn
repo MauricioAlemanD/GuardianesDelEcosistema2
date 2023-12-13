@@ -380,7 +380,7 @@ polygon = PoolVector2Array( -47.7612, 115.423, -45.7712, 65.6716, -41.7911, 67.6
 position = Vector2( 2368, 2864 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 9 )
-frame = 5
+frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -460,7 +460,6 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puebla/eventoJefe"]
 position = Vector2( -0.00012207, 6.3999 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 7 )
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
@@ -902,6 +901,8 @@ playing = false
 [node name="cerrarTexto" type="Timer" parent="."]
 
 [node name="temporizadorEspera" type="Timer" parent="."]
+
+[node name="senal" type="Timer" parent="."]
 
 [connection signal="area_entered" from="NPC1/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="NPC2/Area2D" to="." method="_on_Area2D_area_entered"]

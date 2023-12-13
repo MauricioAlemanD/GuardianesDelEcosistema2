@@ -39,13 +39,13 @@ func _on_Area2D_area_entered(area):
 		NPC = 3
 	
 	if NPC == 1:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Habitante: En el centro histórico de Guanajuato, hay un callejón estrecho conocido como el ''Callejón del Beso''. La leyenda cuenta que dos amantes de diferentes clases sociales se encontraban en balcones opuestos y, al no poder casarse, se besaron en este callejón."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Fuegooooooo... Fuegoooo..... Hay muchooooo fuegooooo..."
 	
 	if NPC == 2:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Habitante: En las entrañas de esta región, la despiadada minería ha dejado tras de sí materiales letales que acechan tanto a nosotros como a la vida silvestre. Lamentablemente, los dueños de las empresas mineras parecen incapaces de sentir la tragedia que provocan, mostrando una indiferencia cruel ante el daño irreparable que infligen a nuestra tierra."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Normalmete hay incendios involuntarios pero este incendio no pinta ser uno de esos..."
 		
 	if NPC == 3:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Mis abuelos me platicaban como antes había mas flora y fauna en esta zona, pero desde que llegó la industria minera todo empezó a morir."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Acabo de ver a un coyote con un encendedor..."
 	
 	
 	$Jugador/Camera2D/HUD/mnuTexto.visible = true
