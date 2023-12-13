@@ -563,10 +563,10 @@ extents = Vector2( 50, 35.875 )
 script = ExtResource( 7 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -2607.0
-margin_top = -2051.0
-margin_right = 2692.0
-margin_bottom = 1427.0
+margin_left = -2470.0
+margin_top = -2137.0
+margin_right = 2829.0
+margin_bottom = 1341.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -594,7 +594,6 @@ tile_data = PoolIntArray( -2424817, -1610612733, 0, -2359279, -1610612733, 0, -2
 position = Vector2( -81, 173 )
 
 [node name="Camera2D2" type="Camera2D" parent="JugadorC"]
-current = true
 
 [node name="exit" type="Area2D" parent="."]
 position = Vector2( -2592, -1832 )
@@ -605,6 +604,10 @@ collision_mask = 16
 light_mask = 16
 position = Vector2( 2513, 2087 )
 shape = SubResource( 18 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2( -1.53302, 0.0709856 )
+current = true
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
 [connection signal="body_exited" from="exit" to="." method="_on_exit_body_exited"]

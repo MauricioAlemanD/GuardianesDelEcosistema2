@@ -3,8 +3,6 @@ extends Control #Hereda de control
 
 func _ready(): #Se crea e inicia el construcor de la escena
 	
-	UsuarioGlobal.busqueda_progresos()
-	
 	if BgGuanajuato.playing == true or BgQueretaro.playing == true or BgHidalgo.playing == true or BgTlaxcala.playing == true or BgPuebla.playing == true or BgMorelos.playing == true or BgEdomex.playing == true or BgCdmx.playing == true :
 		BgGuanajuato.stop()
 		BgQueretaro.stop()
@@ -74,7 +72,3 @@ func _on_Button_pressed(): #Se crea el evento para el boton de salir
 
 func _on_AlmanaqueIco_pressed():
 	get_tree().change_scene("res://mich/Diccionario.tscn") #Se cambia de la escena actual a la escena de inicio de sesion
-
-
-func busqueda_progreso():
-	pass

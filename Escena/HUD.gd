@@ -24,7 +24,7 @@ func _on_btnSalir_pressed():
 
 
 func _on_btnGuardarPartida_pressed():
-	UsuarioGlobal.guardar_progreso()
+	pass # Replace with function body.
 
 
 func _on_btnContinuar_pressed():

@@ -14,9 +14,6 @@ func _ready(): #Se inicializa la funcion ready, esta funcion es como el construc
 
 func busquedaUsuarios(): #Se crea una funcion llamada busquedaUsuarios, que nos servira para identificar los directorios y los ficheros
 	
-	
-	
-	
 	var file = File.new() #Se crea una varibale de tipo file para poder trabaajr con archivos
 	
 	if (file.file_exists("user://usersData.dat")): #Se crea la condicion que si existe el documento en user://usersData.dat se active el usuario existente y de esta manera habilitar el boton de cargar partida
@@ -32,10 +29,7 @@ func busquedaUsuarios(): #Se crea una funcion llamada busquedaUsuarios, que nos 
 		file.open("user://usersData.dat",File.WRITE) #Mediante la variable de objeto file y la propiedad open se podra activar la conexion entre archivo y programa
 		file.store_var(usuarios) #Mediante la variable de tipo file y su propiedad store_var se almacenara toda la variable dentro del fichero
 		file.close() #Se cierra la conexion programa fichero apra evitar problemas de rendimiento y recursos
-		var datosJugadores = {}
-		file.open("user://Progreso.dat",File.WRITE)
-		file.store_var(datosJugadores)
-		file.close()
+		
 
 func _on_btnSalir_pressed(): #Se crea el evento del boton salir que regresa al menu inical
 	get_tree().change_scene("res://Escena/MenuInicial.tscn") #Se canmbia de la escena actual a la escena de manu principal

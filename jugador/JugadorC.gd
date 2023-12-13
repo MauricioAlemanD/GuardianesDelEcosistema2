@@ -8,7 +8,7 @@ var Subterra=null setget set_subterra
 
 var enemy_inattack_range=false
 var enemy_attack_cooldown=true
-var health=200
+var health=100
 var player_alive=true
 
 var attack_ip=false
@@ -37,6 +37,7 @@ func _physics_process(delta):
 	player_movement(delta)
 	enemy_attack()
 	attack()
+	update_health()
 	
 	if health<=0:
 		player_alive=false #respawn
@@ -114,7 +115,7 @@ func _on_player_hitbox_body_exited(body):
 		
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown==true:
-		health=health-20
+		health=health-10
 		enemy_attack_cooldown=false
 		$cooldown.start()
 		print(health)
@@ -147,3 +148,22 @@ func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	Global.player_current_attack=false
 	attack_ip=false
+
+func update_health():
+	var healthbar=$HealthBar
+	healthbar.value=health
+	
+	if health>=100:
+		healthbar.visible=false
+	else:
+		healthbar.visible=true
+	
+func _on_regin_timer_timeout():
+	if health<100:
+		health=health+10
+		if health>100:
+			health=100
+	if health<=0:
+		health=0
+	
+	
