@@ -24,7 +24,7 @@ func set_subterra(subter):
 	Subterra=subter
 
 func _ready():
-	
+	$regin_timer.start()
 	$AnimatedSprite.play("EstaticoDerecha")
 	set_subterra(null)
 	
@@ -160,6 +160,7 @@ func update_health():
 	
 func _on_regin_timer_timeout():
 	if health<100:
+		print("menor a 100")
 		health=health+10
 		if health>100:
 			health=100
