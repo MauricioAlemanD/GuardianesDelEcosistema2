@@ -184,7 +184,6 @@ scale = Vector2( 1.06874, 1.04415 )
 script = ExtResource( 31 )
 
 [node name="TlaxcalaAz" type="Sprite" parent="SvgMexico/EventoTlaxcala"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 
 [node name="AreaTlaxcala" type="Area2D" parent="SvgMexico/EventoTlaxcala/TlaxcalaAz"]
@@ -269,6 +268,11 @@ position = Vector2( 102.099, 52.313 )
 scale = Vector2( 0.358171, 0.334842 )
 texture = ExtResource( 11 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="SvgMexico"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SvgMexico/StaticBody2D"]
+polygon = PoolVector2Array( -133.942, -53.5766, -127.876, -41.4461, -121.811, -27.2937, -119.789, -17.185, -123.833, -7.07616, -125.855, -3.03264, -87.4411, 35.3808, -59.1365, 51.5549, -42.9624, 57.6201, -14.6578, 75.816, 54.082, 75.816, 122.822, 75.816, 120.8, 27.2938, 74.2997, 27.2938, 64.1909, 23.2502, 41.9515, -7.07616, 27.7992, -41.4461, 23.7557, -43.4678, -123.833, -43.4678, -129.898, -63.6854, 45.995, -55.5984, 143.039, 7.07616, 167.301, 71.7725, 132.931, 98.0553, -105.637, 89.9683, -137.985, -1.01088, -140.007, -65.7072 )
+
 [node name="lblGuardian" type="Label" parent="."]
 margin_left = 737.0
 margin_top = 386.0
@@ -306,11 +310,19 @@ margin_bottom = 21.0
 rect_pivot_offset = Vector2( 115, 13 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "último nivel : GUANAJUATO"
+text = "último nivel : "
 
-[node name="AlmanaqueIco" type="Sprite" parent="."]
-position = Vector2( 0, 452 )
-scale = Vector2( 0.193151, 0.193151 )
+[node name="AlmanaqueIco" type="Button" parent="."]
+anchor_right = 0.037
+anchor_bottom = 0.492
+margin_left = -48.0
+margin_top = 372.0
+margin_right = 64.032
+margin_bottom = 279.84
+
+[node name="AlmanaqueIco" type="Sprite" parent="AlmanaqueIco"]
+position = Vector2( 72, 72 )
+scale = Vector2( 0.195205, 0.195205 )
 texture = ExtResource( 17 )
 
 [node name="lblProgreso" type="Label" parent="."]
@@ -344,16 +356,17 @@ flat = true
 
 [node name="indicador" type="AnimatedSprite" parent="."]
 modulate = Color( 0.905882, 0.513726, 0.741176, 1 )
-position = Vector2( 344, 124 )
+position = Vector2( 480, 348 )
 scale = Vector2( 1.16939, 1.32486 )
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="controles" type="AnimatedSprite" parent="."]
 position = Vector2( 64, 244 )
 scale = Vector2( 0.738777, 0.837 )
 frames = SubResource( 7 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="Jugador" parent="." instance=ExtResource( 13 )]
@@ -367,4 +380,5 @@ position = Vector2( 800, 460 )
 [connection signal="area_entered" from="SvgMexico/EventoHidalgo/HidalgoAz/AreaHidalgo" to="SvgMexico/EventoHidalgo" method="_on_AreaHidalgo_area_entered"]
 [connection signal="area_entered" from="SvgMexico/EventoMexico/MexicoAz/AreaEDOMEX" to="SvgMexico/EventoMexico" method="_on_AreaEDOMEX_area_entered"]
 [connection signal="area_entered" from="SvgMexico/EventoMorelos/MorelosAz/AreaMorelos" to="SvgMexico/EventoMorelos" method="_on_AreaMorelos_area_entered"]
+[connection signal="pressed" from="AlmanaqueIco" to="." method="_on_AlmanaqueIco_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

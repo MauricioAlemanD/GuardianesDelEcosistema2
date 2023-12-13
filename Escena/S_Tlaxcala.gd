@@ -1,5 +1,12 @@
 extends Node2D
 func _ready():
+	BgApertura.stop()
+	BgTlaxcala.play()
+	
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn1.text = "Habla con los habitantes."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn2.text = "Libera a las palomas blancas."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn3.text = "Descubre el secreto de la serpiente sospechoza."
+	
 	UsuarioGlobal.nivelActual = "Tlaxcala"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel Tlaxcala"
 	$Tlaxcala/Jaulajefe.visible = false
@@ -27,13 +34,13 @@ func _on_Area2D_area_entered(area):
 		NPC = 3
 	
 	if NPC == 1:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Habitante: En el centro histórico de Guanajuato, hay un callejón estrecho conocido como el ''Callejón del Beso''. La leyenda cuenta que dos amantes de diferentes clases sociales se encontraban en balcones opuestos y, al no poder casarse, se besaron en este callejón."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Tlaxcala es un lugar muy tranquilo y bonito, solamente que hay problemas... Como todos los demas estados."
 	
 	if NPC == 2:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Habitante: En las entrañas de esta región, la despiadada minería ha dejado tras de sí materiales letales que acechan tanto a nosotros como a la vida silvestre. Lamentablemente, los dueños de las empresas mineras parecen incapaces de sentir la tragedia que provocan, mostrando una indiferencia cruel ante el daño irreparable que infligen a nuestra tierra."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Mi mamá esta preocupada de que algun día se lleven a nuestra paloma y que nunca más la volvamos a ver."
 		
 	if NPC == 3:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Mis abuelos me platicaban como antes había mas flora y fauna en esta zona, pero desde que llegó la industria minera todo empezó a morir."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Estoy muy triste, hace tres dias que no veo a mi amiga paloma."
 	
 	
 	$Jugador/Camera2D/HUD/mnuTexto.visible = true
@@ -57,7 +64,7 @@ func _on_eventoJefe_area_entered(area):
 	if $Paloma1/jaulaPaloma1.visible == false and $Paloma2/jaulaPaloma2.visible == false and $Paloma3/jaulaPaloma3.visible == false:
 		print("Ganaste")
 		$Tlaxcala/Jaulajefe.visible = true
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Me atrapaste"
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "¡Me atrapaste!"
 		$Jugador/Camera2D/HUD/mnuTexto.visible = true
 		var cerrarTexto = Timer.new()
 		cerrarTexto.wait_time = 10
@@ -72,7 +79,7 @@ func _on_eventoJefe_area_entered(area):
 		$temporizadorEspera.start()
 	elif  $Paloma1/jaulaPaloma1.visible == false and $Paloma2/jaulaPaloma2.visible == false and $Paloma3/jaulaPaloma3.visible == true:
 		print("Yo no se nada")
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Yo no se nada"
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Yo no se nada..."
 		$Jugador/Camera2D/HUD/mnuTexto.visible = true
 		var cerrarTexto = Timer.new()
 		cerrarTexto.wait_time = 10
@@ -81,7 +88,7 @@ func _on_eventoJefe_area_entered(area):
 		cerrarTexto.connect("timeout",self,"_on_tiempo_expirado")
 	elif  $Paloma1/jaulaPaloma1.visible == false and $Paloma2/jaulaPaloma2.visible == true and $Paloma3/jaulaPaloma3.visible == true:
 		print("Deja de entrometerte")
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Deja de entrometerte"
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Deja de entrometerte..."
 		$Jugador/Camera2D/HUD/mnuTexto.visible = true
 		var cerrarTexto = Timer.new()
 		cerrarTexto.wait_time = 10
@@ -90,7 +97,7 @@ func _on_eventoJefe_area_entered(area):
 		cerrarTexto.connect("timeout",self,"_on_tiempo_expirado")
 	elif  $Paloma1/jaulaPaloma1.visible == true and $Paloma2/jaulaPaloma2.visible == true and $Paloma3/jaulaPaloma3.visible == true:
 		print("Que buen dia hace hoy")
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Que buen dia para trabajar hoy"
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Que buen dia para trabajar hoy."
 		$Jugador/Camera2D/HUD/mnuTexto.visible = true
 		var cerrarTexto = Timer.new()
 		cerrarTexto.wait_time = 10

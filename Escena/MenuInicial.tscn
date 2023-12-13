@@ -136,14 +136,14 @@ position = Vector2( 119, 444 )
 scale = Vector2( 5.98437, 5.98437 )
 frames = SubResource( 2 )
 animation = "New Anim"
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 800, 408 )
 scale = Vector2( 5.78125, 5.78125 )
 frames = SubResource( 3 )
-frame = 8
+frame = 10
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
@@ -157,7 +157,6 @@ playing = true
 position = Vector2( 660, 348 )
 scale = Vector2( 4.90625, 4.90625 )
 frames = SubResource( 5 )
-frame = 2
 playing = true
 
 [node name="HitSound" parent="." instance=ExtResource( 5 )]

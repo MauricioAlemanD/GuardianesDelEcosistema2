@@ -5,6 +5,14 @@ var combinacionValida = ""
 var contadorBotones = 0
 
 func _ready():
+	
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn1.text = "Habla con los habitantes."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn2.text = "Recuerda el orden de los números."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn3.text = "Ayuda al puercoespin con su problema."
+	
+	BgApertura.stop()
+	BgHidalgo.play()
+	
 	UsuarioGlobal.nivelActual = "Hidalgo"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel Hidalgo"
 	$Jugador/Camera2D/Reto.visible = false
@@ -35,13 +43,13 @@ func _on_Area2D_area_entered(area):
 		NPC = 3
 	
 	if NPC == 1:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Habitante: En el centro histórico de Guanajuato, hay un callejón estrecho conocido como el ''Callejón del Beso''. La leyenda cuenta que dos amantes de diferentes clases sociales se encontraban en balcones opuestos y, al no poder casarse, se besaron en este callejón."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Habitante: Ya no puedo mas con el olor que viene del agua del río, hace años que apesta fatal."
 	
 	if NPC == 2:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Habitante: En las entrañas de esta región, la despiadada minería ha dejado tras de sí materiales letales que acechan tanto a nosotros como a la vida silvestre. Lamentablemente, los dueños de las empresas mineras parecen incapaces de sentir la tragedia que provocan, mostrando una indiferencia cruel ante el daño irreparable que infligen a nuestra tierra."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "El el señor puercoespin que esta en la reserva natural ha estado cortando muchos arboles ultimamente."
 		
 	if NPC == 3:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Mis abuelos me platicaban como antes había mas flora y fauna en esta zona, pero desde que llegó la industria minera todo empezó a morir."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Un día escuche al señor puercoespin diciendo  3, 5, 1, 4, 2."
 	
 	
 	$Jugador/Camera2D/HUD/mnuTexto.visible = true
@@ -108,3 +116,7 @@ func _on_eventoJefe_area_entered(area):
 func _on_temporizador_espera_timeoutES():
 	get_tree().change_scene("res://FinalJefe/Hidalgo.tscn")
 	
+
+
+func _on_btnSalirPiel_pressed():
+	$Jugador/Camera2D/Reto.visible = false

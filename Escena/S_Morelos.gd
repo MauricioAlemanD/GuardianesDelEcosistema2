@@ -1,6 +1,14 @@
 extends Node2D
 var segundos_pasados = 0
 func _ready():
+	
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn1.text = "Habla con los habitantes."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn2.text = "Explola el lugar."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn3.text = "Apaga el incendio provocado por el coyote."
+	
+	BgApertura.stop()
+	BgMorelos.play()
+	
 	UsuarioGlobal.nivelActual = "Morelos"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel Morelos"
 	$Jugador/Camera2D/CambioEscena.visible = false
