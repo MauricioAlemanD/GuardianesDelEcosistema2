@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://jugador/Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escena/HUD.tscn" type="PackedScene" id=2]
@@ -172,11 +172,22 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 1/z_index = 0
 
+[sub_resource type="TileSet" id=10]
+
 [sub_resource type="CapsuleShape2D" id=6]
 radius = 10.449
 height = 10.449
 
-[node name="CDMX_Mapa" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 69.5, 17.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 15.5, 5 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 17, 4.5 )
+
+[node name="CDMX_Mapa" type="Node2D" groups=["cdmx"]]
 script = ExtResource( 6 )
 
 [node name="Escenario" type="Node2D" parent="."]
@@ -212,7 +223,12 @@ format = 1
 [node name="Suelos2" parent="Escenario" instance=ExtResource( 4 )]
 tile_data = PoolIntArray(  )
 
+[node name="TileMap" type="TileMap" parent="Escenario"]
+tile_set = SubResource( 10 )
+format = 1
+
 [node name="NPC1" type="Sprite" parent="."]
+visible = false
 position = Vector2( 3949, 2882 )
 scale = Vector2( 3.0625, 3.0625 )
 texture = ExtResource( 8 )
@@ -235,6 +251,7 @@ polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.
 shape = SubResource( 6 )
 
 [node name="NPC2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 2825, 1379 )
 scale = Vector2( 3.0625, 3.0625 )
 texture = ExtResource( 8 )
@@ -257,6 +274,7 @@ polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.
 shape = SubResource( 6 )
 
 [node name="NPC3" type="Sprite" parent="."]
+visible = false
 position = Vector2( 2129, 3515 )
 scale = Vector2( 3.0625, 3.0625 )
 texture = ExtResource( 8 )
@@ -278,21 +296,17 @@ polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3/Area2D/StaticBody2D"]
 shape = SubResource( 6 )
 
-[node name="BellasArtes" type="Sprite" parent="."]
-position = Vector2( 7231, 3974 )
-texture = ExtResource( 11 )
-offset = Vector2( -4070, -1591 )
-
-[node name="MonumentoRevolucion" type="Sprite" parent="."]
-position = Vector2( 3052, 3227 )
-scale = Vector2( 3.22656, 2.81641 )
-texture = ExtResource( 10 )
-
 [node name="Metro2" type="Sprite" parent="."]
-position = Vector2( 2034.68, 2674.28 )
+position = Vector2( 2033, 2674 )
 scale = Vector2( 2.60037, 2.30448 )
 texture = ExtResource( 9 )
 offset = Vector2( -74.7791, -64.0001 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Metro2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Metro2/StaticBody2D"]
+position = Vector2( -75.374, -62.4872 )
+polygon = PoolVector2Array( -19, -45.6, -19, -43.8, -8, -32.8, -8, -30.4, -2.6, -17, 10.7, -21, 32, -21, 32, -19.4, 54, -10.3, 54, -7.3, 61, 13.7, 61, 26, 64, 26, 64, 64, -1.2, 64, -64, 28.3, -64, -25.5, -58.2, -37, -56.9, -37, -48.9, -46, -46.3, -46, -41, -48.3, -41, -50.5 )
 
 [node name="Metro" type="Sprite" parent="."]
 position = Vector2( 1796, 2742 )
@@ -300,24 +314,61 @@ scale = Vector2( 2.59765, 2.34375 )
 texture = ExtResource( 9 )
 offset = Vector2( -74.7791, -64.0001 )
 
-[node name="cerrarTexto" type="Timer" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="Metro"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Metro/StaticBody2D"]
+position = Vector2( -75.374, -62.4872 )
+polygon = PoolVector2Array( -19, -45.6, -19, -43.8, -8, -32.8, -8, -30.4, -2.6, -17, 10.7, -21, 32, -21, 32, -19.4, 54, -10.3, 54, -7.3, 61, 13.7, 61, 26, 64, 26, 64, 64, -1.2, 64, -64, 28.3, -64, -25.5, -58.2, -37, -56.9, -37, -48.9, -46, -46.3, -46, -41, -48.3, -41, -50.5 )
 
 [node name="EntradaSubterraneo" type="Sprite" parent="."]
 position = Vector2( 1983, 2888 )
 scale = Vector2( 1.8125, 1.70313 )
 texture = ExtResource( 12 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="EntradaSubterraneo"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="EntradaSubterraneo/StaticBody2D"]
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( -63.4482, 62.2384, -44.1379, 62.2384, -34.2069, 8.80737, 35.3103, 8.80737, 45.7931, 58.7155, 46.3448, 62.8256, 60.6897, 62.8256, 63.4482, -33.4678, 50.2069, -65.1741, -53.5172, -64.5869, -63.4482, -29.9448 )
+
+[node name="SubTerra" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubTerra"]
+position = Vector2( 1982.5, 2911.5 )
+shape = SubResource( 9 )
+
+[node name="BellasArtes" type="Sprite" parent="."]
+position = Vector2( 3183, 2375 )
+texture = ExtResource( 11 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BellasArtes"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BellasArtes/StaticBody2D"]
+polygon = PoolVector2Array( 4, -98.9, 10, -93.9, 10, -90, 23, -90, 23, -69.1, 10, -58.1, 10, -54.7, 17, -46, 25.2, -46, 27.2, -42, 38, -42, 38, -39.5, 39.2, -37, 48, -37, 48, -34.8, 62, -20.8, 62, -13.4, 67, -11.4, 67, -6, 83, -6, 83, -3, 84, 2.70001, 84, -3, 85.9, -3, 87.9, -6, 110.8, -6, 114, -2.79999, 114, 39, 121.4, 39, 123.4, 44, 130.8, 44, 134, 47.2, 134, 52.5, 134.2, 53, 140, 53, 140, 52, 148, 46, 148, 43.3, 155.1, 35, 196, 35, 196, 37.1, 211.9, 54, 223, 54, 223, 57, 224.5, 63, 237.8, 63, 241, 66.2, 241, 78.2, 237, 80.2, 237, 90, 243.7, 90, 246.4, 106, 244.3, 106, 239.3, 117, 232, 117, 232, 150, 234.6, 150, 236.6, 159, 238.4, 159, 240.4, 164, 242.8, 164, 246, 167.2, 246, 179, 243.7, 179, 236, 185.9, 236, 228, 238.6, 228, 240.7, 238, 243.1, 238, 245.1, 241, 253, 241, 253, 243.7, 255.8, 252, 252, 252, -258, 254, -258, 251.3, -260.8, 243, -257.4, 243, -246, 238.6, -246, 230.6, -241, 228.6, -241, 186, -251, 178, -251, 167, -242, 160, -242, 152, -239.5, 152, -237, 150.8, -237, 117, -245, 117, -245, 114, -246.5, 108, -247.8, 108, -251, 104.8, -251, 92.4, -242, 90.4, -242, 80.2, -246, 78.2, -246, 65, -243.3, 65, -230, 63.2, -230, 56.3, -219, 54.3, -219, 53, -204, 41, -204, 38.2, -200.8, 35, -161, 35, -147, 53, -140, 53, -134, 45, -127.4, 45, -125.4, 40, -120, 40, -120, -2.79999, -93, -5.20001, -93, -2, -91.3, 8, -90, 8, -90, -2.79999, -74, -4.79999, -74, -11.4, -69, -13.4, -69, -20.8, -53.9, -37, -47.4, -37, -45.4, -42, -35.2, -42, -33.2, -46, -23, -46, -23, -46.8, -15, -54.8, -15, -57, -15.9, -57, -27, -69.2, -27, -90, -24.4, -90, -13, -92.5, -13, -89.8, -11, -87.8, -11, -89.4, -6, -91.4, -6, -98.2, -4, -99.2, -4, -101, 4, -101 )
+
+[node name="MontRev" type="Sprite" parent="."]
+position = Vector2( 3046, 3151 )
+scale = Vector2( 2.98438, 2.67188 )
+texture = ExtResource( 10 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MontRev"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MontRev/StaticBody2D"]
+polygon = PoolVector2Array( 2.01044, -49.7778, 4.02094, -48.2808, 4.02094, -41.9181, 13.4031, -36.6783, 18.7643, -28.8187, 28.4816, -14.2223, 37.8638, 1.49707, 38.1989, 45.6608, 28.8167, 53.1462, 21.7801, 48.2806, 20.4398, 14.2222, 12.733, 14.9707, 11.0576, 24.3275, 3.01569, 28.0702, 3.68585, 57.2632, -11.3927, 63.6257, -19.7697, 54.269, -19.4346, 37.4269, -19.0995, 19.8363, -20.4398, 39.2982, -31.1623, 47.1578, -37.8639, 42.2924, -38.199, 3.74268, -37.8639, -1.49707, -38.5341, -5.23975, -37.5288, -8.98242, -35.8534, -13.848, -31.8325, -15.7194, -26.8063, -24.3275, -23.4555, -33.3099, -18.4293, -37.8011, -12.3979, -40.0468, -9.04712, -41.1696, -9.04712, -45.2865, -9.04712, -49.0293, -7.03668, -49.4036, -4.35602, -51.2749, -0.335083, -50.9006 )
+
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2547, 1872 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 2581, 1782 )
+collision_layer = 18
+collision_mask = 17
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 position = Vector2( -37, 10 )
 current = true
 
 [node name="CambioEscena" parent="Jugador/Camera2D" instance=ExtResource( 13 )]
+visible = false
 position = Vector2( -11, 6 )
 scale = Vector2( 35.125, 20.7188 )
 z_index = 2
@@ -325,8 +376,23 @@ speed_scale = 1.0
 playing = false
 
 [node name="HUD" parent="Jugador/Camera2D" instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -511, -299 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Jugador"]
+light_mask = 17
+position = Vector2( 4.5, 12 )
+shape = SubResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="Jugador"]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jugador/Area2D"]
+position = Vector2( 5, 15.5 )
+shape = SubResource( 11 )
 
 [connection signal="area_entered" from="NPC1/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="NPC2/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="NPC3/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="SubTerra" to="." method="_on_SubTerra_area_entered"]
