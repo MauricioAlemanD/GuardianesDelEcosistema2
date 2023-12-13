@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://SPRITES_SOPHIE/Lugares/CDMX/ajoloteCONATAQUE2.png" type="Texture" id=1]
 [ext_resource path="res://jugador/JugadorC.gd" type="Script" id=2]
@@ -311,36 +311,9 @@ extents = Vector2( 17, 4.5 )
 
 [sub_resource type="Animation" id=58]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ ExtResource( 4 ) ]
-}
-
-[sub_resource type="Animation" id=59]
-length = 0.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 4 ), ExtResource( 3 ) ]
-}
 
 [sub_resource type="Animation" id=60]
+resource_name = "TeclaE"
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -358,6 +331,7 @@ tracks/0/keys = {
 
 [node name="JugadorC" type="KinematicBody2D"]
 collision_layer = 16
+collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -381,14 +355,13 @@ shape = SubResource( 49 )
 light_mask = 17
 position = Vector2( -0.182222, -51.75 )
 scale = Vector2( 2.10222, 1.84375 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 hframes = 5
 vframes = 8
 frame = 4
 
 [node name="AnimTecla" type="AnimationPlayer" parent="Tecla"]
 anims/RESET = SubResource( 58 )
-anims/TeclaE = SubResource( 59 )
-anims/TeclaQ = SubResource( 60 )
+anims/TeclaE = SubResource( 60 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
