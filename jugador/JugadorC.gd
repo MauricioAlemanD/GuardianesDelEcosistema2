@@ -4,8 +4,25 @@ const velocidad=200
 onready var animacion=$AnimatedSprite
 var actual_direccion="nada"
 
+var Subterra=null setget set_subterra
+
+func set_subterra(subter):
+	print("set_subterra llamado")
+	if subter!=null:
+		$Tecla.show()
+		$Tecla/AnimTecla.play("TeclaE")
+	else:
+		$Tecla.hide()
+		$Tecla/AnimTecla.stop()
+	Subterra=subter
+
 func _ready():
 	$AnimatedSprite.play("EstaticoDerecha")
+	set_subterra(null)
+	
+func _unhandled_input(event):
+	if event is InputEventKey and event.is_action_pressed("entrar") and Subterra!=null:
+		Subterra.enter()
 
 func _physics_process(delta):
 	player_movement(delta)
