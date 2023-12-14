@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://SPRITES_SOPHIE/Lugares/CDMX/subterraneo-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://SPRITES_SOPHIE/Lugares/CDMX/subterraneo2-Sheet.png" type="Texture" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://jugador/Enemigo.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Escena/HUD.tscn" type="PackedScene" id=9]
 [ext_resource path="res://SPRITES_SOPHIE/ajolote/letreroQ.png" type="Texture" id=10]
+[ext_resource path="res://SPRITES_SOPHIE/ajolote/fin2.png" type="Texture" id=11]
+[ext_resource path="res://SPRITES_SOPHIE/ajolote/fin1.png" type="Texture" id=12]
+[ext_resource path="res://llave.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Escena/cofre.gd" type="Script" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -564,6 +568,9 @@ extents = Vector2( 14, 14.5455 )
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 50, 35.875 )
 
+[sub_resource type="CircleShape2D" id=20]
+radius = 84.0536
+
 [node name="Subterraneo" type="Node2D"]
 script = ExtResource( 7 )
 
@@ -606,15 +613,6 @@ texture = ExtResource( 10 )
 position = Vector2( 0, 0.415585 )
 shape = SubResource( 19 )
 
-[node name="JugadorC" parent="." instance=ExtResource( 4 )]
-position = Vector2( -81, 173 )
-
-[node name="Camera2D2" type="Camera2D" parent="JugadorC"]
-current = true
-
-[node name="HUD" parent="JugadorC" instance=ExtResource( 9 )]
-position = Vector2( -513, -297 )
-
 [node name="exit" type="Area2D" parent="."]
 position = Vector2( -2592, -1832 )
 collision_layer = 0
@@ -634,11 +632,46 @@ position = Vector2( -1212, -769 )
 [node name="Enemigo4" parent="." instance=ExtResource( 8 )]
 position = Vector2( -837, 134 )
 
+[node name="Enemigo6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 704, -567 )
+
 [node name="Enemigo5" parent="." instance=ExtResource( 8 )]
 position = Vector2( 360, -951 )
 
-[node name="Enemigo" parent="Enemigo5" instance=ExtResource( 8 )]
-position = Vector2( 344, 384 )
+[node name="cofre" type="StaticBody2D" parent="."]
+position = Vector2( 875, -767 )
+script = ExtResource( 14 )
+
+[node name="zona_cofre" type="Area2D" parent="cofre"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cofre/zona_cofre"]
+position = Vector2( 8, 33 )
+shape = SubResource( 20 )
+
+[node name="abierto" type="Sprite" parent="cofre"]
+position = Vector2( 12.5, 31.5 )
+scale = Vector2( 2.34375, 2.34375 )
+texture = ExtResource( 11 )
+
+[node name="cerrado" type="Sprite" parent="cofre"]
+position = Vector2( 12.5, 31.5 )
+scale = Vector2( 2.34375, 2.34375 )
+texture = ExtResource( 12 )
+
+[node name="llave" parent="." instance=ExtResource( 13 )]
+position = Vector2( 77, -6 )
+
+[node name="JugadorC" parent="." instance=ExtResource( 4 )]
+position = Vector2( -81, 173 )
+
+[node name="Camera2D2" type="Camera2D" parent="JugadorC"]
+current = true
+
+[node name="HUD" parent="JugadorC" instance=ExtResource( 9 )]
+position = Vector2( -513, -297 )
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
 [connection signal="body_exited" from="exit" to="." method="_on_exit_body_exited"]
+[connection signal="body_entered" from="cofre/zona_cofre" to="llave" method="_on_zona_cofre_body_entered"]
+[connection signal="body_exited" from="cofre/zona_cofre" to="llave" method="_on_zona_cofre_body_exited"]
+[connection signal="cofre_abierto" from="llave" to="cofre" method="_on_llave_cofre_abierto"]
