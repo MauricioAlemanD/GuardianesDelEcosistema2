@@ -1,0 +1,135 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/ea.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/Heavitas.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Escena/Creditos.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 1590.0
+color = Color( 0.313726, 0.12549, 0.121569, 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 622.0
+
+[node name="Control" type="ColorRect" parent="ScrollContainer"]
+margin_right = 1024.0
+margin_bottom = 1590.0
+rect_min_size = Vector2( 1024, 1590 )
+color = Color( 0.352941, 0.0941176, 0.0352941, 1 )
+
+[node name="Label" type="Label" parent="ScrollContainer/Control"]
+margin_left = 33.0
+margin_top = 33.0
+margin_right = 255.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 144, 17 )
+custom_fonts/font = SubResource( 2 )
+text = "CRÉDITOS"
+
+[node name="Label2" type="Button" parent="ScrollContainer/Control"]
+margin_left = 763.0
+margin_top = 33.0
+margin_right = 997.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 144, 17 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "REGRESAR"
+flat = true
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer/Control"]
+margin_left = 6.0
+margin_top = 112.0
+margin_right = 1030.0
+margin_bottom = 1136.0
+rect_min_size = Vector2( 1024, 1024 )
+color = Color( 0.858824, 0.854902, 0.854902, 1 )
+
+[node name="lbl1" type="Label" parent="ScrollContainer/Control/ColorRect"]
+margin_left = -12.0
+margin_top = -0.999992
+margin_right = 752.0
+margin_bottom = 73.0
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 144, 17 )
+custom_colors/font_color = Color( 0.298039, 0.52549, 0.27451, 1 )
+custom_colors/font_outline_modulate = Color( 0.00784314, 0.0941176, 0.0352941, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Desarrollado con Godot Engine v3.5.2"
+valign = 1
+autowrap = true
+
+[node name="lbl2" type="Label" parent="ScrollContainer/Control/ColorRect"]
+margin_left = -11.0
+margin_top = 43.0
+margin_right = 753.0
+margin_bottom = 117.0
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 144, 17 )
+custom_colors/font_color = Color( 0.858824, 1, 0.862745, 1 )
+custom_colors/font_outline_modulate = Color( 0.00784314, 0.0941176, 0.0352941, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Equipo de Desarrollo:
+
+**Alonso Música**
+- Composición y Producción Musical
+
+**Sophi**
+- Diseño de Sprites y Creaciones de Escena
+
+**Valdi**
+- Animaciones de Sprites
+
+**Mauricio**
+- Programador Principal del Juego
+
+**Michelle**
+- Creación de Enciclopedia
+"
+valign = 1
+autowrap = true
+
+[node name="lbl3" type="Label" parent="ScrollContainer/Control/ColorRect"]
+margin_left = -18.0
+margin_top = 479.0
+margin_right = 1391.0
+margin_bottom = 1337.0
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 144, 17 )
+custom_colors/font_color = Color( 0.858824, 1, 0.862745, 1 )
+custom_colors/font_outline_modulate = Color( 0.00784314, 0.0941176, 0.0352941, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "**Acerca de Nosotros:**
+
+Somos un equipo apasionado y nuevo en la creación de experiencias de juego únicas y emocionantes. Desde la música hasta las animaciones, cada miembro de nuestro equipo ha contribuido con su talento para hacer de este juego una realidad.
+
+Creemos en la magia de los videojuegos como una forma de expresión artística y entretenimiento. Este juego es el resultado de horas de dedicación y creatividad, y esperamos que lo disfrutes tanto como nosotros disfrutamos creándolo. Guardianes del Ecosistema es nuestra contribución para crear conciencia y fomentar una conexión más profunda con la naturaleza y la comunidad.
+
+---
+
+¡Gracias por jugar y ser parte de nuestra aventura!
+
+Att. Equipo \"Guardianes del Ecosistema\""
+valign = 1
+autowrap = true
+
+[connection signal="pressed" from="ScrollContainer/Control/Label2" to="." method="_on_Label2_pressed"]
