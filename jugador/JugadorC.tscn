@@ -401,7 +401,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=61]
-radius = 39.8121
+radius = 29.0172
 
 [sub_resource type="Theme" id=62]
 
@@ -452,7 +452,7 @@ anims/TeclaE = SubResource( 60 )
 [node name="player_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
-position = Vector2( 1, -11 )
+position = Vector2( 1, -8 )
 shape = SubResource( 61 )
 
 [node name="cooldown" type="Timer" parent="."]

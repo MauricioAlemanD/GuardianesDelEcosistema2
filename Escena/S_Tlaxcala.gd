@@ -5,7 +5,7 @@ func _ready():
 	
 	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn1.text = "Habla con los habitantes."
 	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn2.text = "Libera a las palomas blancas."
-	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn3.text = "Descubre el secreto de la serpiente sospechoza."
+	$Jugador/Camera2D/HUD/mnuMisiones/lblMsn3.text = "Descubre el secreto de la serpiente sospechosa."
 	
 	UsuarioGlobal.nivelActual = "Tlaxcala"
 	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel Tlaxcala"
