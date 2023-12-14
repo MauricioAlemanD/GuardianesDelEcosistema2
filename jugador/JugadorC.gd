@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var outside="res://Escena/S_CDMX.tscn"
+
 const velocidad=200
 onready var animacion=$AnimatedSprite
 var actual_direccion="nada"
@@ -33,6 +35,7 @@ func _unhandled_input(event):
 		Global.player_pos=global_position
 		Subterra.enter()
 
+
 func _physics_process(delta):
 	player_movement(delta)
 	enemy_attack()
@@ -44,6 +47,7 @@ func _physics_process(delta):
 		health=0
 		print("mataaaaron mataron a un inocenteeeeeee")
 		self.queue_free()
+		get_tree().change_scene(outside)
 	
 func player_movement(delta):
 	var velocity = Vector2(0, 0)
@@ -134,13 +138,13 @@ func attack():
 			$AnimatedSprite.play("Ataque")
 			$deal_attack_timer.start()
 		if dir2=="izquierda":
-			$AnimatedSprite.play("Ataque")
+			$AnimatedSprite.play("AtaqueIzq")
 			$deal_attack_timer.start()
 		if dir2=="abajo":
-			$AnimatedSprite.play("Ataque")
+			$AnimatedSprite.play("AtaqueAbajo")
 			$deal_attack_timer.start()
 		if dir2=="arriba":
-			$AnimatedSprite.play("Ataque")
+			$AnimatedSprite.play("AtaqueArriba")
 			$deal_attack_timer.start()
 
 

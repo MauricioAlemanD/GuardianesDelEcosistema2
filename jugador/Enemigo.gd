@@ -12,6 +12,8 @@ var player_inattack_zone=false
 
 var can_take_damage=true
 
+
+
 func _physics_process(delta):
 	deal_with_damage()
 	update_health()
@@ -53,8 +55,10 @@ func _on_enemy_hitbox_body_exited(body):
 func deal_with_damage():
 	if player_inattack_zone and Global.player_current_attack==true:
 		if can_take_damage==true:
+			
+			health=health-10
 			$AnimatedSprite.play("damage")
-			health=health-20
+			$"daño".start()
 			$take_damage_cooldown.start()
 			can_take_damage=false
 			print("enemigo salud= ",health)
@@ -74,5 +78,15 @@ func update_health():
 		healthbar.visible=false
 	else:
 		healthbar.visible=true
+		
+func reset():
+	health = 100
+	player_chase = false
+	
 
 
+
+
+
+func _on_dao_timeout():
+	$"daño".stop()
