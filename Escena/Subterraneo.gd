@@ -5,21 +5,19 @@ var outside="res://Escena/S_CDMX.tscn"
 func _ready():
 	UsuarioGlobal.nivelActual = "Ciudad de méxico"
 	$JugadorC/HUD/lblNivel.text = "Subterraneo"
-	
 	$JugadorC/HUD/mnuMisiones/lblMsn2.text = "Toma la llave"
 	$JugadorC/HUD/mnuMisiones/lblMsn3.text = "Derrota al fango."
 	$JugadorC/HUD/mnuMisiones/lblMsn1.text = "Abre el cofre."
 	
 func _on_Area2D_area_entered(area):
 	var coordenadas_npc1 = Vector2($Salamandra.position)
-
+	print("El personaje está cerca de la salamandra.")
+	$JugadorC/HUD/mnuTexto/lblMsn1.text = "Salamandra: ¡Te arrepentirás de confiar en los humanos!"
 	var margen = 0.1
 	var coordenadas_personaje = $JugadorC.position
 
 	if coordenadas_personaje.x > coordenadas_npc1.x - coordenadas_npc1.x * margen and coordenadas_personaje.x < coordenadas_npc1.x + coordenadas_npc1.x * margen and coordenadas_personaje.y > coordenadas_npc1.y - coordenadas_npc1.y * margen and coordenadas_personaje.y < coordenadas_npc1.y + coordenadas_npc1.y * margen:
-		print("El personaje está cerca de la salamandra.")
-		$JugadorC/HUD/mnuTexto/lblMsn2.text = "¿Cómo entraste aquí? ¡LARGO DE MI CASA!"
-
+		pass
 
 	$JugadorC/HUD/mnuTexto.visible = true
 	var cerrarTexto = Timer.new()

@@ -391,14 +391,12 @@ position = Vector2( 3249, 2775 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 11 )
 animation = "normal"
-frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Area2D" type="Area2D" parent="NPC1"]
-collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPC1/Area2D"]
@@ -415,14 +413,12 @@ shape = SubResource( 12 )
 position = Vector2( 2415, 2963 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 19 )
-frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Area2D" type="Area2D" parent="NPC2"]
-collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPC2/Area2D"]
@@ -439,13 +435,13 @@ shape = SubResource( 20 )
 position = Vector2( 2398, 1787 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 21 )
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Area2D" type="Area2D" parent="NPC3"]
-collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPC3/Area2D"]
@@ -462,7 +458,7 @@ shape = SubResource( 22 )
 position = Vector2( 1947, 2771 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 23 )
-frame = 8
+frame = 5
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -470,7 +466,6 @@ __meta__ = {
 
 [node name="Area2D" type="Area2D" parent="NPC4"]
 scale = Vector2( 1.01819, 1.03413 )
-collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPC4/Area2D"]

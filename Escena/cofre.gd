@@ -6,5 +6,7 @@ func _ready():
 	
 
 func _on_llave_cofre_abierto():
-	$abierto.visible=true
-	$cerrado.visible=false
+	if Global.fangos_derrotados >= 5:
+		$abierto.visible=true
+		$cerrado.visible=false
+

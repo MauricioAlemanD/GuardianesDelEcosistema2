@@ -18,7 +18,7 @@ func _on_Area2D_area_entered(area):
 	var coordenadas_npc4 = Vector2($NPC4.position)
 
 	var margen = 0.1
-	var coordenadas_personaje = $JugadorC.position
+	var coordenadas_personaje = $YSort/JugadorC.position
 
 	if coordenadas_personaje.x > coordenadas_npc1.x - coordenadas_npc1.x * margen and coordenadas_personaje.x < coordenadas_npc1.x + coordenadas_npc1.x * margen and coordenadas_personaje.y > coordenadas_npc1.y - coordenadas_npc1.y * margen and coordenadas_personaje.y < coordenadas_npc1.y + coordenadas_npc1.y * margen:
 		print("El personaje está cerca de NPC1.")
@@ -37,15 +37,15 @@ func _on_Area2D_area_entered(area):
 		NPC = 4
 
 	if NPC == 1:
-		$YSort/JugadorC/HUD/mnuTexto/lblMsn2.text = "Habitante: Ah... el palacio de Bellas Artes, que lugar tan magnífico ¿Sabías que a pesar de que combina varios estilos, como el Neoclásico, Art Decó y Art Nouveau, también mantiene relieves que representan escenas de la mitología prehispánica?"
+		$YSort/JugadorC/HUD/mnuTexto/lblMsn1.text = "Habitante: Ah... el palacio de Bellas Artes, que lugar tan magnífico ¿Sabías que a pesar de que combina varios estilos, como el Neoclásico, Art Decó y Art Nouveau, también mantiene relieves que representan escenas de la mitología prehispánica?"
 
 	if NPC == 2:
-		$YSort/JugadorC/HUD/mnuTexto/lblMsn2.text = "Habitante: ¡Cuidado! dicen que por ahí espantan. Un tal Fangue se llama...."
+		$YSort/JugadorC/HUD/mnuTexto/lblMsn1.text = "Habitante: ¡Cuidado! dicen que por ahí espantan. Un tal Fangue se llama...."
 
 	if NPC == 3:
-		$YSort/JugadorC/HUD/mnuTexto/lblMsn2.text = "Habitante: 21 millones de habitantes en la cdmx, pero nadie tan desvelado como tú mau, ya duermeee"
+		$YSort/JugadorC/HUD/mnuTexto/lblMsn1.text = "Habitante: 21 millones de habitantes en la cdmx, pero nadie tan desvelado como tú mau, ya duermeee"
 	if NPC == 4:
-		$YSort/JugadorC/HUD/mnuTexto/lblMsn2.text = "Habitante: Xochimilco es famoso por sus canales donde se pueden alquilar trajineras, su importancia natural e histórica, han hecho que Xochimilco sea considerado Patrimonio de la Humanidad, curiosamente también es tu hogar... Ahora me siento mal por ti"
+		$YSort/JugadorC/HUD/mnuTexto/lblMsn1.text = "Habitante: Xochimilco es famoso por sus canales donde se pueden alquilar trajineras, su importancia natural e histórica, han hecho que Xochimilco sea considerado Patrimonio de la Humanidad, curiosamente también es tu hogar... Ahora me siento mal por ti"
 
 
 	$YSort/JugadorC/HUD/mnuTexto.visible = true

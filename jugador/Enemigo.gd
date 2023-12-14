@@ -56,14 +56,16 @@ func deal_with_damage():
 	if player_inattack_zone and Global.player_current_attack==true:
 		if can_take_damage==true:
 			
-			health=health-10
+			health=health-35
 			$AnimatedSprite.play("damage")
 			$"daño".start()
 			$take_damage_cooldown.start()
 			can_take_damage=false
 			print("enemigo salud= ",health)
 			if health<=0:
+				print("enemigo muerte")
 				$AnimatedSprite.play("muerte")
+				Global.fangos_derrotados = Global.fangos_derrotados + 1
 				self.queue_free()
 
 
