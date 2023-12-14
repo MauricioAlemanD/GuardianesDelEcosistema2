@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://SPRITES_SOPHIE/Lugares/CDMX/subterraneo-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://SPRITES_SOPHIE/Lugares/CDMX/subterraneo2-Sheet.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://SPRITES_SOPHIE/Lugares/CDMX/subterraneo4-Sheet.png" type="Texture" id=6]
 [ext_resource path="res://Escena/Subterraneo.gd" type="Script" id=7]
 [ext_resource path="res://jugador/Enemigo.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Escena/HUD.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -596,6 +597,9 @@ position = Vector2( -81, 173 )
 [node name="Camera2D2" type="Camera2D" parent="JugadorC"]
 current = true
 
+[node name="HUD" parent="JugadorC" instance=ExtResource( 9 )]
+position = Vector2( -513, -297 )
+
 [node name="exit" type="Area2D" parent="."]
 position = Vector2( -2592, -1832 )
 collision_layer = 0
@@ -605,6 +609,15 @@ collision_mask = 16
 light_mask = 16
 position = Vector2( 2513, 2087 )
 shape = SubResource( 18 )
+
+[node name="Enemigo2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -275, -752 )
+
+[node name="Enemigo3" parent="." instance=ExtResource( 8 )]
+position = Vector2( -1212, -769 )
+
+[node name="Enemigo4" parent="." instance=ExtResource( 8 )]
+position = Vector2( -837, 134 )
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
 [connection signal="body_exited" from="exit" to="." method="_on_exit_body_exited"]

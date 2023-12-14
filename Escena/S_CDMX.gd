@@ -1,10 +1,9 @@
 extends Node2D
 
-#func _ready():
+func _ready():
 #	$YSort/JugadorC.global_position=Global.player_pos
-#	UsuarioGlobal.nivelActual = "Ciudad de méxico"
-#	$Jugador/Camera2D/HUD/lblNivel.text = "Nivel ciudad de méxico"
-#
+	UsuarioGlobal.nivelActual = "Ciudad de méxico"
+	$YSort/JugadorC/HUD/lblNivel.text = "Nivel ciudad de méxico"
 #func _on_Area2D_area_entered(area):
 #	var NPC
 #
