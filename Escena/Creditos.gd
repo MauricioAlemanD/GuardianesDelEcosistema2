@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Label2_pressed():
-	get_tree().change_scene("res://Escena/seleccionNiveles.tscn")
+	get_tree().change_scene("res://Escena/MenuInicial.tscn")

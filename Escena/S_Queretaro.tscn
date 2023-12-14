@@ -872,6 +872,7 @@ polygon = PoolVector2Array( -62.053, 26.0414, -62.4682, 6.56317, -61.0148, 1.536
 position = Vector2( 3431, 1724 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 40 )
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -895,7 +896,7 @@ shape = SubResource( 31 )
 position = Vector2( 1372, 1130 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 41 )
-frame = 4
+frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -919,6 +920,7 @@ shape = SubResource( 31 )
 position = Vector2( 2973, 2167 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 42 )
+frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -998,7 +1000,7 @@ shape = SubResource( 32 )
 position = Vector2( 2420, 2801 )
 scale = Vector2( 3.8125, 3.8125 )
 frames = SubResource( 43 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="tubo1" type="AnimatedSprite" parent="Jefe"]
@@ -1058,7 +1060,6 @@ shape = SubResource( 37 )
 position = Vector2( 2047, 3064 )
 scale = Vector2( 2.8125, 2.8125 )
 frames = ExtResource( 50 )
-frame = 3
 playing = true
 
 [node name="tubo1" type="AnimatedSprite" parent="secuas1"]
@@ -1117,7 +1118,6 @@ shape = SubResource( 37 )
 position = Vector2( 2632, 2905 )
 scale = Vector2( 2.8125, 2.8125 )
 frames = ExtResource( 50 )
-frame = 3
 playing = true
 
 [node name="tubo1" type="AnimatedSprite" parent="secuas2"]
@@ -1177,7 +1177,6 @@ shape = SubResource( 37 )
 position = Vector2( 2208, 2906 )
 scale = Vector2( 2.8125, 2.8125 )
 frames = ExtResource( 50 )
-frame = 3
 playing = true
 
 [node name="tubo1" type="AnimatedSprite" parent="secuas3"]

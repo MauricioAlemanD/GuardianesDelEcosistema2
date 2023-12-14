@@ -24,4 +24,4 @@ func _on_Menu_ready():
 
 
 func _on_btnAcercade_pressed():
-	get_tree().change_scene("res://mich/Creditos.tscn")
+	get_tree().change_scene("res://Escena/Creditos.tscn")
