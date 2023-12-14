@@ -700,7 +700,6 @@ position = Vector2( 873, -900 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 25 )
 animation = "sinfango"
-frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true

@@ -18,7 +18,7 @@ func _on_Area2D_area_entered(area):
 
 	if coordenadas_personaje.x > coordenadas_npc1.x - coordenadas_npc1.x * margen and coordenadas_personaje.x < coordenadas_npc1.x + coordenadas_npc1.x * margen and coordenadas_personaje.y > coordenadas_npc1.y - coordenadas_npc1.y * margen and coordenadas_personaje.y < coordenadas_npc1.y + coordenadas_npc1.y * margen:
 		print("El personaje está cerca de la salamandra.")
-		$JugadorC/HUD/mnuTexto/lblMsn2.text = "¿Por qué no te rindes?"
+		$JugadorC/HUD/mnuTexto/lblMsn2.text = "¿Cómo entraste aquí? ¡LARGO DE MI CASA!"
 
 
 	$JugadorC/HUD/mnuTexto.visible = true
