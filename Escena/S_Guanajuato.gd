@@ -87,7 +87,7 @@ func _on_temporizador_espera_timeoutES():
 func _on_tiempo_expirado2(iteracion):
 	
 	if UsuarioGlobal.ganadoJefe1 == false:
-		get_tree().change_scene("res://Escena/MenuInicial.tscn")
+		get_tree().change_scene("res://FinalJefe/Perdida.tscn")
 	elif estalactitas == 10 and UsuarioGlobal.ganadoJefe1 == true:
 		$Jugador/Camera2D/CambioEscena.playing = true
 		$Jugador/Camera2D/CambioEscena.visible = true

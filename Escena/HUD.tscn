@@ -39,6 +39,7 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="HudItemps" type="Sprite" parent="."]
+visible = false
 position = Vector2( 780, 39 )
 texture = ExtResource( 8 )
 
@@ -147,20 +148,24 @@ margin_bottom = 22.0
 flat = true
 
 [node name="ColorProgresoNivel" type="Sprite" parent="."]
+visible = false
 position = Vector2( 294, 54 )
 texture = ExtResource( 7 )
 
 [node name="ColorProgresoNivel2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 395, 54 )
 scale = Vector2( 1.04167, 1 )
 texture = ExtResource( 7 )
 
 [node name="ColorProgresoNivel3" type="Sprite" parent="."]
+visible = false
 position = Vector2( 494, 54 )
 scale = Vector2( 0.958333, 1 )
 texture = ExtResource( 7 )
 
 [node name="BarraProgresoNivel" type="Sprite" parent="."]
+visible = false
 position = Vector2( 393, 54 )
 texture = ExtResource( 6 )
 

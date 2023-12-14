@@ -142,7 +142,7 @@ func _on_temporizador_timeout():
 		$temporizadorEspera.start()
 		
 	if UsuarioGlobal.ganadoJefe2 == false:
-		get_tree().change_scene("res://Escena/seleccionNiveles.tscn")
+		get_tree().change_scene("res://FinalJefe/Perdida.tscn")
 	
 	$Jugador/Camera2D/HUD/tiempo.text = str(segundos_pasados)
 	

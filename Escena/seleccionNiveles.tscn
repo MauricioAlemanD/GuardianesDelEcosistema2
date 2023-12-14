@@ -286,11 +286,12 @@ text = "Guardian:"
 [node name="lblNombreUsuario" type="Label" parent="."]
 margin_left = 736.0
 margin_top = 412.0
-margin_right = 983.0
-margin_bottom = 438.0
+margin_right = 936.0
+margin_bottom = 508.0
 rect_pivot_offset = Vector2( 134, 11 )
 custom_colors/font_color = Color( 0.721569, 0.631373, 0.54902, 1 )
 custom_fonts/font = SubResource( 1 )
+autowrap = true
 script = SubResource( 2 )
 
 [node name="Head" type="Sprite" parent="."]
@@ -359,12 +360,14 @@ modulate = Color( 0.905882, 0.513726, 0.741176, 1 )
 position = Vector2( 480, 348 )
 scale = Vector2( 1.16939, 1.32486 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="controles" type="AnimatedSprite" parent="."]
 position = Vector2( 64, 244 )
 scale = Vector2( 0.738777, 0.837 )
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="Jugador" parent="." instance=ExtResource( 13 )]

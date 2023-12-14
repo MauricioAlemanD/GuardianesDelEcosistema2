@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://fonts/bgzm.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/ea.tres" type="DynamicFont" id=2]
@@ -70,6 +70,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="DynamicFont" id=6]
+size = 80
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
 [node name="Menu" type="Control"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -136,14 +142,14 @@ position = Vector2( 119, 444 )
 scale = Vector2( 5.98437, 5.98437 )
 frames = SubResource( 2 )
 animation = "New Anim"
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 800, 408 )
 scale = Vector2( 5.78125, 5.78125 )
 frames = SubResource( 3 )
-frame = 2
+frame = 8
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
@@ -157,12 +163,26 @@ playing = true
 position = Vector2( 660, 348 )
 scale = Vector2( 4.90625, 4.90625 )
 frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="HitSound" parent="." instance=ExtResource( 5 )]
+
+[node name="btnAcercade" type="Button" parent="."]
+margin_left = -32.0
+margin_top = -18.0
+margin_right = 23.0
+margin_bottom = 39.0
+custom_colors/font_color_disabled = Color( 1, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "?"
+flat = true
 
 [connection signal="ready" from="." to="." method="_on_Menu_ready"]
 [connection signal="mouse_entered" from="vbxBotones/btnJugar" to="." method="_on_btnJugar_mouse_entered"]
 [connection signal="pressed" from="vbxBotones/btnJugar" to="." method="_on_btnJugar_pressed"]
 [connection signal="mouse_entered" from="vbxBotones/btnSalir" to="." method="_on_btnSalir_mouse_entered"]
 [connection signal="pressed" from="vbxBotones/btnSalir" to="." method="_on_btnSalir_pressed"]
+[connection signal="pressed" from="btnAcercade" to="." method="_on_btnAcercade_pressed"]
