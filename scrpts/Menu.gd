@@ -21,3 +21,7 @@ func _on_Menu_ready():
 	else:
 		BgApertura.play()
 	
+
+
+func _on_btnAcercade_pressed():
+	get_tree().change_scene("res://mich/Creditos.tscn")

@@ -75,7 +75,7 @@ func _on_temporizador_timeout():
 		temporizadorEspera.connect("timeout",self,"_on_temporizador_espera_timeoutESE")
 		temporizadorEspera.start()
 	if UsuarioGlobal.fuegoApagador <20 and segundos_pasados > 100 :
-		get_tree().change_scene("res://Escena/seleccionNiveles.tscn")
+		get_tree().change_scene("res://FinalJefe/Perdida.tscn")
 	
 func _on_temporizador_espera_timeoutESE():
 	get_tree().change_scene("res://FinalJefe/Morelos.tscn")

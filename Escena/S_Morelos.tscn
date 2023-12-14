@@ -425,7 +425,7 @@ shape = SubResource( 6 )
 position = Vector2( 2208, 1512 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 11 )
-frame = 3
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true

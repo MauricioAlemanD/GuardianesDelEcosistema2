@@ -895,7 +895,7 @@ shape = SubResource( 31 )
 position = Vector2( 1372, 1130 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 41 )
-frame = 1
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -919,7 +919,6 @@ shape = SubResource( 31 )
 position = Vector2( 2973, 2167 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 42 )
-frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -999,13 +998,12 @@ shape = SubResource( 32 )
 position = Vector2( 2420, 2801 )
 scale = Vector2( 3.8125, 3.8125 )
 frames = SubResource( 43 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="tubo1" type="AnimatedSprite" parent="Jefe"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 2
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1023,7 +1021,7 @@ shape = SubResource( 37 )
 [node name="tubo2" type="AnimatedSprite" parent="Jefe"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1041,6 +1039,7 @@ shape = SubResource( 37 )
 [node name="tubo3" type="AnimatedSprite" parent="Jefe"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
+frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1059,13 +1058,12 @@ shape = SubResource( 37 )
 position = Vector2( 2047, 3064 )
 scale = Vector2( 2.8125, 2.8125 )
 frames = ExtResource( 50 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="tubo1" type="AnimatedSprite" parent="secuas1"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 2
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1083,7 +1081,6 @@ shape = SubResource( 37 )
 [node name="tubo2" type="AnimatedSprite" parent="secuas1"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 2
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1101,7 +1098,7 @@ shape = SubResource( 37 )
 [node name="tubo3" type="AnimatedSprite" parent="secuas1"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1120,12 +1117,13 @@ shape = SubResource( 37 )
 position = Vector2( 2632, 2905 )
 scale = Vector2( 2.8125, 2.8125 )
 frames = ExtResource( 50 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="tubo1" type="AnimatedSprite" parent="secuas2"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
+frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1143,6 +1141,7 @@ shape = SubResource( 37 )
 [node name="tubo2" type="AnimatedSprite" parent="secuas2"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
+frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1160,7 +1159,6 @@ shape = SubResource( 37 )
 [node name="tubo3" type="AnimatedSprite" parent="secuas2"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 2
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1179,12 +1177,13 @@ shape = SubResource( 37 )
 position = Vector2( 2208, 2906 )
 scale = Vector2( 2.8125, 2.8125 )
 frames = ExtResource( 50 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="tubo1" type="AnimatedSprite" parent="secuas3"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
+frame = 1
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1202,7 +1201,6 @@ shape = SubResource( 37 )
 [node name="tubo2" type="AnimatedSprite" parent="secuas3"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 2
 playing = true
 offset = Vector2( 0, 20 )
 
@@ -1220,7 +1218,6 @@ shape = SubResource( 37 )
 [node name="tubo3" type="AnimatedSprite" parent="secuas3"]
 scale = Vector2( 1.33333, 1.33333 )
 frames = SubResource( 36 )
-frame = 2
 playing = true
 offset = Vector2( 0, 20 )
 
