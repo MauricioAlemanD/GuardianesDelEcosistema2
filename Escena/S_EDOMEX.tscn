@@ -343,7 +343,7 @@ tile_data = PoolIntArray(  )
 position = Vector2( 3374, 1634 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 14 )
-frame = 3
+frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -367,7 +367,7 @@ shape = SubResource( 7 )
 position = Vector2( 1610, 1435 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 15 )
-frame = 2
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -391,6 +391,7 @@ shape = SubResource( 7 )
 position = Vector2( 728, 2572 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 16 )
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -411,13 +412,14 @@ polygon = PoolVector2Array( 0, 5.22449, 7.83673, 5.22449, 7.83673, 15.6735, -10.
 shape = SubResource( 7 )
 
 [node name="Arcos" type="Sprite" parent="."]
-position = Vector2( 2957.49, 594.43 )
+position = Vector2( 2952, 624 )
 scale = Vector2( 2.91142, 2.66397 )
 texture = ExtResource( 34 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Arcos"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Arcos/StaticBody2D"]
+position = Vector2( 2.74774, -3.05176e-05 )
 polygon = PoolVector2Array( -139.276, 86.1759, -139.276, 23.1122, 88.7917, 23.1122, 88.7917, 83.1729 )
 
 [node name="TorresSatelite" type="Sprite" parent="."]
@@ -444,6 +446,7 @@ polygon = PoolVector2Array( -173.231, 25.4753, -30.5702, -56.0453, -30.5702, -76
 position = Vector2( 1576, 536 )
 scale = Vector2( 2.53125, 2.53125 )
 frames = SubResource( 13 )
+frame = 3
 playing = true
 
 [node name="eventoJefe" type="Area2D" parent="EstadoMexico"]

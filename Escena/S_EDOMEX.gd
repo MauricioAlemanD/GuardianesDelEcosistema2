@@ -53,7 +53,7 @@ func _on_Area2D_area_entered(area):
 		NPC = 3
 	
 	if NPC == 1:
-		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Un cacomixtle se comío a mi gato."
+		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Un cacomixtle se comió a mi gato."
 	
 	if NPC == 2:
 		$Jugador/Camera2D/HUD/mnuTexto/lblMsn1.text = "Acabo de salir a dejar mi basura y una especie de gato-mono se llevó mi basura."

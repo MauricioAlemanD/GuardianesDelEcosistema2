@@ -4,6 +4,7 @@ extends Control
 
 var  nombreUsuario = "" #Se crea y define la variable para almacenar el nombre de usuario ongresado
 var usuariosToales = [] #Se crea la variable de tipo array para almacenar los usuarios totales 
+var datosJugadores = {}  #Se crea la variable diccionario para almacenar los datos del jugador
 
 func _ready(): #Se crea e inica el constructor de la escena 
 	$btnSiguiente.disabled = true  #Se establece la propiedad deshabilitada del boton siguiene verdadera
@@ -17,6 +18,9 @@ func busquedaUsuarios(): #Se crea la funcion de busquedaUsusarios
 	file.open("user://usersData.dat", File.READ) #Se accede a la lectura de datos mediante la varible file 
 	usuariosToales = file.get_var() #Se obtiene el contendio de la variale de usuarios en el archivo y se almacenan en usauriosTotales
 	file.close() #Se cierra la conexion al fichero
+	file.open("user://Progreso.dat",File.READ)
+	datosJugadores = file.get_var()
+	file.close()
 		
 
 
@@ -39,11 +43,16 @@ func _on_btnSiguiente_pressed(): #Se crea el evento del boton siguiente
 		
 
 	if $lblExistente.visible == false: #Se crea la condicion de que si la etiqueta de existencia esta no visible permitira crear un nuevo usaurio
+		datosJugadores[nombreUsuario] = "Guanajuato" #Se inserta el nuevo usuario en el diccionario
 		usuariosToales.append(nombreUsuario) #Se insetra el usaurio en el arreglo de usuariosTotales con la propiedad append
 		var file = File.new() #Se crea la variable de archivo para poder acceder al archivo user://usersData.dat y sobreescribirlo/actualizarlo con el nuevo usuario
 		file.open("user://usersData.dat",File.WRITE) #Se establece la conexion con el archivo para escribir en el 
 		file.store_var(usuariosToales) #Con la propiedad .store_var se le agrega el valor del arreglo de usuariosTotales actualizado al archivo user://usersData.dat
 		file.close() #Se cierra la conexion con el archivo
+		var file2 = File.new()
+		file2.open("user://Progreso.dat",File.WRITE)
+		file2.store_var(datosJugadores)
+		file2.close()
 		UsuarioGlobal.nombreUsuarioGlobal = nombreUsuario #Al nombre de usuario global dentro de las varaibles globeles se le asignara el nombre de usuario ingresado para comenzar la partida
 		get_tree().change_scene("res://Escena/seleccionNiveles.tscn") #Se cambia la escena actual por la escena de seleccion de nivel
 	

@@ -403,6 +403,7 @@ shape = SubResource( 7 )
 position = Vector2( 1896, 1048 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 13 )
+frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -426,7 +427,7 @@ shape = SubResource( 7 )
 position = Vector2( 1424, 1280 )
 scale = Vector2( 2.83333, 2.83333 )
 frames = SubResource( 14 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="eventoJefe" type="Area2D" parent="Tlaxcala"]
@@ -446,7 +447,6 @@ scale = Vector2( 2.83333, 2.83333 )
 
 [node name="spritePaloma1" type="AnimatedSprite" parent="Paloma1"]
 frames = SubResource( 8 )
-frame = 1
 playing = true
 
 [node name="jaulaPaloma1" type="Sprite" parent="Paloma1"]
@@ -466,6 +466,7 @@ scale = Vector2( 2.83333, 2.83333 )
 
 [node name="spritePaloma2" type="AnimatedSprite" parent="Paloma2"]
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="jaulaPaloma2" type="Sprite" parent="Paloma2"]
@@ -485,6 +486,7 @@ scale = Vector2( 2.83333, 2.83333 )
 
 [node name="spritePaloma3" type="AnimatedSprite" parent="Paloma3"]
 frames = SubResource( 8 )
+frame = 1
 playing = true
 
 [node name="jaulaPaloma3" type="Sprite" parent="Paloma3"]

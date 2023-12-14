@@ -64,8 +64,12 @@ func deal_with_damage():
 			print("enemigo salud= ",health)
 			if health<=0:
 				print("enemigo muerte")
-				$AnimatedSprite.play("muerte")
+				$AnimatedSprite.visible = false
+				$AnimatedSprite2.visible = true
+				$AnimatedSprite2.play()
+				
 				Global.fangos_derrotados = Global.fangos_derrotados + 1
+				yield(get_tree().create_timer(1), "timeout")
 				self.queue_free()
 
 

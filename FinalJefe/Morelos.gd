@@ -1,6 +1,6 @@
 extends Node2D
 
-var textoCompleto = "Que he hecho!, me enfoque demasiado en mi diversión que olvide que existía gente y arboles a mis alrededores a quienes podía dañar, esto no está bien, buscare la manera de arreglar las consecuencias de mis actos."
+var textoCompleto = "QUÉ HE HECHO, me enfoqué demasiado en mi diversión que olvidé que existía gente y árboles a mis alrededores a quienes podía dañar, esto no está bien, buscaré la manera de arreglar las consecuencias de mis actos."
 var textoActual = ""
 var indiceTexto = 0
 

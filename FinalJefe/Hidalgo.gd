@@ -1,6 +1,6 @@
 extends Node2D
 
-var textoCompleto = "Diablos, no sé en que estaba pensando para tratar de esta manera a las personas y talar de tal manera a los árboles, me equivoque gracias a estas púas que tenía enterradas en mi piel, de verdad te agradezco y espero que logres mejorar la zona centro del país."
+var textoCompleto = "Diablos, no sé en que estaba pensando para tratar de esa manera a las personas y talar a tantos árboles, de verdad te agradezco y espero que logres mejorar la zona centro del país."
 var textoActual = ""
 var indiceTexto = 0
 

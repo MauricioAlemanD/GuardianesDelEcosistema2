@@ -1,6 +1,6 @@
 extends Node2D
 
-var textoCompleto = "Debo pdir disculpas a todos quien he molestado, de verdad es muy divertido tomar basura y dejarla por ahi, sin embargo estoy causando mucha contaminacion en el lugar, perdon por eso."
+var textoCompleto = "Debo pedir disculpas a todos quien he molestado, de verdad es muy divertido tomar basura y dejarla por ahí, sin embargo estoy causando mucha contaminación en el lugar, perdón por eso."
 var textoActual = ""
 var indiceTexto = 0
 

@@ -47,7 +47,7 @@ func _physics_process(delta):
 		health=0
 		print("mataaaaron mataron a un inocenteeeeeee")
 		self.queue_free()
-		get_tree().change_scene(outside)
+		get_tree().change_scene("res://Escena/Subterraneo.tscn")
 	
 func player_movement(delta):
 	var velocity = Vector2(0, 0)

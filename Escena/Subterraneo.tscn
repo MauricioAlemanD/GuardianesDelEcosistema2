@@ -700,7 +700,6 @@ position = Vector2( 703, -861 )
 scale = Vector2( 3.0625, 3.0625 )
 frames = SubResource( 25 )
 animation = "normal"
-frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -727,6 +726,8 @@ current = true
 
 [node name="HUD" parent="JugadorC" instance=ExtResource( 9 )]
 position = Vector2( -513, -297 )
+
+[node name="temporizadorEspera" type="Timer" parent="."]
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
 [connection signal="body_exited" from="exit" to="." method="_on_exit_body_exited"]

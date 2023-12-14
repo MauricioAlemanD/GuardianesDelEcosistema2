@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=2]
 
-[ext_resource path="res://fonts/eEraDua.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/Heavitas.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://sprites/Estrucutras/Queretaro/estacionTren.png" type="Texture" id=2]
 [ext_resource path="res://sprites/Estrucutras/Guanajuato/basilica.png" type="Texture" id=3]
 [ext_resource path="res://sprites/Estrucutras/Queretaro/Templo San Francisco de Ásis.png" type="Texture" id=4]
@@ -799,12 +799,54 @@ margin_right = 1014.0
 margin_bottom = 602.0
 color = Color( 0.0117647, 0.258824, 0.141176, 1 )
 
-[node name="lblBoton" type="Label" parent="ColorRect"]
+[node name="lblInformacion" type="Label" parent="ColorRect"]
 margin_left = 33.0
 margin_top = 33.0
-margin_right = 255.0
-margin_bottom = 64.0
+margin_right = 312.0
+margin_bottom = 107.0
 rect_pivot_offset = Vector2( 144, 17 )
 custom_fonts/font = SubResource( 1 )
+text = "xvds"
+autowrap = true
 
 [connection signal="pressed" from="ScrollContainer/Control/Label2" to="." method="_on_Label2_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlGuanajuato/EnchiladasMineras" to="." method="_on_EnchiladasMineras_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlGuanajuato/Guacamaya" to="." method="_on_Guacamaya_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlGuanajuato/Basilica" to="." method="_on_Basilica_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlGuanajuato/CallejonBeso" to="." method="_on_CallejonBeso_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlGuanajuato/MuseoMomias" to="." method="_on_MuseoMomias_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlQueretaro/EnchiladasQueretanas" to="." method="_on_EnchiladasQueretanas_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlQueretaro/GorditasDeMAiz" to="." method="_on_GorditasDeMAiz_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlQueretaro/CerroCampana" to="." method="_on_CerroCampana_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlQueretaro/EstacionDeTren" to="." method="_on_EstacionDeTren_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlQueretaro/TemploPusisima" to="." method="_on_TemploPusisima_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlHidalgo/GusanosMaguey" to="." method="_on_GusanosMaguey_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlHidalgo/Pastes" to="." method="_on_Pastes_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlHidalgo/Grutas" to="." method="_on_Grutas_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlHidalgo/Reserva" to="." method="_on_Reserva_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlHidalgo/RioTula" to="." method="_on_RioTula_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlTlaxcala/TacosDeCanasta" to="." method="_on_TacosDeCanasta_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlTlaxcala/Tlatlapas" to="." method="_on_Tlatlapas_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlTlaxcala/CasaCultura" to="." method="_on_CasaCultura_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlTlaxcala/Catedral" to="." method="_on_Catedral_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlTlaxcala/PlazaToros" to="." method="_on_PlazaToros_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlPuebla/Cemita" to="." method="_on_Cemita_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlPuebla/ChileEnNogada" to="." method="_on_ChileEnNogada_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlPuebla/RuedaFortuna" to="." method="_on_RuedaFortuna_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlPuebla/PiramideCholula" to="." method="_on_PiramideCholula_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlPuebla/SantuarioGuadalupe" to="." method="_on_SantuarioGuadalupe_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlMorelos/Cecina" to="." method="_on_Cecina_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlMorelos/ChilesRellenos" to="." method="_on_ChilesRellenos_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlMorelos/Tequesquitengo" to="." method="_on_Tequesquitengo_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlMorelos/CentroHistorico" to="." method="_on_CentroHistorico_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlMorelos/SantuarioGuadalupe" to="." method="_on_SantuarioGuadalupe_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlEdomex/GuajoloteEnSalsaVerde" to="." method="_on_GuajoloteEnSalsaVerde_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlEdomex/QuesadillasDEHongos" to="." method="_on_QuesadillasDEHongos_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlEdomex/ArcosTepotzotlan" to="." method="_on_ArcosTepotzotlan_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlEdomex/PiramideTeotihuacan" to="." method="_on_PiramideTeotihuacan_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlEdomex/TorresSatelite" to="." method="_on_TorresSatelite_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlCdmx/TacosPastor" to="." method="_on_TacosPastor_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlCdmx/ChilesRellenos" to="." method="_on_ChilesRellenos_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlCdmx/Metro" to="." method="_on_Metro_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlCdmx/CentroHistorico" to="." method="_on_CentroHistorico_pressed"]
+[connection signal="pressed" from="ScrollContainer/Control/pnlCdmx/BellasArtes" to="." method="_on_BellasArtes_pressed"]

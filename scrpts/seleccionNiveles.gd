@@ -3,6 +3,9 @@ extends Control #Hereda de control
 
 func _ready(): #Se crea e inicia el construcor de la escena
 	
+	UsuarioGlobal.busqueda_progresos()
+
+	
 	if BgGuanajuato.playing == true or BgQueretaro.playing == true or BgHidalgo.playing == true or BgTlaxcala.playing == true or BgPuebla.playing == true or BgMorelos.playing == true or BgEdomex.playing == true or BgCdmx.playing == true :
 		BgGuanajuato.stop()
 		BgQueretaro.stop()
@@ -32,34 +35,43 @@ func _ready(): #Se crea e inicia el construcor de la escena
 	if UsuarioGlobal.nivelActual == 'Guanajuato' or UsuarioGlobal.nivelActual == "" :
 		$indicador.position = Vector2(344,124)
 		$SvgMexico/EventoGuanajuato.position = Vector2(4.5,34)
+		$lblProgreso.text = "Progreso : 0%"
 	
 	if UsuarioGlobal.nivelActual == 'Queretaro':
 		$indicador.position = Vector2(448,124)
 		$SvgMexico/EventoQueretaro.position = Vector2(7,-2.5)
+		$lblProgreso.text = "Progreso : 25%"
+		
 		
 	if UsuarioGlobal.nivelActual == 'Hidalgo':
 		$indicador.position = Vector2(496,148)
 		$SvgMexico/EventoHidalgo.position = Vector2(7,-3.005)
+		$lblProgreso.text = "Progreso : 37.5%"
 		
 	if UsuarioGlobal.nivelActual == 'Tlaxcala':
 		$indicador.position = Vector2(552,268)
 		$SvgMexico/EventoTlaxcala.position = Vector2(23.071,19.007)
+		$lblProgreso.text = "Progreso : 50%"
 		
 	if UsuarioGlobal.nivelActual == 'Puebla':
 		$indicador.position = Vector2(592,340)
 		$SvgMexico/EventoPuebla.position = Vector2(28,20)
+		$lblProgreso.text = "Progreso : 62.5%"
 		
 	if UsuarioGlobal.nivelActual == 'Morelos':
 		$indicador.position = Vector2(480,322)
 		$SvgMexico/EventoMorelos.position = Vector2(5.005,34)
+		$lblProgreso.text = "Progreso : 75%"
 		
 	if UsuarioGlobal.nivelActual == 'Estado de México':
 		$indicador.position = Vector2(432,276)
 		$SvgMexico/EventoMexico.position = Vector2(-4.995,21.995)
+		$lblProgreso.text = "Progreso : 87.5%"
 		
 	if UsuarioGlobal.nivelActual == 'Ciudad de México':
 		$indicador.position = Vector2(472,292)
 		$SvgMexico/EventoCDMX.position = Vector2(3,22.995)
+		$lblProgreso.text = "Progreso : 100%"
 		
 	$lblNombreUsuario.text = UsuarioGlobal.nombreUsuarioGlobal #Se añadde al texto de la etiqueta el valor del usuario global
 	$lblUltimoNivel.text = "Último nivel : " + UsuarioGlobal.nivelActual

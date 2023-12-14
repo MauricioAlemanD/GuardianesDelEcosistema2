@@ -37,7 +37,7 @@ func _on_tiempo_expirado():
 	
 	
 func _on_exit_body_entered(body):
-		get_tree().change_scene(outside)
+		get_tree().change_scene("res://Escena/Subterraneo.tscn")
 		
 func _on_exit_body_exited(body):
 	pass

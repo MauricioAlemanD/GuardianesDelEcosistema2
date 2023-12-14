@@ -1,6 +1,6 @@
 extends Node2D
 
-var textoCompleto = "Tuviste que entrometerte en mis negocios, esto no te lo perdonare, tuviste suerte por esta ocasión, yo se que nos volveremos a ver, tengo vínculos con gente muy importante dentro de estas zonas, ya sabes como son los negocios."
+var textoCompleto = "Tuviste que entrometerte en mis negocios, esto no te lo perdonaré, tuviste suerte por esta ocasión, yo sé que nos volveremos a ver, tengo vínculos con gente muy importante dentro de estas zonas, ya sabes como son los negocios."
 var textoActual = ""
 var indiceTexto = 0
 
